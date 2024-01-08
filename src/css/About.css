@@ -1,0 +1,162 @@
+/* .........Google Font......... */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Preahvihear&display=swap');
+
+/* .........Custom Styles......... */
+
+:root{
+    --color-primary: #1a74e2;
+    --color-danger: #ff003d;
+
+    --color-white: #ffffff;
+    --color-light: #88949b;
+
+    --color-black: #0c0c10;
+    --color-dark: #0e1013;
+
+    --transition: .4s ease;
+}
+
+.btn{
+    display: inline-block;
+    width: fit-content;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-size: 16px;
+    border: 1px solid var(--color-white);
+    padding: 18px 40px;
+    color: var(--color-white);
+    border-radius: 5px;
+    transition: var(--transition);
+}
+.btn:hover{
+    background: var(--color-white);
+    color: var(--color-black);
+    border-color: var(--color-white);
+}
+.btn-primary{
+    color: var(--color-primary);
+    border: 1px solid var(--color-primary);
+}
+.btn-primary:hover{
+    color: var(--color-primary);
+}
+.btn-danger{
+    background: var(--color-danger);
+    border-color: var(--color-danger);
+    color: var(--color-white);
+}
+
+/* .....................Start About..................... */ 
+#About{
+    background: var(--color-black);
+    padding: 4rem 0;
+}
+.about-container{
+    display: grid;
+    grid-template-columns: 38% auto;
+    gap: 120px;
+    align-items: center;
+}
+.about-right{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+.about-small-title{
+    font-size: 17px;
+    font-weight: bold;
+    color: var(--color-primary);
+    margin-bottom: 7px;
+}
+.aboutMe-contact-info a{
+    margin-top: 7px;
+    color: var(--color-primary);
+    transition: var(--transition);
+    display: inline-block;
+    cursor: default;
+}
+.aboutMe-contact-info a:hover{
+    color: var(--color-danger);
+}
+.about-action-aria{
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+/* .....................End About..................... */
+
+/* .....................Start Media Screen(1024)..................... */
+@media (max-width:1024px) {
+    h1{
+        font-size: 46px;
+    }
+    h2{
+        font-size: 38px !important;
+    }
+    h3{
+        font-size: 34px !important;
+    }
+    h4{
+        font-size: 24px !important;
+    }
+    h5{
+        font-size: 20px; 
+    }
+    .hero-text{
+        font-size: 38px;
+    }
+    .btn{
+        padding: 16px 36px;
+    }
+}
+/* .....................Start Media Screen(666)..................... */
+@media (max-width:666px) {
+    h1{
+        font-size: 34px !important;
+    }
+    h2{
+        font-size: 30px !important;
+    }
+    h3{
+        font-size: 20px !important;
+    }
+    h4{
+        font-size: 17px !important;
+    }
+    h5{
+        font-size: 20px; 
+    }
+    .hero-text{
+        font-size: 34px;
+    }
+    section{
+        padding: 9rem 0;
+    }
+    .btn{
+        padding: 16px 30px;
+    }
+    /* ..........Start Nav.......... */
+    nav{
+        height: 6rem;
+    }
+    .logo img{
+        max-width: 30;
+    }
+    /* ..........Start About.......... */
+    .about-container{
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 20px;
+    }
+    .about-left{
+        width: 90%;
+        margin: auto;
+    }
+    .about-action-aria{
+        justify-content: center;
+    }
+}
+
+

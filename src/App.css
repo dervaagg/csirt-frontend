@@ -1,0 +1,319 @@
+/* .........Google Font......... */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Preahvihear&display=swap');
+
+/* .........Custom Styles......... */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    outline: none;
+}
+
+:root{
+    --color-primary: #1a74e2;
+    --color-danger: #ff003d;
+
+    --color-white: #ffffff;
+    --color-light: #88949b;
+
+    --color-black: #0c0c10;
+    --color-dark: #0e1013;
+
+    --transition: .4s ease;
+}
+
+html{
+    scroll-behavior: smooth;
+    font-family: 'Inter', sans-serif;
+}
+
+body{
+    background: var(--color-black);
+    color: var(--color-white);
+}
+
+h1{
+    font-size: 52px;
+    font-weight: 500;
+    line-height: 60px;
+    
+}
+h2{
+    font-size: 48px;
+    font-weight: 500;
+    line-height: 56px;
+}
+h3{
+    font-size: 46px;
+    font-weight: 400;
+    line-height: 54px;
+}
+h4{
+    font-size: 40px;
+    font-weight: 300;
+    line-height: 48px;
+}
+h5{
+    font-size: 25px;
+    font-weight: 300;
+    line-height: 34px;
+}
+p{
+    font-size: 16px;
+    line-height: 26px;
+}
+small{
+    color: var(--color-light);
+    font-size: 15px;
+}
+span{
+    color: var(--color-danger);
+}
+
+.btn{
+    display: inline-block;
+    width: fit-content;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-size: 16px;
+    border: 1px solid var(--color-white);
+    padding: 18px 40px;
+    color: var(--color-white);
+    border-radius: 5px;
+    transition: var(--transition);
+}
+.btn:hover{
+    background: var(--color-white);
+    color: var(--color-black);
+    border-color: var(--color-white);
+}
+.btn-primary{
+    color: var(--color-primary);
+    border: 1px solid var(--color-primary);
+}
+.btn-primary:hover{
+    color: var(--color-primary);
+}
+.btn-danger{
+    background: var(--color-danger);
+    border-color: var(--color-danger);
+    color: var(--color-white);
+}
+
+.container{
+    width: 90%;
+    margin: 0 auto;
+    max-width: 1480px;
+}
+
+/* ----------------Start Navbar---------------- */
+nav{
+    margin-bottom: .7rem;
+    height: 6rem;
+    display: grid;
+    background: var(--color-black);
+    place-items: center;
+    position: sticky;
+    width: 100%;
+    top: 0;
+    z-index: 999;
+}
+.nav-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.navbar-logo img{
+    margin-top: 5px;
+    max-width: 75px;
+}
+.nav-links{
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+}
+.nav-links li a{
+    color: var(--color-white);
+    transition: var(--transition);
+}
+.nav-links li a:hover{
+    color: var(--color-danger);
+}
+.name{
+    font-size: 32px;
+    line-height: normal;
+}
+/* ----------------End Navbar---------------- */
+
+/* ----------------Start Footer---------------- */
+.Footer{
+    background: var(--color-dark);
+    padding: 5rem 0 !important;
+}
+.footer-container{
+    display: grid;
+    grid-template-columns: 70% 30%;
+    justify-content: space-between;
+    align-items: center;
+}
+.footer-container h4{
+    margin-bottom: 20px;
+}
+.footer-left{
+    display: grid;
+    justify-content: space-between;
+}
+.footer-left p{
+    font-size: 15px;
+    color: var(--color-white);
+}
+.footer-left p a{
+    color: var(--color-white);
+    transition: var(--transition);
+}
+.footer-left p a:hover{
+    color: var(--color-primary);
+}
+.kontak{
+    display: flex;
+    flex-direction: row;
+    gap: 60px;
+}
+.kontak .icon-kontak{
+    color: var(--color-danger);
+    font-size: 20px;
+}
+.social{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+.social a{
+    font-size: 22px;
+    color: var(--color-white);
+    cursor: pointer;
+    transition: var(--transition);
+}
+.social a:hover{
+    color: var(--color-primary) !important;
+}
+.social a:nth-child(2){
+    color: var(--color-danger);
+}
+.social a:nth-child(4){
+    color: var(--color-danger);
+}
+.footer-bottom{
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+.footer-bottom h4{
+    font-size: 24px;
+}
+/* ----------------End Footer---------------- */
+
+/* .....................Start Media Screen(1024)..................... */
+@media (max-width:1024px) {
+    h1{
+        font-size: 46px;
+    }
+    h2{
+        font-size: 38px !important;
+    }
+    h3{
+        font-size: 34px !important;
+    }
+    h4{
+        font-size: 24px !important;
+    }
+    h5{
+        font-size: 20px; 
+    }
+    .hero-text{
+        font-size: 38px;
+    }
+    .btn{
+        padding: 16px 36px;
+    }
+    /* ..........Start Nav.......... */
+    .nav-links{
+        display: none;
+    }
+    /* ..........Start Menus.......... */
+    .menus{
+        display: flex;
+        position: fixed;
+        left: 0;
+        right: 0;
+        margin: auto;
+        bottom: 2rem;
+        width: max-content;
+        background: rgba(0, 0, 0, 0.3);
+        backdrop-filter: blur(15px);
+        display: flex;
+        gap: .7rem;
+        z-index: 11;
+        padding: .7rem 1.7rem;
+        border-radius: 2rem;
+    }
+    .menus a{
+        padding: .8rem;
+        border-radius: 50%;
+        display: flex;
+        font-size: 1.1rem;
+        color: var(--color-white);
+    }
+    .menus .active{
+        background: var(--color-danger);
+    }
+    /* ..........Start Footer.......... */
+    .footer-container h4{
+        margin-bottom: 20px;
+    }
+    .footer-left .social{
+        margin-top: 20px;
+    }
+}
+
+/* .....................Start Media Screen(666)..................... */
+@media (max-width:666px) {
+    h1{
+        font-size: 34px !important;
+    }
+    h2{
+        font-size: 30px !important;
+    }
+    h3{
+        font-size: 20px !important;
+    }
+    h4{
+        font-size: 17px !important;
+    }
+    h5{
+        font-size: 20px; 
+    }
+    .hero-text{
+        font-size: 34px;
+    }
+    .btn{
+        padding: 16px 30px;
+    }
+    /* ..........Start Nav.......... */
+    nav{
+        height: 6rem;
+    }
+    .navbar-logo img{
+        max-width: 40;
+    }
+    /* ..........Start Footer.......... */
+    .footer-container{
+        grid-template-columns: 1fr;
+    }
+} 
