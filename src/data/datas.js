@@ -1,5 +1,5 @@
 import AboutImage from '../assets/about.png'
-import PDF from '../assets/CV.pdf'
+import PDF from '../assets/testPDF.pdf'
 
 export const AboutData =[
     {
@@ -15,30 +15,43 @@ export const AboutData =[
 
 
 // Service  Data Start.......................
-import { HiOutlineLightBulb } from "react-icons/hi"; 
-import { IoLayersOutline } from "react-icons/io5";
-import { RiComputerLine } from "react-icons/ri";
-
-export const ServicesData ={
-    services: [
+export const PanduanData ={
+    DataPanduan: [
         { 
-            icon: HiOutlineLightBulb, 
-            proCount: '198 Projects',
-            name: 'UI & UX Design',
-            textInfo: 'Create project plan, Data analysis, wireframes, Concept Testing, Style guide, Responsiveness, User Testing.'
-        },   
-        {
-            icon: IoLayersOutline,
-            proCount: '18 Projects',
-            name: 'Graphic Design',
-            textInfo: 'Create project plan, Data analysis, wireframes, Concept Testing, Style guide, Responsiveness, User Testing.'
+            id: '1',
+            title: 'Panduan Pengamanan Insiden Serangan SQL Injection',
+            linkPdf: PDF,
         },   
         { 
-            icon: RiComputerLine,
-            proCount: '112 Projects',
-            name: 'Web Design',
-            textInfo: 'Create project plan, Data analysis, wireframes, Concept Testing, Style guide, Responsiveness, User Testing.'
+            id: '2',
+            title: 'Panduan Pengamanan Insiden Serangan DDoS',
+            linkPdf: PDF,
         },   
+        { 
+            id: '3',
+            title: 'Panduan Pelaporan Insiden',
+            linkPdf: PDF,
+        },   
+        { 
+            id: '4',
+            title: 'Panduan Penanganan Insiden Serangan Phising',
+            linkPdf: PDF,
+        },   
+        { 
+            id: '5',
+            title: 'Panduan Penanganan Insiden Web Defacement ',
+            linkPdf: PDF,
+        },   
+        { 
+            id: '6',
+            title: 'Panduan Penanganan Insiden Ransom Sign',
+            linkPdf: PDF,
+        },   
+        { 
+            id: '7',
+            title: 'Panduan Penanganan Insiden Malware',
+            linkPdf: PDF,
+        },      
     ],
             
 } 
