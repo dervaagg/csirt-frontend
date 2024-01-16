@@ -1,18 +1,18 @@
 import TitleOne from "../UI/TitleOne"
 import { PanduanData } from "../data/datas"
-import "../css/PanduanHome.css"
+import "../css/Panduan.css"
 
 export default function PanduanHome() {
   return (
-    <div id='Panduan'>
-        <div className="container panduan-container">
+    <div id='PanduanH'>
+        <div className="container panduanH-container">
             <TitleOne titleEx={'Siber'} titleSm={'Panduan Penanganan Insiden'} 
-            className={'panduan-title'}/>      
+            className={'panduanH-title'}/>      
 
-            <div className="card-warpper">
+            <div className="card-panduan-warpper">
             {
             PanduanData.DataPanduan.map((sar, index)=>( 
-                <a key={index} href={sar.linkPdf} target="_blanck" className="card" >                    
+                <a key={index} href={sar.linkPdf} target="_blanck" className="card-panduan" >                    
                     <p>{sar.title}</p>
                 </a>
             ))

@@ -15,42 +15,51 @@ export const AboutData =[
 
 
 // Service  Data Start.......................
+
+import PDF1 from '../assets/pdf/Panduan-Penanganan-Insiden-Serangan-SQL-Injection.pdf'
+import PDF2 from '../assets/pdf/Panduan-Penanganan-Insiden-Serangan-DDoS.pdf'
+import PDF3 from '../assets/pdf/Panduan-Pelaporan-Insiden.pdf'
+import PDF4 from '../assets/pdf/Panduan-Penanganan-Insiden-Serangan-Phishing.pdf'
+import PDF5 from '../assets/pdf/Panduan-Penanganan-Insiden-Web-Defacement.pdf'
+import PDF6 from '../assets/pdf/Panduan-Penanganan-Insiden-Ransom-sign.pdf'
+import PDF7 from '../assets/pdf/Panduan-Penanganan-Insiden-Malware.pdf'
+
 export const PanduanData ={
     DataPanduan: [
         { 
             id: '1',
             title: 'Panduan Pengamanan Insiden Serangan SQL Injection',
-            linkPdf: PDF,
+            linkPdf: PDF1,
         },   
         { 
             id: '2',
             title: 'Panduan Pengamanan Insiden Serangan DDoS',
-            linkPdf: PDF,
+            linkPdf: PDF2,
         },   
         { 
             id: '3',
             title: 'Panduan Pelaporan Insiden',
-            linkPdf: PDF,
+            linkPdf: PDF3,
         },   
         { 
             id: '4',
             title: 'Panduan Penanganan Insiden Serangan Phising',
-            linkPdf: PDF,
+            linkPdf: PDF4,
         },   
         { 
             id: '5',
             title: 'Panduan Penanganan Insiden Web Defacement ',
-            linkPdf: PDF,
+            linkPdf: PDF5,
         },   
         { 
             id: '6',
             title: 'Panduan Penanganan Insiden Ransom Sign',
-            linkPdf: PDF,
+            linkPdf: PDF6,
         },   
         { 
             id: '7',
             title: 'Panduan Penanganan Insiden Malware',
-            linkPdf: PDF,
+            linkPdf: PDF7,
         },      
     ],
             

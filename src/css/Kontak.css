@@ -1,0 +1,67 @@
+:root{
+    --color-primary: #1a74e2;
+    --color-danger: #ff003d;
+
+    --color-white: #ffffff;
+    --color-light: #88949b;
+
+    --color-black: #0c0c10;
+    --color-dark: #0e1013;
+
+    --transition: .4s ease;
+}
+
+.kontak-container{
+    padding-top: 2rem;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.kontak-warpper{
+    padding: 2rem;
+    display: grid;
+    grid-template-columns: 65% 42%;
+    justify-content: center;
+}
+
+.kontak-left{
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.kontak-left .lokasi{
+    display: flex;
+    gap: 10px;
+}
+
+.kontak-left .telephone{
+    display: flex;
+    gap: 10px;
+}
+.kontak-left .email{
+    display: flex;
+    gap: 10px;
+}
+.kontak-left .email a{
+    color: var(--color-danger);
+}
+.kontak-left .email a:hover{
+    color: var(--color-primary);
+    transition: var(--transition);
+}
+.icon-kontak{
+    color: var(--color-danger);
+}
+
+iframe {
+    width: 700px;
+    height: 450px;
+    border: 0;
+    margin: 10px;
+}

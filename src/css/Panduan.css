@@ -1,0 +1,107 @@
+:root {
+    --color-primary: #1a74e2;
+    --color-danger: #ff003d;
+
+    --color-white: #ffffff;
+    --color-light: #88949b;
+
+    --color-black: #0c0c10;
+    --color-dark: #0e1013;
+
+    --transition: .4s ease;
+}
+
+.panduan-container {
+    min-height: 100vh;
+    margin: 0;
+    font-size: 1.25rem;
+    display: grid;
+    grid-template-columns: 20rem 1fr;
+    gap: 2rem;
+}
+
+.sidebar {
+    position: sticky;
+    top: 0;
+    max-height: 100svh;
+    background-color: var(--color-dark);
+    max-height: 100vh;
+    overflow-y: auto;
+}
+
+.side-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    padding-block: 20px;
+}
+
+.side-list li {
+    background: var(--color-dark);
+    margin-left: 2rem;
+    margin-right: 1rem;
+    font-size: 17px !important;   
+}
+
+.side-list a {
+    color: var(--color-white);
+    text-decoration: none;    
+}
+
+.side-list a:hover {
+    color: var(--color-danger);   
+}
+
+ .pdfbar p{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80%;
+ }
+
+/* Start Panduan At Home */
+#PanduanH {
+    background: var(--color-dark);
+  }
+  .panduanH-container {
+    position: relative;
+  }
+  .panduanH-title {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+  .card-panduan-warpper {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 30px;
+  }
+  
+  .card-panduan {
+      box-sizing: border-box;
+      height: 220px;
+      background: var(--color-danger);
+      border: 1px solid white;
+      box-shadow: 12px 17px 51px rgba(0, 0, 0, 0.22);
+      backdrop-filter: blur(6px);
+      border-radius: 17px;
+      text-align: center;
+      cursor: pointer;
+      transition: var(--transition);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      user-select: none;
+      font-weight: bolder;
+      color: var(--color-white);
+      z-index: 1 !important;
+    }
+    
+    .card:hover {
+      border: 1px solid black;
+      transform: scale(1.05);
+    }
+    
+    .card:active {
+      transform: scale(0.95) rotateZ(1.7deg);
+    }
