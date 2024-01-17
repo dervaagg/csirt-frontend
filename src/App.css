@@ -135,7 +135,7 @@ nav{
 .nav-links{
     display: flex;
     align-items: center;
-    gap: 3rem;
+    gap: 4rem;
 }
 .nav-links li a{
     color: var(--color-white);

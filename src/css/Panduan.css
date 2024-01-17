@@ -53,12 +53,16 @@
     color: var(--color-danger);   
 }
 
- .pdfbar p{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 80%;
- }
+.pdfbar {
+  width: 150vh;
+}
+
+.pdfbar p {
+display: flex;
+justify-content: center;
+align-items: center;
+height: 80%;
+}
 
 /* Start Panduan At Home */
 #PanduanH {

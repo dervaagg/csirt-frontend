@@ -21,7 +21,7 @@ export default function Navbar() {
                         <Link to='/about' onClick={closeMobileMenu} scrollBehavior="instant">About</Link>
                     </li>
                     <li className='nav-item'>
-                        <Link to='/rfc' onClick={closeMobileMenu} scrollBehavior="instant">RFC</Link>
+                        <Link to='/rfc' onClick={closeMobileMenu} scrollBehavior="instant">RFC 2350</Link>
                     </li>                    
                     <li className='nav-item'>
                         <Link to='/layanan' onClick={closeMobileMenu} scrollBehavior="instant">Layanan</Link>

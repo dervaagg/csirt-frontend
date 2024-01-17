@@ -18,6 +18,7 @@ import NewsV3 from './components/News Viwer/NewsV3'
 import NewsV4 from './components/News Viwer/NewsV4'
 import NewsV5 from './components/News Viwer/NewsV5'
 import Panduan from './components/Panduan'
+import RFC from './components/RFC'
 
 function App() {
   return (
@@ -30,8 +31,9 @@ function App() {
           {/* Route Page */}
           <Route path='/' exact element={<Home />} />
           <Route path='/about' element={<About />} />
-          <Route path='/kontak' element={<Kontak />} />
+          <Route path='/rfc' element={<RFC />} />
           <Route path='/panduan' element={<Panduan />} />
+          <Route path='/kontak' element={<Kontak />} />
 
           {/* Route News */}
           <Route path='/news1' element={<NewsV1 />} />

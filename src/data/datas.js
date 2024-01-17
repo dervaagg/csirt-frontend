@@ -1,3 +1,5 @@
+// About  Data Start.......................
+
 import AboutImage from '../assets/about.png'
 import PDF from '../assets/testPDF.pdf'
 
@@ -13,8 +15,18 @@ export const AboutData =[
     }
 ];
 
+//Start RFC Data...................
+import rfcPDF from '../assets/pdf/2. WASKITA CSIRT RFC2350.pdf'
 
-// Service  Data Start.......................
+export const rfcData =[
+    {
+        pdfRFC: rfcPDF,
+    },
+]
+//Start RFC Data...................
+
+
+// Panduan Data Start.......................
 
 import PDF1 from '../assets/pdf/Panduan-Penanganan-Insiden-Serangan-SQL-Injection.pdf'
 import PDF2 from '../assets/pdf/Panduan-Penanganan-Insiden-Serangan-DDoS.pdf'
@@ -64,7 +76,7 @@ export const PanduanData ={
     ],
             
 } 
-// Servive  Data End.......................
+// Panduan Data End.......................
 
 // News Data Start
 import NewsImage1 from '../assets/project1.png'
