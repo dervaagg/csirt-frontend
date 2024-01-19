@@ -101,11 +101,11 @@ height: 80%;
       z-index: 1 !important;
     }
     
-    .card:hover {
+    .card-panduan:hover {
       border: 1px solid black;
       transform: scale(1.05);
     }
     
-    .card:active {
+    .card-panduan:active {
       transform: scale(0.95) rotateZ(1.7deg);
     }

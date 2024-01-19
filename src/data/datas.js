@@ -26,6 +26,46 @@ export const rfcData =[
 //Start RFC Data...................
 
 
+// Layanan Data Start.......................
+
+export const layananData = {
+    LayananUtama: [
+        {
+            id: 1,
+            layanan: 'Pemberian peringatan terkait keamanan siber',
+        },
+        {
+            id: 2,
+            layanan: 'Penanganan insiden siber',
+        },
+    ],
+    LayananTambahan: [
+        {
+            id: 1,
+            layanan: 'Pemberian peringatan terkait keamanan siber',
+        },
+        {
+            id: 2,
+            layanan: 'Penanganan insiden siber',
+        },
+        {
+            id: 3,
+            layanan: 'Pemberian peringatan terkait keamanan siber',
+        },
+        {
+            id: 4,
+            layanan: 'Penanganan insiden siber',
+        },
+        {
+            id: 5,
+            layanan: 'Pemberian peringatan terkait keamanan siber',
+        },
+    ],
+}
+
+// Layanan Data END.......................
+
+
 // Panduan Data Start.......................
 
 import PDF1 from '../assets/pdf/Panduan-Penanganan-Insiden-Serangan-SQL-Injection.pdf'

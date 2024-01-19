@@ -7,6 +7,9 @@ import './App.css'
 import Navbar from './components/Navbar'
 import Home from './pages/Home'
 import About from './components/About'
+import RFC from './components/RFC'
+import Layanan from './components/Layanan'
+import Panduan from './components/Panduan'
 import Kontak from './components/Kontak'
 import Footer from './components/Footer'
 
@@ -17,21 +20,20 @@ import NewsV2 from './components/News Viwer/NewsV2'
 import NewsV3 from './components/News Viwer/NewsV3'
 import NewsV4 from './components/News Viwer/NewsV4'
 import NewsV5 from './components/News Viwer/NewsV5'
-import Panduan from './components/Panduan'
-import RFC from './components/RFC'
+
 
 function App() {
   return (
     <>
-      <Router scrollOptions={{ scrollBehavior: 'instant' }}>
+      <Router>
         <Navbar />
         <ScrollTop />
         <Routes>
-
           {/* Route Page */}
           <Route path='/' exact element={<Home />} />
           <Route path='/about' element={<About />} />
           <Route path='/rfc' element={<RFC />} />
+          <Route path='/layanan' element={<Layanan />} />
           <Route path='/panduan' element={<Panduan />} />
           <Route path='/kontak' element={<Kontak />} />
 

@@ -129,8 +129,8 @@ nav{
     justify-content: space-between;
 }
 .navbar-logo img{
-    margin-top: 5px;
-    max-width: 75px;
+    margin-top: -5px;
+    max-width: 70px;
 }
 .nav-links{
     display: flex;

@@ -1,0 +1,34 @@
+:root {
+    --color-primary: #1a74e2;
+    --color-danger: #ff003d;
+
+    --color-white: #ffffff;
+    --color-light: #88949b;
+
+    --color-black: #0c0c10;
+    --color-dark: #0e1013;
+
+    --transition: .4s ease;
+}
+
+.container-layanan {
+    width: 100%;
+    height: 55vh;
+    background: var(--color-dark);
+    display: grid;
+    grid-template-columns: 40% 30%;
+    justify-content: center;
+}
+
+.layanan-utama {
+    margin-top: 150px;
+}
+.layanan-utama li {
+    margin-top: 20px;
+}
+.layanan-tambahan {
+    margin-top: 150px;
+}
+.layanan-tambahan li {
+    margin-top: 20px;
+}
