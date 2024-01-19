@@ -17,7 +17,7 @@
     font-size: 1.25rem;
     display: grid;
     grid-template-columns: 20rem 1fr;
-    gap: 2rem;
+    justify-content: center;
 }
 
 .sidebar {
@@ -54,19 +54,20 @@
 }
 
 .pdfbar {
-  width: 150vh;
+  width: 106.5svh;
 }
 
 .pdfbar p {
-display: flex;
-justify-content: center;
-align-items: center;
-height: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80%;
 }
 
 /* Start Panduan At Home */
 #PanduanH {
-    background: var(--color-dark);
+    background: transparent;
+    margin-bottom: 50px;
   }
   .panduanH-container {
     position: relative;

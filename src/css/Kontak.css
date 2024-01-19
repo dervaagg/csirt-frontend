@@ -1,9 +1,9 @@
 :root{
-    --color-primary: #1a74e2;
-    --color-danger: #ff003d;
+    --color-primary: #000075;
+    --color-danger: #bd002f;
 
     --color-white: #ffffff;
-    --color-light: #88949b;
+    --color-light: #d4dadf;
 
     --color-black: #0c0c10;
     --color-dark: #0e1013;
@@ -12,7 +12,6 @@
 }
 
 .kontak-container{
-    padding-top: 2rem;
     height: 100%;
     width: 100%;
     display: flex;
@@ -22,8 +21,41 @@
     margin-bottom: 20px;
 }
 
+.kontak-header {
+    height: 40vh;
+    width: 100%;
+    display: flex;
+    /* flex-direction: column-reverse; */
+    justify-content: center;
+    align-items: center;
+    object-fit: contain;
+}
+.kontak-header img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50vh;
+    z-index: -1;
+    object-fit: cover;
+}
+.kontak-header .title {
+    margin-left: 50px;
+}
+.kontak-header .title h3 {
+    font-weight: bold;
+    color: var(--color-white);
+    max-width: 700px;
+    margin-bottom: 10px;
+}
+
+.kontak-title {
+    margin-top: 40px;
+}
+
 .kontak-warpper{
     padding: 2rem;
+    margin-top: 20px;    
     display: grid;
     grid-template-columns: 65% 42%;
     justify-content: center;
@@ -32,7 +64,9 @@
 .kontak-left{
     display: flex;
     flex-direction: column;
-    gap: 40px;
+    gap: 30px;
+    margin-bottom: 50px;
+    font-weight: 500;
 }
 
 .kontak-left .lokasi{
@@ -49,14 +83,15 @@
     gap: 10px;
 }
 .kontak-left .email a{
-    color: var(--color-danger);
+    color: var(--color-primary);
+    font-weight: 580;
 }
 .kontak-left .email a:hover{
-    color: var(--color-primary);
+    color: var(--color-danger);
     transition: var(--transition);
 }
 .icon-kontak{
-    color: var(--color-danger);
+    color: var(--color-primary);
 }
 
 iframe {

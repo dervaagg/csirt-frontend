@@ -72,12 +72,12 @@ img{
 }
 
 .Home{
-    background: var(--color-dark);
+    background: url('/src/assets/1252907_3133.jpg');
 }
 
 /* .....................Start News..................... */
 .News{
-    background: var(--color-dark);
+    background: transparent;
     padding: 1rem 0;
 }
 .news-wrapper{

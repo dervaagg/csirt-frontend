@@ -1,7 +1,7 @@
 /* .........Google Font......... */
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Preahvihear&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bubblegum+Sans&display=swap');
 
 /* .........Custom Styles......... */
 
@@ -14,12 +14,12 @@
     outline: none;
 }
 
-:root{
-    --color-primary: #1a74e2;
-    --color-danger: #ff003d;
+:root {
+    --color-primary: #000075;
+    --color-danger: #bd002f;
 
     --color-white: #ffffff;
-    --color-light: #88949b;
+    --color-light: #d4dadf;
 
     --color-black: #0c0c10;
     --color-dark: #0e1013;
@@ -29,12 +29,13 @@
 
 html{
     scroll-behavior: smooth;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Poppins', sans-serif;
+    
 }
 
 body{
-    background: var(--color-black);
-    color: var(--color-white);
+    background: var(--color-white);
+    color: var(--color-black);
 }
 
 h1{
@@ -72,10 +73,10 @@ small{
     font-size: 15px;
 }
 span{
-    color: var(--color-danger);
+    color: var(--color-primary);
 }
 
-.btn{
+/* .btn{
     display: inline-block;
     width: fit-content;
     cursor: pointer;
@@ -103,7 +104,7 @@ span{
     background: var(--color-danger);
     border-color: var(--color-danger);
     color: var(--color-white);
-}
+} */
 
 .container{
     width: 90%;
@@ -112,37 +113,38 @@ span{
 }
 
 /* ----------------Start Navbar---------------- */
-nav{
-    margin-bottom: .7rem;
+nav {
     height: 6rem;
     display: grid;
-    background: var(--color-black);
+    background: var(--color-white);
     place-items: center;
     position: sticky;
+    border-bottom: 2px solid var(--color-light);
     width: 100%;
     top: 0;
     z-index: 999;
 }
-.nav-container{
+.nav-container {
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
-.navbar-logo img{
+.navbar-logo img {
     margin-top: -5px;
     max-width: 70px;
 }
-.nav-links{
+.nav-links {
     display: flex;
     align-items: center;
-    gap: 4rem;
+    gap: 3.5rem;
 }
-.nav-links li a{
-    color: var(--color-white);
+.nav-links li a {
+    font-weight: bold;
+    color: var(--color-black);
     transition: var(--transition);
 }
-.nav-links li a:hover{
-    color: var(--color-danger);
+.nav-links li a:hover {
+    color: var(--color-primary);
 }
 .name{
     font-size: 32px;
@@ -152,7 +154,7 @@ nav{
 
 /* ----------------Start Footer---------------- */
 .Footer{
-    background: var(--color-dark);
+    background: transparent;
     padding: 5rem 0 !important;
 }
 .footer-container{
@@ -168,12 +170,16 @@ nav{
     display: grid;
     justify-content: space-between;
 }
+.footer-left h4{
+    font-weight: 900;
+}
 .footer-left p{
     font-size: 15px;
-    color: var(--color-white);
+    font-weight: bold;
+    color: var(--color-black);
 }
 .footer-left p a{
-    color: var(--color-white);
+    color: var(--color-black);
     transition: var(--transition);
 }
 .footer-left p a:hover{

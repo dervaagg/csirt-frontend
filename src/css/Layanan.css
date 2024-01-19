@@ -14,7 +14,7 @@
 .container-layanan {
     width: 100%;
     height: 55vh;
-    background: var(--color-dark);
+    background: url("/src/assets/1252907_3133.jpg");
     display: grid;
     grid-template-columns: 40% 30%;
     justify-content: center;

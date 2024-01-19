@@ -1,20 +1,21 @@
-:root{
-    --color-primary: #1a74e2;
-    --color-danger: #ff003d;
+:root {
+  --color-primary: #000075;
+  --color-danger: #ff003d;
 
-    --color-white: #ffffff;
-    --color-light: #88949b;
+  --color-white: #ffffff;
+  --color-light: #d4dadf;
 
-    --color-black: #0c0c10;
-    --color-dark: #0e1013;
+  --color-black: #0c0c10;
+  --color-dark: #0e1013;
 
-    --transition: .4s ease;
+  --transition: .4s ease;
 }
 
 .card {
     width: fit-content;
     height: fit-content;
-    background-color: var(--color-black);
+    border-radius: 50px;
+    background-color: var(--color-light);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -28,7 +29,7 @@
     width: 52px;
     height: 52px;
     border-radius: 50%;
-    background-color: rgb(44, 44, 44);
+    background-color: var(--color-dark);
     display: flex;
     align-items: center;
     justify-content: center;
