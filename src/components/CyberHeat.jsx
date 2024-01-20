@@ -5,7 +5,7 @@ export default function CyberHeat() {
           <iframe
             width="900"
             height="550"
-            src="https://cybermap.kaspersky.com/en/widget/dynamic/dark"
+            src="https://threatmap.fortiguard.com/"
             border="0"
             sandbox="allow-scripts allow-same-origin"
             allowFullScreen
