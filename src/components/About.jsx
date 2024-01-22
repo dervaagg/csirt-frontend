@@ -5,31 +5,42 @@ import '../css/About.css'
 export default function About() {
   return (
     <section id="About">
-      {
-        AboutData.map(({Image, AboutMe, AboutContactText, CV, Email}, index)=>{
+      {AboutData.aboutInfo.map((sar, index)=>{
           return(
             <div className="container about-container" key={index}>
               <div className="contrainer about-left">
-                <img src={Image} alt="AboutMe" />
+                <img src={sar.Image} alt="AboutMe" />
               </div>
               <div className="contrainer about-right">
-
-                <TitleOne titleSm={'let me intoduce myself'} title={'About '} titleEx={'Me'}/>
+                <div className="aboutMe-header">
+                  <TitleOne title={'Tentang '} titleEx={'CSIRT'} className="about-main"/>
+                  <TitleOne titleSm={'Waskita Karya'}  className="about-second"/>
+                </div>
  
                 <div className="aboutMe-info">
-                  <h5 className="about-small-title">A Story of hardwork and persevence. </h5>
-                  <p>{AboutMe}</p>
+                  <p>{sar.AboutMe}</p>
                 </div>
                 
-                <div className="aboutMe-contact-info">
-                  <h5 className="about-small-title">contact </h5>
-                  <p>{AboutContactText}</p>
-                  <a href={`mailto:${Email}`}>{Email}</a>
+                <div className="aboutMe-info">
+                  <h5 className="about-small-title">Visi :  </h5>
+                  {AboutData.visiData.map((sar, index)=>{
+                    return(
+                      <ul key={index} >
+                        <li>{sar.visi}</li>
+                      </ul>
+                      )
+                  })}
                 </div>
 
-                <div className="about-action-aria">
-                  <a href='#Kontak' className="btn btn-danger">Contact</a>
-                  <a href={CV} className="btn btn-primary">See PDF</a>
+                <div className="aboutMe-info">
+                  <h5 className="about-small-title">Misi :  </h5>
+                  {AboutData.misiData.map((sar, index)=>{
+                    return(
+                      <ul key={index} >
+                        <li>{sar.id+". "+sar.misi}</li>
+                      </ul>
+                      )
+                  })}
                 </div>
               </div>
             </div>

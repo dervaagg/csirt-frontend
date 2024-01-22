@@ -1,68 +1,14 @@
-/* .........Google Font......... */
-
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Preahvihear&display=swap');
-
-/* .........Custom Styles......... */
-
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    text-decoration: none;
-    list-style: none;
-    outline: none;
-}
-
-:root{
-    --color-primary: #1a74e2;
-    --color-danger: #ff003d;
+:root {
+    --color-primary: rgb(30 27 75);
+    --color-danger: #bd002f;
 
     --color-white: #ffffff;
-    --color-light: #88949b;
+    --color-light: #d4dadf;
 
     --color-black: #0c0c10;
     --color-dark: #0e1013;
 
     --transition: .4s ease;
-}
-
-h1{
-    font-size: 52px;
-    font-weight: 500;
-    line-height: 60px;
-    
-}
-h2{
-    font-size: 48px;
-    font-weight: 500;
-    line-height: 56px;
-}
-h3{
-    font-size: 46px;
-    font-weight: 400;
-    line-height: 54px;
-}
-h4{
-    font-size: 40px;
-    font-weight: 300;
-    line-height: 48px;
-}
-h5{
-    font-size: 25px;
-    font-weight: 300;
-    line-height: 34px;
-}
-p{
-    font-size: 16px;
-    line-height: 26px;
-}
-small{
-    color: var(--color-light);
-    font-size: 15px;
-}
-span{
-    color: var(--color-danger);
 }
 
 img{
@@ -72,7 +18,7 @@ img{
 }
 
 .Home{
-    background: url('/src/assets/1252907_3133.jpg');
+    background: transparent !important;
 }
 
 /* .....................Start News..................... */
@@ -84,6 +30,7 @@ img{
     padding-top: 4.5rem !important;
 } 
 .news-title{
+    font-size: 30px;
     margin-bottom: -2rem;
     position: relative;
     z-index: 1 !important;
@@ -139,13 +86,14 @@ img{
     background: transparent;
 }
 .navigation-buttons .button-prev-slide svg{
-    color: var(--color-white);
+    color: var(--color-black);
 }
+
 .navigation-buttons .button-next-slide{
     background: transparent;
 }
 .navigation-buttons .button-next-slide svg{
-    color: var(--color-white);
+    color: var(--color-black);
 }
 .navigation-buttons button{
     border: 1px solid var(--color-danger);
@@ -168,10 +116,12 @@ img{
 /* .....................Start Cyberheat..................... */
 #Cyberheat{
     padding: 50px;
+    background: transparent;
 }
 .cyberheat-container{
     display: flex;
     justify-content: center;
+    background: transparent;
 }
 /* .....................End Cyberheat..................... */
 

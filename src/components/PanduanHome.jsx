@@ -9,14 +9,17 @@ export default function PanduanHome() {
             <TitleOne titleEx={'Siber'} titleSm={'Panduan Penanganan Insiden'} 
             className={'panduanH-title'}/>      
 
-            <div className="card-panduan-warpper">
-            {
-            PanduanData.DataPanduan.map((sar, index)=>( 
-                <a key={index} href={sar.linkPdf} target="_blanck" className="card-panduan" >                    
-                    <p>{sar.title}</p>
+            <div className="card-panduanH-warpper">
+              {PanduanData.DataPanduan.map((sar, index) => (
+                <a key={index} href={sar.linkPdf} target="_blanck" className="card-panduanH">
+                  <p className="header">Panduan Insiden</p>
+                    <div className="main-content">
+                      <p className="heading">{sar.title}</p>
+                    </div>
+                    <div className="footer">CSIRT - Waskita Karya</div>
+                  <p></p>
                 </a>
-            ))
-            }
+              ))}
             </div>
         </div>
     </div>

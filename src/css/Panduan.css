@@ -1,14 +1,14 @@
 :root {
-    --color-primary: #1a74e2;
-    --color-danger: #ff003d;
+  --color-primary: rgb(30 27 75);
+  --color-danger: #bd002f;
 
-    --color-white: #ffffff;
-    --color-light: #88949b;
+  --color-white: #ffffff;
+  --color-light: #d4dadf;
 
-    --color-black: #0c0c10;
-    --color-dark: #0e1013;
+  --color-black: #0c0c10;
+  --color-dark: #0e1013;
 
-    --transition: .4s ease;
+  --transition: .4s ease;
 }
 
 .panduan-container {
@@ -21,10 +21,10 @@
 }
 
 .sidebar {
-    position: sticky;
+    /* position: sticky; */
     top: 0;
     max-height: 100svh;
-    background-color: var(--color-dark);
+    background-color: var(--color-light);
     max-height: 100vh;
     overflow-y: auto;
 }
@@ -38,30 +38,30 @@
 }
 
 .side-list li {
-    background: var(--color-dark);
     margin-left: 2rem;
     margin-right: 1rem;
     font-size: 17px !important;   
 }
 
 .side-list a {
-    color: var(--color-white);
+    color: var(--color-black);
+    font-weight: 700;
     text-decoration: none;    
 }
 
 .side-list a:hover {
-    color: var(--color-danger);   
+    color: var(--color-primary);   
 }
 
 .pdfbar {
-  width: 106.5svh;
-}
-
-.pdfbar p {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 80%;
+  margin-left: 70px;
+  width: 100%;
+}
+.pdfbar p{
+  color: var(--color-black);
 }
 
 /* Start Panduan At Home */
@@ -75,38 +75,57 @@
   .panduanH-title {
     text-align: center;
     margin-bottom: 4rem;
+    font-size: 35px;
   }
-  .card-panduan-warpper {
+  .card-panduanH-warpper {
     display: grid;
     grid-template-columns: repeat(4,1fr);
+    justify-content: center;
     gap: 30px;
   }
+
+  .card-panduanH {
+    width: 300px;
+    height: 310px;
+    padding: 20px;
+    color: white;
+    background: var(--color-danger);
+    border: 2px solid var(--color-primary);
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    transform-origin: center center;
+    transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
   
-  .card-panduan {
-      box-sizing: border-box;
-      height: 220px;
-      background: var(--color-danger);
-      border: 1px solid white;
-      box-shadow: 12px 17px 51px rgba(0, 0, 0, 0.22);
-      backdrop-filter: blur(6px);
-      border-radius: 17px;
-      text-align: center;
-      cursor: pointer;
-      transition: var(--transition);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      user-select: none;
-      font-weight: bolder;
-      color: var(--color-white);
-      z-index: 1 !important;
-    }
+  .card-panduanH .main-content {
+    flex: 1;
+  }
+  
+  .header {
+    margin-bottom: 24px;
+  }
+  
+  .card-panduanH .heading {
+    font-size: 28px;
+    font-weight: 400;
+    line-height: 1.2;
+  }
+  
+  .card-panduanH .footer {
+    font-weight: 400;
+    margin-right: 4px;
+  }
+  
+  .card-panduanH:hover {
+    border-radius: 12px;
+    background-color: var(--color-primary);
+    scale: 0.95;
+    rotate: 8deg;
+    box-shadow: 0px 3px 187.5px 7.5px rgba(255, 107, 0, 0.4);
+  }
+
+  .card-panduanH:active {
+    transform: scale(0.95) rotateZ(1.7deg);
+  }
     
-    .card-panduan:hover {
-      border: 1px solid black;
-      transform: scale(1.05);
-    }
-    
-    .card-panduan:active {
-      transform: scale(0.95) rotateZ(1.7deg);
-    }

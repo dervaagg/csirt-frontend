@@ -18,7 +18,7 @@ export default function Navbar() {
                         <Link to='/' className='nav-links' onClick={closeMobileMenu}>Home</Link>
                     </li>
                     <li className='nav-item'>
-                        <Link to='/about' onClick={closeMobileMenu}>About</Link>
+                        <Link to='/about' onClick={closeMobileMenu}>Profil</Link>
                     </li>
                     <li className='nav-item'>
                         <Link to='/rfc' onClick={closeMobileMenu}>RFC 2350</Link>
@@ -34,8 +34,7 @@ export default function Navbar() {
                     </li>                    
                 </ul>
                 <h4 className='name'>
-                    CSIRT <br />
-                    <span>WSKT</span>
+                    CSIRT
                 </h4>
             </div>
         </nav>

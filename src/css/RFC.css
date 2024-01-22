@@ -1,9 +1,9 @@
-:root{
-    --color-primary: #1a74e2;
-    --color-danger: #ff003d;
+:root {
+    --color-primary: rgb(30 27 75);
+    --color-danger: #bd002f;
 
     --color-white: #ffffff;
-    --color-light: #88949b;
+    --color-light: #d4dadf;
 
     --color-black: #0c0c10;
     --color-dark: #0e1013;

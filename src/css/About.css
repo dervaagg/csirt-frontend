@@ -1,16 +1,9 @@
-/* .........Google Font......... */
-
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Preahvihear&display=swap');
-
-/* .........Custom Styles......... */
-
-:root{
-    --color-primary: #1a74e2;
-    --color-danger: #ff003d;
+:root {
+    --color-primary: rgb(30 27 75);
+    --color-danger: #bd002f;
 
     --color-white: #ffffff;
-    --color-light: #88949b;
+    --color-light: #d4dadf;
 
     --color-black: #0c0c10;
     --color-dark: #0e1013;
@@ -18,39 +11,8 @@
     --transition: .4s ease;
 }
 
-.btn{
-    display: inline-block;
-    width: fit-content;
-    cursor: pointer;
-    text-transform: uppercase;
-    font-size: 16px;
-    border: 1px solid var(--color-white);
-    padding: 18px 40px;
-    color: var(--color-white);
-    border-radius: 5px;
-    transition: var(--transition);
-}
-.btn:hover{
-    background: var(--color-white);
-    color: var(--color-black);
-    border-color: var(--color-white);
-}
-.btn-primary{
-    color: var(--color-primary);
-    border: 1px solid var(--color-primary);
-}
-.btn-primary:hover{
-    color: var(--color-primary);
-}
-.btn-danger{
-    background: var(--color-danger);
-    border-color: var(--color-danger);
-    color: var(--color-white);
-}
-
-/* .....................Start About..................... */ 
 #About{
-    background: var(--color-black);
+    background: url(/src/assets/1252907_3133.jpg);
     padding: 4rem 0;
 }
 .about-container{
@@ -63,6 +25,14 @@
     display: flex;
     flex-direction: column;
     gap: 30px;
+    text-align: justify;
+}
+.aboutMe-header .about-main{
+    font-size: 40px;
+}
+.aboutMe-header .about-second{
+    color: var(--color-black);
+    font-weight: 500;
 }
 .about-small-title{
     font-size: 17px;
@@ -70,22 +40,14 @@
     color: var(--color-primary);
     margin-bottom: 7px;
 }
-.aboutMe-contact-info a{
-    margin-top: 7px;
-    color: var(--color-primary);
-    transition: var(--transition);
-    display: inline-block;
-    cursor: default;
-}
-.aboutMe-contact-info a:hover{
-    color: var(--color-danger);
+.aboutMe-info {
+    font-weight: 500;
 }
 .about-action-aria{
     display: flex;
     align-items: center;
     gap: 30px;
 }
-/* .....................End About..................... */
 
 /* .....................Start Media Screen(1024)..................... */
 @media (max-width:1024px) {

@@ -20,6 +20,7 @@ import NewsV2 from './components/News Viwer/NewsV2'
 import NewsV3 from './components/News Viwer/NewsV3'
 import NewsV4 from './components/News Viwer/NewsV4'
 import NewsV5 from './components/News Viwer/NewsV5'
+import Menu from './components/Menu'
 
 
 function App() {
@@ -45,6 +46,7 @@ function App() {
           <Route path='/news5' element={<NewsV5 />} />
         </Routes>
         <Footer />
+        <Menu />
       </Router>
     </>
   )

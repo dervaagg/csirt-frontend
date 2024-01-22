@@ -15,7 +15,7 @@
 }
 
 :root {
-    --color-primary: #000075;
+    --color-primary: rgb(30 27 75);
     --color-danger: #bd002f;
 
     --color-white: #ffffff;
@@ -34,7 +34,7 @@ html{
 }
 
 body{
-    background: var(--color-white);
+    background: url(/src/assets/bg.jpg);
     color: var(--color-black);
 }
 
@@ -69,42 +69,12 @@ p{
     line-height: 26px;
 }
 small{
-    color: var(--color-light);
-    font-size: 15px;
+    color: var(--color-black);
+    font-size: 20px !important;
 }
 span{
     color: var(--color-primary);
 }
-
-/* .btn{
-    display: inline-block;
-    width: fit-content;
-    cursor: pointer;
-    text-transform: uppercase;
-    font-size: 16px;
-    border: 1px solid var(--color-white);
-    padding: 18px 40px;
-    color: var(--color-white);
-    border-radius: 5px;
-    transition: var(--transition);
-}
-.btn:hover{
-    background: var(--color-white);
-    color: var(--color-black);
-    border-color: var(--color-white);
-}
-.btn-primary{
-    color: var(--color-primary);
-    border: 1px solid var(--color-primary);
-}
-.btn-primary:hover{
-    color: var(--color-primary);
-}
-.btn-danger{
-    background: var(--color-danger);
-    border-color: var(--color-danger);
-    color: var(--color-white);
-} */
 
 .container{
     width: 90%;
@@ -113,6 +83,9 @@ span{
 }
 
 /* ----------------Start Navbar---------------- */
+.menus{
+    display: none;
+}
 nav {
     height: 6rem;
     display: grid;
@@ -146,6 +119,9 @@ nav {
 .nav-links li a:hover {
     color: var(--color-primary);
 }
+.nav-links li a:active{
+    text-decoration: underline;
+}
 .name{
     font-size: 32px;
     line-height: normal;
@@ -171,7 +147,9 @@ nav {
     justify-content: space-between;
 }
 .footer-left h4{
-    font-weight: 900;
+    font-weight: 700;
+    font-size: 35px;
+    margin-bottom: 3rem;
 }
 .footer-left p{
     font-size: 15px;
@@ -184,6 +162,10 @@ nav {
 }
 .footer-left p a:hover{
     color: var(--color-primary);
+}
+.footer-right{
+    display: flex-end;
+    margin-right: 10rem;
 }
 .kontak{
     display: flex;
@@ -214,14 +196,6 @@ nav {
 }
 .social a:nth-child(4){
     color: var(--color-danger);
-}
-.footer-bottom{
-    margin-top: 20px;
-    display: flex;
-    justify-content: space-between;
-}
-.footer-bottom h4{
-    font-size: 24px;
 }
 /* ----------------End Footer---------------- */
 
@@ -255,7 +229,7 @@ nav {
     /* ..........Start Menus.......... */
     .menus{
         display: flex;
-        position: fixed;
+        position: sticky;
         left: 0;
         right: 0;
         margin: auto;
