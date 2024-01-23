@@ -15,7 +15,7 @@ export default function Navbar() {
                 <Link to='/' className='navbar-logo' onClick={handleClick}><img src={icoImg} alt="icon" /></Link>
                 <ul className={click ? 'nav-links active' : 'nav-links'}>
                     <li className='nav-item'>
-                        <Link to='/' className='nav-links' onClick={closeMobileMenu}>Home</Link>
+                        <Link to='/' className='nav-links' onClick={closeMobileMenu}>Beranda</Link>
                     </li>
                     <li className='nav-item'>
                         <Link to='/about' onClick={closeMobileMenu}>Profil</Link>

@@ -109,7 +109,7 @@ nav {
 .nav-links {
     display: flex;
     align-items: center;
-    gap: 3.5rem;
+    gap: 3rem;
 }
 .nav-links li a {
     font-weight: bold;

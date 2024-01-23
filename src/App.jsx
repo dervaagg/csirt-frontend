@@ -12,15 +12,12 @@ import Layanan from './components/Layanan'
 import Panduan from './components/Panduan'
 import Kontak from './components/Kontak'
 import Footer from './components/Footer'
+import Menu from './components/Menu'
 
 // Import News Content.............................
 
-import NewsV1 from './components/News Viwer/NewsV1'
-import NewsV2 from './components/News Viwer/NewsV2'
-import NewsV3 from './components/News Viwer/NewsV3'
-import NewsV4 from './components/News Viwer/NewsV4'
-import NewsV5 from './components/News Viwer/NewsV5'
-import Menu from './components/Menu'
+import NewsView from './components/NewsView'
+
 
 
 function App() {
@@ -39,11 +36,8 @@ function App() {
           <Route path='/kontak' element={<Kontak />} />
 
           {/* Route News */}
-          <Route path='/news1' element={<NewsV1 />} />
-          <Route path='/news2' element={<NewsV2 />} />
-          <Route path='/news3' element={<NewsV3 />} />
-          <Route path='/news4' element={<NewsV4 />} />
-          <Route path='/news5' element={<NewsV5 />} />
+          <Route path="/news/:id" element={<NewsView />} />
+
         </Routes>
         <Footer />
         <Menu />

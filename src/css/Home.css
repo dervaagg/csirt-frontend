@@ -53,14 +53,15 @@ img{
     color: var(--color-primary);
 }
 .news-article h5{
-    font-size: 20px;
+    font-size: 22px;
     margin: 10px 0;
 }
 .news-article small{
+    font-size: 15px !important;
     display: inline-block;
     line-height: 24px;
 }
-.news-article a{
+.news-article .news-link{
     display: inline-block;
     color: var(--color-danger);
     margin-top: 20px;
@@ -70,7 +71,7 @@ img{
     font-size: 17px;
     transition: var(--transition);
 }
-.news-article a:hover{
+.news-article .news-link:hover{
     transform: translateX(10px);
     color: var(--color-primary);
 }
@@ -114,14 +115,34 @@ img{
 /* .....................End News..................... */
 
 /* .....................Start Cyberheat..................... */
-#Cyberheat{
-    padding: 50px;
+#Cyberheat {
     background: transparent;
 }
-.cyberheat-container{
-    display: flex;
+.cyberheat-container {
+    height: 650px;
+    display: grid;
     justify-content: center;
+    align-items: center;
     background: transparent;
+}
+.cyberheat-wrapper {
+    width: 850px;
+    height: 480px;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    background: var(--color-light);
+    border-radius: 20px;
+}
+.cyberheat-wrapper iframe {
+    width: 800px;
+    height: 400px;
+}
+.cyberheat-wrapper h3 {
+    margin-top: -30px;
+    margin-left: 10px;
+    color: var(--color-black);
+    font-weight: 600;
 }
 /* .....................End Cyberheat..................... */
 

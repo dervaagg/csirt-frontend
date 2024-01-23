@@ -23,9 +23,7 @@
     align-items: center;
     gap: 5rem;
 }
-.layanan-utama-right{
 
-}
 .layanan-utama-left .title-layanan {
     color: var(--color-primary);
     font-weight: 700;
