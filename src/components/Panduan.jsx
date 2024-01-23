@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { PanduanData } from "../data/datas"
+import { Link } from 'react-router-dom';
 
 export default function Panduan() {
 
@@ -11,7 +12,7 @@ export default function Panduan() {
         {PanduanData.DataPanduan.map((sar, index)=>(
             <ul key={index} className="side-list" style={index === 0 ? {marginTop:"20px"} : {marginTop:"0"}}>
                 <li>
-                  <a onClick={() => setSelectedPdf(sar.linkPdf)}>{sar.title}</a>
+                  <Link onClick={() => setSelectedPdf(sar.linkPdf)}>{sar.title}</Link>
                 </li>
             </ul>
         ))}
@@ -20,7 +21,7 @@ export default function Panduan() {
         {selectedPdf ? (
           <object data={selectedPdf} type="application/pdf" width="100%" height="100%">
             <p>It appears you don`t have a PDF plugin for this browser. No biggie... you can 
-              <a href={selectedPdf}>click here to download the PDF file.</a></p>
+              <li href={selectedPdf}>click here to download the PDF file.</li></p>
           </object>
         ) : (
           <p>PDF Will Show Here</p>

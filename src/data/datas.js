@@ -207,53 +207,13 @@ export const PanduanData ={
 } 
 // Panduan Data End.......................
 
-// News Data Start
+//Start News View Data...................
 import NewsImage1 from '../assets/project1.png'
 import NewsImage2 from '../assets/project2.png'
 import NewsImage3 from '../assets/project3.png'
 import NewsImage4 from '../assets/project4.png'
 import NewsImage5 from '../assets/project5.png'
 
-// export const NewsData =[
-//     {
-//         newsImage: NewsImage1,
-//         category: 'MALWARE & THREATS',
-//         title: 'BlackLotus UEFI Bootkit Source Code Leaked on GitHub',
-//         info: 'The BlackLotus UEFI bootkit, initially discovered in October of the previous year.',
-//         newsLink: "/news1",
-//     },
-//     {
-//         newsImage: NewsImage2,
-//         category: 'MALWARE & THREATS',
-//         title: 'Meet CustomerLoader: A Multifaceted Malware Unleashing Diverse Payloads',
-//         info: 'Sekoia uncovered an undocumented .NET loader named CustomerLoader.',
-//         newsLink: "/news2",
-//     },
-//     {
-//         newsImage: NewsImage3,
-//         category: 'MALWARE & THREATS',
-//         title: 'Fake Linux vulnerability exploit drops data-stealing malware',
-//         info: 'The security community, including both cybersecurity researchers and potential threat actors.',
-//         newsLink: "/news3",
-//     },
-//     {
-//         newsImage: NewsImage4,
-//         category: 'MALWARE & THREATS',
-//         title: 'USB Flash Drives for Malware Attack Surges',
-//         info: 'The first campaign, attributed to the China-linked cyberespionage group TEMP.Hex.',
-//         newsLink: "/news4",
-//     },
-//     {
-//         newsImage: NewsImage5,
-//         category: 'MALWARE & THREATS',
-//         title: 'Meet CustomerLoader: A Multifaceted Malware Unleashing Diverse Payloads',
-//         info: 'Sekoia uncovered an undocumented .NET loader named CustomerLoader.',
-//         newsLink: "/news5",
-//     },   
-// ]
-// // News Data End.......................
-
-//Start News View Data...................
 export const NewsViewData = [    
         {
             id: 1,
