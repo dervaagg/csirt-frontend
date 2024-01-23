@@ -12,7 +12,7 @@ export default function Panduan() {
         {PanduanData.DataPanduan.map((sar, index)=>(
             <ul key={index} className="side-list" style={index === 0 ? {marginTop:"20px"} : {marginTop:"0"}}>
                 <li>
-                  <Link onClick={() => setSelectedPdf(sar.linkPdf)}>{sar.title}</Link>
+                  <Link className='sidebar-button' onClick={() => setSelectedPdf(sar.linkPdf)}>{sar.title}</Link>
                 </li>
             </ul>
         ))}

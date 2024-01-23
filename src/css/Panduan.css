@@ -43,13 +43,13 @@
     font-size: 17px !important;   
 }
 
-.side-list a {
+.side-list .sidebar-button {
     color: var(--color-black);
     font-weight: 700;
     text-decoration: none;    
 }
 
-.side-list a:hover {
+.side-list .sidebar-button:hover {
     color: var(--color-primary);   
 }
 
