@@ -9,10 +9,10 @@ export default function RFC() {
         </div>
         <div className="pdf-rfc">
             {
-                rfcData.map((sar, index)=>(
-                    <object key={index} data={sar.pdfRFC} type="application/pdf" width="100%" height="100%">
+                rfcData.map((items, index)=>(
+                    <object key={index} data={items.pdfRFC} type="application/pdf" width="100%" height="100%">
                         <p>It appears you don`t have a PDF plugin for this browser. No biggie... you can 
-                        <a href={sar.pdfRFC}>click here to download the PDF file.</a></p>
+                        <a href={items.pdfRFC}>click here to download the PDF file.</a></p>
                     </object>
                 ))
             }

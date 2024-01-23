@@ -22,7 +22,7 @@ export const ShuffleHero = () => {
           </button>
         </a>
       </div>
-      <ShuffleGrid />
+      <ShuffleGrid class="md:hidden"/>
     </section>
   );
 };
@@ -76,7 +76,7 @@ const ShuffleGrid = () => {
   };
 
   return (
-    <div className="grid grid-cols-4 grid-rows-4 h-[450px] gap-1">
+    <div className="custom:hidden custom:mb[-20] grid grid-cols-4 grid-rows-4 h-[450px] gap-1">
       {squares.map((sq) => sq)}
     </div>
   );

@@ -172,6 +172,22 @@ img{
     }
 }
 
+/* .....................Start Media Screen(830)..................... */
+@media (max-width:830px) {
+/* .....................Start Cyberheat..................... */
+    .cyberheat-wrapper {
+        width: 670px;
+        height: 480px;
+    }
+    .cyberheat-wrapper iframe {
+        width: 630px;
+        height: 400px;
+    }
+    .cyberheat-wrapper h3 {
+        font-size: 15px !important;
+    }    
+}
+
 /* .....................Start Media Screen(666)..................... */
 @media (max-width:666px) {
     h1{
@@ -203,12 +219,23 @@ img{
     .news-title{
         margin-bottom: -4rem;
     }
+/* .....................Start Cyberheat..................... */
+    .cyberheat-wrapper {
+        width: 370px;
+        height: 480px;
+    }
+    .cyberheat-wrapper iframe {
+        width: 330px;
+        height: 400px;
+    }
+    .cyberheat-wrapper h3 {
+        font-size: 15px !important;
+    }    
 }
 
 
-
-/* .....................Start Media Screen(415)..................... */
-@media (max-width:415px){
+/* .....................Start Media Screen(420)..................... */
+@media (max-width:420px){
     .News{
         padding: 4rem 0;
     }
@@ -220,6 +247,18 @@ img{
         grid-template-columns: 1fr;
         font-size: 25px !important;
         line-height: 27px;
+    }
+/* .....................Start Cyberheat..................... */
+    .cyberheat-wrapper {
+        width: 370px;
+        height: 480px;
+    }
+    .cyberheat-wrapper iframe {
+        width: 330px;
+        height: 400px;
+    }
+    .cyberheat-wrapper h3 {
+        font-size: 15px !important;
     }
 }
 

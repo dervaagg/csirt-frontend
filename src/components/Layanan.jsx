@@ -16,9 +16,9 @@ export default function Layanan() {
           <div className="title-layanan">
             <h4>Layanan Utama :</h4>
           </div>
-          {layananData.LayananUtama.map((sar, index)=>(
+          {layananData.LayananUtama.map((items, index)=>(
               <ul key={index}>
-                <li>{sar.id + ". " + sar.layanan}</li>
+                <li>{items.id + ". " + items.layanan}</li>
               </ul>
             ))}
         </div>
@@ -28,9 +28,9 @@ export default function Layanan() {
           <div className="title-layanan">
               <h4>Layanan Tambahan</h4>
           </div>
-            {layananData.LayananTambahan.map((sar, index)=>(
+            {layananData.LayananTambahan.map((items, index)=>(
                 <ul key={index}>
-                  <li>{sar.id + ". " + sar.layanan}</li>
+                  <li>{items.id + ". " + items.layanan}</li>
                 </ul>
               ))}
         </div>

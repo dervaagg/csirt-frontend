@@ -5,11 +5,11 @@ import '../css/About.css'
 export default function About() {
   return (
     <section id="About">
-      {AboutData.aboutInfo.map((sar, index)=>{
+      {AboutData.aboutInfo.map((items, index)=>{
           return(
             <div className="container about-container" key={index}>
               <div className="contrainer about-left">
-                <img src={sar.Image} alt="AboutMe" />
+                <img src={items.Image} alt="AboutMe" />
               </div>
               <div className="contrainer about-right">
                 <div className="aboutMe-header">
@@ -18,15 +18,15 @@ export default function About() {
                 </div>
  
                 <div className="aboutMe-info">
-                  <p>{sar.AboutMe}</p>
+                  <p>{items.AboutMe}</p>
                 </div>
                 
                 <div className="aboutMe-info">
                   <h5 className="about-small-title">Visi :  </h5>
-                  {AboutData.visiData.map((sar, index)=>{
+                  {AboutData.visiData.map((items, index)=>{
                     return(
                       <ul key={index} >
-                        <li>{sar.visi}</li>
+                        <li>{items.visi}</li>
                       </ul>
                       )
                   })}
@@ -34,10 +34,10 @@ export default function About() {
 
                 <div className="aboutMe-info">
                   <h5 className="about-small-title">Misi :  </h5>
-                  {AboutData.misiData.map((sar, index)=>{
+                  {AboutData.misiData.map((items, index)=>{
                     return(
                       <ul key={index} >
-                        <li>{sar.id+". "+sar.misi}</li>
+                        <li>{items.id+". "+items.misi}</li>
                       </ul>
                       )
                   })}
