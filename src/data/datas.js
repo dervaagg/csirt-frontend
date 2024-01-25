@@ -156,7 +156,15 @@ export const layananData = {
 
 
 // Panduan Data Start.......................
-
+// Import Img
+import IPdf1 from '../assets/Panduan_Img/Insiden-Serangan-SQL-Injection.jpg'
+import IPdf2 from '../assets/Panduan_Img/Insiden-Serangan-DDoS.jpg'
+import IPdf3 from '../assets/Panduan_Img/Pelaporan-Insiden.jpg'
+import IPdf4 from '../assets/Panduan_Img/Insiden-Serangan-Phishing.jpg'
+import IPdf5 from '../assets/Panduan_Img/Insiden-Web-Defacement.jpg'
+import IPdf6 from '../assets/Panduan_Img/Insiden-Ransom-sign.jpg'
+import IPdf7 from '../assets/Panduan_Img/Insiden-Malware.jpg'
+// Import PDF
 import PDF1 from '../assets/pdf/Panduan-Penanganan-Insiden-Serangan-SQL-Injection.pdf'
 import PDF2 from '../assets/pdf/Panduan-Penanganan-Insiden-Serangan-DDoS.pdf'
 import PDF3 from '../assets/pdf/Panduan-Pelaporan-Insiden.pdf'
@@ -168,39 +176,46 @@ import PDF7 from '../assets/pdf/Panduan-Penanganan-Insiden-Malware.pdf'
 export const PanduanData ={
     DataPanduan: [
         { 
-            id: '1',
+            id: 1,
+            imgPdf: IPdf1,
             title: 'Panduan Pengamanan Insiden Serangan SQL Injection',
-            linkPdf: PDF1,
+            filePdf: PDF1,
         },   
         { 
-            id: '2',
+            id: 2,
+            imgPdf: IPdf2,
             title: 'Panduan Pengamanan Insiden Serangan DDoS',
-            linkPdf: PDF2,
+            filePdf: PDF2,
         },   
         { 
-            id: '3',
+            id: 3,
+            imgPdf: IPdf3,
             title: 'Panduan Pelaporan Insiden',
-            linkPdf: PDF3,
+            filePdf: PDF3,
         },   
         { 
-            id: '4',
+            id: 4,
+            imgPdf: IPdf4,
             title: 'Panduan Penanganan Insiden Serangan Phising',
-            linkPdf: PDF4,
+            filePdf: PDF4,
         },   
         { 
-            id: '5',
+            id: 5,
+            imgPdf: IPdf5,
             title: 'Panduan Penanganan Insiden Web Defacement ',
-            linkPdf: PDF5,
+            filePdf: PDF5,
         },   
         { 
-            id: '6',
+            id: 6,
+            imgPdf: IPdf6,
             title: 'Panduan Penanganan Insiden Ransom Sign',
-            linkPdf: PDF6,
+            filePdf: PDF6,
         },   
         { 
-            id: '7',
+            id: 7,
+            imgPdf: IPdf7,
             title: 'Panduan Penanganan Insiden Malware',
-            linkPdf: PDF7,
+            filePdf: PDF7,
         },      
     ],
             

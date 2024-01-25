@@ -11,6 +11,111 @@
   --transition: .4s ease;
 }
 
+/* Start Panduan At Home */
+#PanduanH {
+    background: transparent;
+    margin-bottom: 50px;
+  }
+  .panduanH-container {
+    position: relative;
+  }
+  .panduanH-title {
+    text-align: center;
+    margin-bottom: 4rem;
+    font-size: 35px;
+  }
+
+  .card-panduanH-warpper {
+    display: grid;
+    grid-template-columns: repeat(4,17rem);
+    grid-gap: 30px;
+    justify-content: center;
+  }
+
+  .book {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    border-radius: 10px;
+    width: 220px;
+    height: 280px;
+    background-color: whitesmoke;
+    -webkit-box-shadow: 1px 1px 12px #000;
+    box-shadow: 1px 1px 12px #000;
+    -webkit-transform: preserve-3d;
+    -ms-transform: preserve-3d;
+    transform: preserve-3d;
+    -webkit-perspective: 2000px;
+    perspective: 2000px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    color: #000;
+  }
+
+  .book-cover {
+    top: 0;
+    position: absolute;
+    background-color: lightgray;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    cursor: pointer;
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+    -webkit-transform-origin: 0;
+    -ms-transform-origin: 0;
+    transform-origin: 0;
+    -webkit-box-shadow: 1px 1px 12px #000;
+    box-shadow: 1px 1px 12px #000;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    flex-flow: column;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+  }
+  .book-cover img {    
+    width: 200px;
+    height: 260px;
+  }
+  
+  .book:hover .book-cover {
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+    -webkit-transform: rotatey(-80deg);
+    -ms-transform: rotatey(-80deg);
+    transform: rotatey(-80deg);
+  }
+
+  .book-content {
+    display: grid;
+    grid-template-rows: 120%;
+    margin-left: 42px;
+    margin-right: 10px;
+    margin-bottom: 30px;
+  }
+  .book-content .book-title{
+    font-weight: 700;
+  }
+  .book-content .book-footer{
+    font-size: 12px;
+    font-weight: 700;
+  }
+  
+  
+/* ...................Halaman Panduan......................... */
 .panduan-container {
     min-height: 100vh;
     margin: 0;
@@ -30,20 +135,26 @@
 }
 
 .side-list {
-    margin: 0;
-    padding: 0;
     list-style: none;
     display: grid;
-    padding-block: 20px;
+    padding-block: 10px;
 }
 
 .side-list li {
+    display: flex;
+    align-items: center;
+    height: 70px;
+    border-radius: 100vw 0 0 100vw;    
     margin-left: 2rem;
-    margin-right: 1rem;
-    font-size: 17px !important;   
+    font-size: 16px !important;   
+}
+
+.side-list li.active {
+  background: var(--color-white);
 }
 
 .side-list .sidebar-button {
+    margin-left: 20px;
     color: var(--color-black);
     font-weight: 700;
     text-decoration: none;    
@@ -67,65 +178,6 @@
 .dropdown {
   display: none;
 }
-
-/* Start Panduan At Home */
-#PanduanH {
-    background: transparent;
-    margin-bottom: 50px;
-  }
-  .panduanH-container {
-    position: relative;
-  }
-  .panduanH-title {
-    text-align: center;
-    margin-bottom: 4rem;
-    font-size: 35px;
-  }
-
-  .card-panduanH-warpper {
-    display: grid;
-    grid-template-columns: repeat(4,17rem);
-    grid-gap: 30px;
-    justify-content: center;
-  }
-  .card-panduanH {
-    width: 280px;
-    height: 300px;
-    padding: 20px;
-    color: white;
-    background: var(--color-danger);
-    border: 2px solid var(--color-primary);
-    display: flex;
-    flex-direction: column;
-    cursor: pointer;
-    transform-origin: center center;
-    transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  }
-  .card-panduanH .main-content {
-    flex: 1;
-  }  
-  .header {
-    margin-bottom: 24px;
-  } 
-  .card-panduanH .heading {
-    font-size: 28px;
-    font-weight: 400;
-    line-height: 1.2;
-  }
-  .card-panduanH .footer {
-    font-weight: 400;
-    margin-right: 4px;
-  }
-  .card-panduanH:hover {
-    border-radius: 12px;
-    background-color: var(--color-primary);
-    scale: 0.95;
-    rotate: 8deg;
-    box-shadow: 0px 0px 70px 0px var(--color-danger);
-  }
-  .card-panduanH:active {
-    transform: scale(0.95) rotateZ(1.7deg);
-  }
   
 /* .....................Start Media Screen(1230)..................... */
 @media (max-width:1230px) {
@@ -144,13 +196,6 @@
 @media (max-width:850px) {
   .card-panduanH-warpper {
     grid-template-columns: repeat(2, 15rem);
-  }
-  .card-panduanH {
-    width: 250px;
-    height: 250px;
-  }
-  .card-panduanH .heading {
-    font-size: 22px;
   }
 }
 
@@ -241,7 +286,7 @@
   }
 }
 
-/* .....................Start Media Screen(420)..................... */
+/* .....................Start Media Screen(500)..................... */
 @media (max-width:500px) {
   .card-panduanH-warpper {
     grid-template-columns: repeat(2, 13rem);
@@ -265,20 +310,32 @@
 @media (max-width:420px) {
   .card-panduanH-warpper {
     grid-template-columns: repeat(2, 11rem);
-    gap: 15px;
+    gap: 13px;
+    margin-top: -2rem;
   }
-  .card-panduanH {
-    width: 180px;
-    height: 115px;
+  .book {
+    width: 170px;
+    height: 185px;
   }
-  .card-panduanH .header {
-    display: none;
+  .book-cover img {
+    max-width: 150px;
+    max-height: 170px;
   }
-  .card-panduanH .heading {
-    font-size: 15px;
+  .book-content {
+    display: grid;
+    grid-template-rows: 70%;
+    margin-left: 42px;
+    margin-right: 8px;
+    margin-bottom: 0;
   }
-  .card-panduanH .footer {
-    display: none;
+  .book-content .book-title {
+    font-size: 13px;
+    font-weight: 500;
+  }
+  .book-content .book-footer {
+    font-size: 10px;
+    font-weight: 500;
+    margin-right: 20px;
   }
 }
     

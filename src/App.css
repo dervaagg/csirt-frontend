@@ -104,7 +104,7 @@ nav {
 }
 .navbar-logo img {
     margin-top: -5px;
-    max-width: 70px;
+    max-width: 130px;
 }
 .nav-links {
     display: flex;
@@ -112,7 +112,7 @@ nav {
     gap: 3rem;
 }
 .nav-links li a {
-    font-weight: bold;
+    font-weight: 700;
     color: var(--color-black);
     transition: var(--transition);
 }
@@ -124,6 +124,7 @@ nav {
 }
 .name {
     font-size: 32px;
+    font-weight: 800;
     line-height: normal;
 }
 /* ----------------End Navbar---------------- */
@@ -323,13 +324,13 @@ nav {
         height: 5rem !important;
     }
     .navbar-logo img {
-        max-width: 40px;
+        max-width: 100px;
     }
     /* ..........Start Footer.......... */
     .footer-container {
         grid-template-columns: repeat(1);
     }
     .kontak {
-        grid-template-columns: repeat(2, 180px) !important;
+        grid-template-columns: repeat(1, 200px) !important;
     }
 } 

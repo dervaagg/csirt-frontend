@@ -11,57 +11,57 @@
     --transition: .4s ease;
 }
 
-img{
+img {
     width: 100%;
     display: block;
     object-fit: cover;
 }
 
-.Home{
+.Home {
     background: transparent !important;
 }
 
 /* .....................Start News..................... */
-.News{
+.News {
     background: transparent;
     padding: 1rem 0;
 }
-.news-wrapper{
+.news-wrapper {
     padding-top: 4.5rem !important;
 } 
-.news-title{
+.news-title {
     font-size: 30px;
     margin-bottom: -2rem;
     position: relative;
     z-index: 1 !important;
 }
-.news-image{
+.news-image {
     border: 1px solid var(--color-danger);
     height: 240px;
 }
-.news-image img{
+.news-image img {
     height: 100%;
     object-fit: cover;
     transform: translateX(10px) translateY(-10px);
 }
-.news-image:hover img{
+.news-image:hover img {
     transform: translate(0);
 }
-.news-article .category{
+.news-article .category {
     margin-top: 16px;
     font-weight: bold;
     color: var(--color-primary);
 }
-.news-article h5{
+.news-article h5 {
     font-size: 22px;
     margin: 10px 0;
 }
-.news-article small{
+.news-article small {
     font-size: 15px !important;
     display: inline-block;
     line-height: 24px;
 }
-.news-article .news-link{
+.news-article .news-link {
     display: inline-block;
     color: var(--color-danger);
     margin-top: 20px;
@@ -71,11 +71,11 @@ img{
     font-size: 17px;
     transition: var(--transition);
 }
-.news-article .news-link:hover{
+.news-article .news-link:hover {
     transform: translateX(10px);
     color: var(--color-primary);
 }
-.navigation-buttons{
+.navigation-buttons {
     display: flex;
     align-items: center;
     gap: 20px;
@@ -83,33 +83,33 @@ img{
     top: 0;
     right: 0;
 }
-.navigation-buttons .button-prev-slide{
+.navigation-buttons .button-prev-slide {
     background: transparent;
 }
-.navigation-buttons .button-prev-slide svg{
+.navigation-buttons .button-prev-slide svg {
     color: var(--color-black);
 }
 
-.navigation-buttons .button-next-slide{
+.navigation-buttons .button-next-slide {
     background: transparent;
 }
-.navigation-buttons .button-next-slide svg{
+.navigation-buttons .button-next-slide svg {
     color: var(--color-black);
 }
-.navigation-buttons button{
+.navigation-buttons button {
     border: 1px solid var(--color-danger);
     padding: 10px 14px;
     display: flex;
     color: var(--color-dark);
     transition: var(--transition);
 }
-.navigation-buttons button:hover{
+.navigation-buttons button:hover {
     background: var(--color-danger);
 }
-.navigation-buttons button:last-child{
+.navigation-buttons button:last-child {
     border: 1px solid var(--color-primary);
 }
-.navigation-buttons button:last-child:hover{
+.navigation-buttons button:last-child:hover {
     background: var(--color-primary);
 }
 /* .....................End News..................... */
@@ -148,32 +148,36 @@ img{
 
 /* .....................Start Media Screen(1024)..................... */
 @media (max-width:1024px) {
-    h1{
+    h1 {
         font-size: 46px;
     }
-    h2{
+    h2 {
         font-size: 38px !important;
     }
-    h3{
+    h3 {
         font-size: 34px !important;
     }
-    h4{
+    h4 {
         font-size: 24px !important;
     }
-    h5{
+    h5 {
         font-size: 20px; 
     }
-    /* ..........Start Project.......... */
-    .News{
+    /* ..........Start News.......... */
+    .News {
         padding: 2rem 0;
     }
-    .news-title{
+    .news-title {
         margin-bottom: -3rem;        
     }
 }
 
 /* .....................Start Media Screen(830)..................... */
 @media (max-width:830px) {
+    /* ..........Start News.......... */
+    .News {
+        padding: 3rem;
+    }
 /* .....................Start Cyberheat..................... */
     .cyberheat-wrapper {
         width: 670px;
@@ -190,33 +194,30 @@ img{
 
 /* .....................Start Media Screen(666)..................... */
 @media (max-width:666px) {
-    h1{
+    h1 {
         font-size: 34px !important;
     }
-    h2{
+    h2 {
         font-size: 30px !important;
     }
-    h3{
+    h3 {
         font-size: 20px !important;
     }
-    h4{
+    h4 {
         font-size: 17px !important;
     }
-    h5{
+    h5 {
         font-size: 20px; 
     }
     /* ..........Start Nav.......... */
-    nav{
+    nav {
         height: 6rem;
     }
-    .logo img{
+    .logo img {
         max-width: 30;
     }
-    /* ..........Start Project.......... */
-    .News{
-        padding: 3rem 0;
-    }s
-    .news-title{
+    /* ..........Start News.......... */
+    .news-title {
         margin-bottom: -4rem;
     }
 /* .....................Start Cyberheat..................... */
@@ -235,18 +236,24 @@ img{
 
 
 /* .....................Start Media Screen(420)..................... */
-@media (max-width:420px){
-    .News{
-        padding: 4rem 0;
+@media (max-width:420px) {
+    .News {
+        padding: 2rem;
     }
-    .news-title{
-        margin-bottom: -4rem;        
+    .news-title {
+        margin-bottom: -3rem;        
     }
-    .news-title h2{
+    .news-title h2 {
         display: grid;
         grid-template-columns: 1fr;
         font-size: 25px !important;
         line-height: 27px;
+    }
+    .news-article p {
+        font-size: 15px;
+    }
+    .news-article h5 {
+        font-size: 20px;
     }
 /* .....................Start Cyberheat..................... */
     .cyberheat-wrapper {

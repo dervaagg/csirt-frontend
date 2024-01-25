@@ -1,7 +1,6 @@
 import { MdLocationOn, MdEmail } from "react-icons/md";
 import { BsFillTelephoneFill } from "react-icons/bs";
 import '../css/Kontak.css'
-import Social from "./Social";
 import imgKontak from "../assets/hero.webp";
 
 export default function Kontak() {
@@ -38,7 +37,6 @@ export default function Kontak() {
                         <p>Email : </p>
                         <p className="text-email"><a href="mailto:waskita@waskita.co.id">waskita@waskita.co.id</a></p>
                     </div>
-                    <Social />
                 </div>
             </div>
         </div>

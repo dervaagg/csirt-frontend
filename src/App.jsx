@@ -15,7 +15,6 @@ import Footer from './components/Footer'
 import Menu from './components/Menu'
 
 // Import News Content.............................
-
 import NewsView from './components/NewsView'
 
 

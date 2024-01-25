@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom"
-import icoImg from "../assets/logo-waskita.png"
+import icoImg from "../assets/Logo WSKT.svg"
 
 export default function Navbar() {
     const [click, setClick] = useState(false);

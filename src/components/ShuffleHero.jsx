@@ -13,16 +13,15 @@ export const ShuffleHero = () => {
           CSIRT <br />Waskita Karya
         </h3>
         <p className="text-base md:text-lg text-slate-700 my-4 md:my-6">
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nam nobis in
-          error repellat voluptatibus ad.
+          Waskita Computer Security Incident Response Team 
         </p>
         <a href="/about">
           <button className="bg-indigo-950 text-white font-medium py-2 px-4 rounded transition-all hover:bg-indigo-600 active:scale-95">
-            About
+            Profile
           </button>
         </a>
       </div>
-      <ShuffleGrid class="md:hidden"/>
+      <ShuffleGrid />
     </section>
   );
 };

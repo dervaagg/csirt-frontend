@@ -12,15 +12,19 @@ export default function PanduanHome() {
 
             <div className="card-panduanH-warpper">
               {PanduanData.DataPanduan.map(( items, index) => (
-                <Link key={index} to={ items.linkPdf} target="_blank" className="card-panduanH">
-                  <p className="header">Panduan Insiden</p>
-                    <div className="main-content">
-                      <p className="heading">{ items.title}</p>
-                    </div>
-                    <div className="footer">CSIRT - Waskita Karya</div>
-                  <p></p>
+                <Link key={index} to={ items.filePdf} target="_blank" className="book">
+                  <div className="book-cover">
+                    <img src={items.imgPdf} alt="cover-img" />
+                  </div>                    
+                  <div className="book-content">                    
+                    <p className="book-title">{items.title}</p>
+                    <p className="book-footer">Klik untuk membaca lebih lanjut</p>
+                  </div>
                 </Link>
               ))}
+              <Link to="/panduan" className="book">
+              
+              </Link>
             </div>
         </div>
     </div>

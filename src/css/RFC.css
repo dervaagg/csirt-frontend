@@ -11,22 +11,34 @@
     --transition: .4s ease;
 }
 
-.rfc-container{
+.rfc-container {
     display: grid;
     grid-template-columns: 35% 61%;
     justify-content: center;
     align-items: center;
     background: transparent;
-    width: 100%;
-    height: 100%;
     gap: 2.5rem;
 }
-.title-rfc h3{
+.title-rfc h3 {
     font-size: 25px !important;
     margin-left: 50px;
     margin-top: -7rem;
 }
-.pdf-rfc{
+.pdf-rfc {
+    max-height: 870px;
     height: 100vh;
     
+}
+
+@media (max-width:700px) {
+    .rfc-container {
+        display: flex;
+        flex-direction: column;
+        padding-top: 9rem;
+    }
+    .pdf-rfc {
+        width: 60vh;
+        max-height: 500px;
+        max-width: 420px;
+    }
 }

@@ -11,30 +11,30 @@
     --transition: .4s ease;
 }
 
-#About{
+#About {
     background: url(/src/assets/1252907_3133.jpg);
     padding: 4rem 0;
 }
-.about-container{
+.about-container {
     display: grid;
     grid-template-columns: 38% auto;
     gap: 120px;
     align-items: center;
 }
-.about-right{
+.about-right {
     display: flex;
     flex-direction: column;
     gap: 30px;
     text-align: justify;
 }
-.aboutMe-header .about-main{
+.aboutMe-header .about-main {
     font-size: 40px;
 }
-.aboutMe-header .about-second{
+.aboutMe-header .about-second {
     color: var(--color-black);
     font-weight: 500;
 }
-.about-small-title{
+.about-small-title {
     font-size: 17px;
     font-weight: bold;
     color: var(--color-primary);
@@ -43,7 +43,7 @@
 .aboutMe-info {
     font-weight: 500;
 }
-.about-action-aria{
+.about-action-aria {
     display: flex;
     align-items: center;
     gap: 30px;
@@ -51,72 +51,23 @@
 
 /* .....................Start Media Screen(1024)..................... */
 @media (max-width:1024px) {
-    h1{
-        font-size: 46px;
-    }
-    h2{
-        font-size: 38px !important;
-    }
-    h3{
-        font-size: 34px !important;
-    }
-    h4{
-        font-size: 24px !important;
-    }
-    h5{
-        font-size: 20px; 
-    }
-    .hero-text{
-        font-size: 38px;
-    }
-    .btn{
-        padding: 16px 36px;
-    }
+
 }
 /* .....................Start Media Screen(666)..................... */
 @media (max-width:666px) {
-    h1{
-        font-size: 34px !important;
-    }
-    h2{
-        font-size: 30px !important;
-    }
-    h3{
-        font-size: 20px !important;
-    }
-    h4{
-        font-size: 17px !important;
-    }
-    h5{
-        font-size: 20px; 
-    }
-    .hero-text{
-        font-size: 34px;
-    }
-    section{
-        padding: 9rem 0;
-    }
-    .btn{
-        padding: 16px 30px;
-    }
-    /* ..........Start Nav.......... */
-    nav{
-        height: 6rem;
-    }
-    .logo img{
-        max-width: 30;
-    }
-    /* ..........Start About.......... */
-    .about-container{
+    .about-container {
         grid-template-columns: 1fr;
         text-align: center;
         gap: 20px;
     }
-    .about-left{
+    .about-right {
+        padding: 2.5rem;
+    }
+    .about-left {
         width: 90%;
         margin: auto;
     }
-    .about-action-aria{
+    .about-action-aria {
         justify-content: center;
     }
 }

@@ -13,9 +13,9 @@ export default function Panduan() {
       <div className="container panduan-container">
         <div className="sidebar">
           {PanduanData.DataPanduan.map((items, index)=>(
-              <ul key={index} className="side-list" style={index === 0 ? {marginTop:"20px"} : {marginTop:"0"}}>
-                  <li>
-                    <Link className='sidebar-button' onClick={() => setSelectedPdf(items.linkPdf)}>{items.title}</Link>
+              <ul key={index} className="side-list" style={index === 0 ? {marginTop:"5px"} : {marginTop:"0"}}>
+                  <li className={selectedPdf === (items.filePdf) ? 'active' : ''}>
+                    <Link className="sidebar-button" onClick={() => setSelectedPdf(items.filePdf)}>{items.title}</Link>
                   </li>
               </ul>
           ))}
