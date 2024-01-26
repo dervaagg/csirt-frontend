@@ -1,0 +1,103 @@
+import EditLayanan from '../adminpage/EditLayanan'
+import EditNews from '../adminpage/EditNews'
+import EditPanduan from '../adminpage/EditPanduan'
+import { useState } from 'react';
+import {
+  MenuFoldOutlined,
+  MenuUnfoldOutlined,
+  UploadOutlined,
+  UserOutlined,
+  VideoCameraOutlined,
+} from '@ant-design/icons';
+import { Layout, Menu, Button, theme } from 'antd';
+
+const { Header, Sider, Content } = Layout;
+const Sidebar = () => {
+
+  const [collapsed, setCollapsed] = useState(false);
+  const {
+    token: { colorBgContainer, borderRadiusLG },
+  } = theme.useToken();
+  const [isButtonClicked, setIsButtonClicked] = useState(false);
+  const components = {
+    Nav1: <EditLayanan />,
+    Nav2: <EditNews />,
+    Nav3: <EditPanduan />,
+   };
+  const [currentComponent, setCurrentComponent] = useState(null);
+  const handleMenuItemClick = (key) => {
+    setCurrentComponent(components[key]);
+   };
+
+  return (
+    <Layout
+      style={{
+        height: '100vh',
+      }}
+      >
+      <Sider trigger={null} collapsible collapsed={collapsed} style={{ overflow: 'auto', height: '100vh', position: 'fixed', left: 0, top: 0, bottom: 0}}>
+        <div className="demo-logo-vertical" />
+        <Menu
+          theme="dark"
+          mode="inline"
+          defaultSelectedKeys={['0']}
+          items={[
+            {
+              key: '1',
+              icon: <UserOutlined />,
+              label: 'nav 1',
+              onClick: () => handleMenuItemClick('Nav1'),
+            },
+            {
+              key: '2',
+              icon: <VideoCameraOutlined />,
+              label: 'nav 2',
+              onClick: () => handleMenuItemClick('Nav2'),
+            },
+            {
+              key: '3',
+              icon: <UploadOutlined />,
+              label: 'nav 3',
+              onClick: () => handleMenuItemClick('Nav3'),
+            },
+          ]}
+        />
+      </Sider>
+      <Layout
+        style={{marginLeft: isButtonClicked ? '80px' : '200px',}}>
+        <Header
+          style={{
+            padding: 0,
+            background: colorBgContainer,
+          }}
+        >
+          <Button
+            type="text"
+            icon={collapsed ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}
+            onClick={() => {
+                setCollapsed(!collapsed);
+                setIsButtonClicked(!isButtonClicked);
+            }}
+            style={{
+                fontSize: '16px',
+                width: 64,
+                height: 64,
+            }}
+          />
+        </Header>
+        <Content
+          style={{
+            margin: '24px 16px',
+            padding: 24,
+            minHeight: 280,
+            background: colorBgContainer,
+            borderRadius: borderRadiusLG,
+          }}
+        >
+          {currentComponent}
+        </Content>
+      </Layout>
+    </Layout>
+  );
+};
+export default Sidebar;

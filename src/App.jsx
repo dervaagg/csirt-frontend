@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
+import { Route, Routes } from 'react-router-dom'
 import ScrollTop from './UI/ScrollTop'
 import './App.css'
 
@@ -22,7 +22,6 @@ import NewsView from './components/NewsView'
 function App() {
   return (
     <>
-      <Router>
         <Navbar />
         <ScrollTop />
         <Routes>
@@ -40,7 +39,6 @@ function App() {
         </Routes>
         <Footer />
         <Menu />
-      </Router>
     </>
   )
 }
