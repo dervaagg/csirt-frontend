@@ -1,7 +1,6 @@
 import { useState } from 'react'
 import { PanduanData } from "../data/datas"
 import { Link } from 'react-router-dom';
-import DropDown from './DropDown';
 
 export default function Panduan() {
 
@@ -9,7 +8,20 @@ export default function Panduan() {
 
   return (
     <div className="panduan">
-        <DropDown />
+      <div className="dropdown">
+        <div className="paste-button">
+            <button className="button">Paste &nbsp; ▼</button>
+            <div className="dropdown-content">
+              {PanduanData.DataPanduan.map((items, index)=>(
+                <ul key={index}>
+                    <li>
+                      <Link className="sidebar-button" onClick={() => setSelectedPdf(items.filePdf)}>{items.title}</Link>
+                    </li>
+                </ul>
+              ))}
+            </div>
+        </div>
+      </div>
       <div className="container panduan-container">
         <div className="sidebar">
           {PanduanData.DataPanduan.map((items, index)=>(

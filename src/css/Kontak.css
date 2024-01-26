@@ -1,4 +1,4 @@
-:root{
+:root {
     --color-primary: rgb(30 27 75);
     --color-danger: #bd002f;
 
@@ -11,7 +11,7 @@
     --transition: .4s ease;
 }
 
-.kontak-container{
+.kontak-container {
     height: 100%;
     width: 100%;
     display: flex;
@@ -22,81 +22,94 @@
 }
 
 .kontak-header {
-    height: 70vh;
+    height: 45vh;
     width: 100%;
     display: flex;
-    /* flex-direction: column-reverse; */
     justify-content: center;
     align-items: center;
     object-fit: contain;
 }
-.kontak-header img {
+.kontak-header iframe {
     position: absolute;
     top: 0;
-    left: 0;
+    margin-top: 6rem;
     width: 100%;
-    height: 80vh;
-    z-index: -1;
+    height: 45vh;
     object-fit: cover;
 }
-.kontak-header .title {
-    margin-left: 50px;
-}
-.kontak-header .title h3 {
-    font-weight: bold;
-    color: var(--color-white);
-    max-width: 700px;
-    margin-bottom: 10px;
-}
-
 .kontak-title {
-    margin-top: 40px;
+    font-size: 35px;
+    font-weight: 700;
+    margin-top: 30px;
 }
 
-.kontak-warpper{
+.kontak-warpper {
+    height: 50vh;
     padding: 2rem;
-    margin-top: 20px;    
+    margin-top: -20px;    
     display: grid;
-    grid-template-columns: 65% 42%;
+    grid-template-columns: repeat(2, 1fr);
     justify-content: center;
+    align-items: center;
 }
 
-.kontak-left{
+.kontak-right {
     display: flex;
     flex-direction: column;
     gap: 30px;
-    margin-bottom: 50px;
     font-weight: 500;
+    justify-content: center;
 }
 
-.kontak-left .lokasi{
+.kontak-right .lokasi {
     display: flex;
     gap: 10px;
 }
 
-.kontak-left .telephone{
+.kontak-right .telephone {
     display: flex;
     gap: 10px;
 }
-.kontak-left .email{
+.kontak-right .email {
     display: flex;
     gap: 10px;
 }
-.kontak-left .email a{
+.kontak-right .email a {
     color: var(--color-primary);
     font-weight: 580;
 }
-.kontak-left .email a:hover{
+.kontak-right .email a:hover {
     color: var(--color-danger);
     transition: var(--transition);
 }
-.icon-kontak{
+.icon-kontak {
     color: var(--color-primary);
 }
 
-iframe {
-    width: 700px;
-    height: 450px;
-    border: 0;
-    margin: 10px;
+.kontak-left {
+    display: flex;
+    flex-direction: column;
+}
+
+.kontak-left h2 {
+    font-weight: 700;
+}
+
+.kontak-left li {
+    text-align: justify;
+    margin-bottom: 20px;
+}
+
+@media (max-width:1024px) {
+    .kontak-warpper {
+        margin-top: 15px;
+        margin-bottom: 80px;
+        grid-template-columns: repeat(1, 1fr) !important;
+    }
+    .kontak-left {
+        margin-top: 20px;
+    }
+    .kontak-left h2 {
+        font-size: 20px !important;
+    }
 }
