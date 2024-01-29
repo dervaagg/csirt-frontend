@@ -14,16 +14,14 @@ import { Link } from "react-router-dom";
 
 const ListMenu = () => {
   return (
-    <Menu
-    >
-      <Menu.Item key="home" icon={<HomeOutlined />}>
-        <Link to="/" />
-        Home
+    <Menu style={{background: 'none', color:'white'}}>
+      <Menu.Item key="edit-layanan" icon={<HomeOutlined />}>
+        <Link to="/admin/e-layanan" />Home
       </Menu.Item>
-      <Menu.Item key="profil" icon={<UserOutlined />}>
+      <Menu.Item key="edit-news" icon={<UserOutlined />}>
         Profil
       </Menu.Item>
-      <Menu.Item key="kontak" icon={<ContactsOutlined />}>
+      <Menu.Item key="edit-panduan" icon={<ContactsOutlined />}>
         Kontak
       </Menu.Item>
       <Menu.SubMenu key="sublayanan" icon={<FileOutlined />} title="Layanan">
@@ -35,11 +33,9 @@ const ListMenu = () => {
         </Menu.Item>
       </Menu.SubMenu>
       <Menu.Item key="berita" icon={<ReadOutlined />}>
-        <Link to="/news" />
         Berita
       </Menu.Item>
       <Menu.Item key="rfc" icon={<FilePdfOutlined />}>
-        <Link to="/rfc2350" />
         RFC 2350
       </Menu.Item>
       <Menu.Item key="panduan" icon={<FileSearchOutlined />}>
