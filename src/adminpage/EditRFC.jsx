@@ -1,6 +1,15 @@
 import { rfcData } from "../data/datas"
 import { InboxOutlined } from '@ant-design/icons';
-import { message, Upload } from 'antd';
+import { message, Popconfirm, Upload } from 'antd';
+
+const confirm = (e) => {
+  console.log(e);
+  message.success('Berhasil Menghapus');
+};
+const cancel = (e) => {
+  console.log(e);
+  message.error('Batal Menghapus');
+};
 
 const { Dragger } = Upload;
 const props = {
@@ -41,7 +50,16 @@ export default function EditRFC() {
 
           <div className="mt-1 w-full flex justify-center gap-4">        
             <button className="bg-black font-extrabold p-2 px-5 rounded-xl hover:bg-sky-700 transition-colors">Upload</button>
-            <button className="bg-black font-extrabold p-2 px-5 rounded-xl hover:bg-sky-700 transition-colors">Delete</button>
+            <Popconfirm
+              title="Hapus RFC"
+              description="Yakin Dihapus?"
+              onConfirm={confirm}
+              onCancel={cancel}
+              okText="Ya"
+              cancelText="Tidak"
+            >
+              <button className="bg-black font-extrabold p-2 px-5 rounded-xl hover:bg-sky-700 transition-colors">Delete</button>
+            </Popconfirm>
           </div>
         </div>
       </div>

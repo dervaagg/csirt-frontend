@@ -1,6 +1,16 @@
 import { useState } from 'react';
 import { UploadOutlined } from '@ant-design/icons';
-import { Button, message, Upload } from 'antd';
+import { Button, message, Popconfirm, Upload } from 'antd';
+
+const confirm = (e) => {
+  console.log(e);
+  message.success('Berhasil Menghapus');
+};
+const cancel = (e) => {
+  console.log(e);
+  message.error('Batal Menghapus');
+};
+
 const EditPanduan = () => {
   const [fileList, setFileList] = useState([]);
   const [uploading, setUploading] = useState(false);
@@ -85,7 +95,16 @@ const EditPanduan = () => {
         </div>
         <div className="mt-1 flex gap-3">        
           <button className="bg-black font-extrabold p-2 px-8 rounded-xl hover:bg-sky-700 transition-colors">Edit</button>
-          <button className="bg-black font-extrabold p-2 px-8 rounded-xl hover:bg-sky-700 transition-colors">Delete</button>
+          <Popconfirm
+            title="Hapus Panduan"
+            description="Yakin Dihapus?"
+            onConfirm={confirm}
+            onCancel={cancel}
+            okText="Ya"
+            cancelText="Tidak"
+          >
+            <button className="bg-black font-extrabold p-2 px-8 rounded-xl hover:bg-sky-700 transition-colors">Delete</button>
+          </Popconfirm>
         </div>
       </div>
     </div>

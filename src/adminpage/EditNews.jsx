@@ -1,6 +1,15 @@
 import { useState } from 'react';
-import { Button, Modal } from 'antd';
+import { Modal, message, Popconfirm } from 'antd';
 import Enews from './Enews';
+
+const confirm = (e) => {
+  console.log(e);
+  message.success('Berhasil Menghapus');
+};
+const cancel = (e) => {
+  console.log(e);
+  message.error('Batal Menghapus');
+};
 
 const EditNews = () => {
 
@@ -32,7 +41,16 @@ const EditNews = () => {
         </div>
         <div className="mt-1 flex gap-3">        
           <button className="bg-black font-extrabold p-2 px-8 rounded-xl hover:bg-sky-700 transition-colors" onClick={showModal}>Edit</button>
-          <button className="bg-black font-extrabold p-2 px-8 rounded-xl hover:bg-sky-700 transition-colors">Delete</button>
+          <Popconfirm
+            title="Hapus Berita"
+            description="Yakin Dihapus?"
+            onConfirm={confirm}
+            onCancel={cancel}
+            okText="Ya"
+            cancelText="Tidak"
+          >
+            <button className="bg-black font-extrabold p-2 px-8 rounded-xl hover:bg-sky-700 transition-colors">Delete</button>
+          </Popconfirm>
         </div>
         <Modal title="Berita" open={isModalOpen} onOk={handleOk} onCancel={handleCancel}>
           <Enews />
