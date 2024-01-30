@@ -7,6 +7,7 @@ export default function EditKontak() {
     textareaRef.current.style.height = "auto";
     textareaRef.current.style.height = `${textareaRef.current.scrollHeight}px`;
   };
+  
 
   return (
     <div className="flex flex-col bg-white min-h-full rounded-lg p-4 shadow-sm">
