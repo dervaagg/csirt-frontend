@@ -52,7 +52,7 @@ const EditPanduan = () => {
   };
   return (
     <div className="flex flex-col min-h-full bg-white rounded-lg p-4 shadow-sm">
-      <h2 className="mt-4 mb-5 text-black font-bold text-3xl">Edit Panduan</h2>
+      <h2 className="mt-4 mb-5 text-black font-bold text-3xl">Panduan</h2>
 
       <div className="mt-4">
           <label className="text-black" id="name">Judul Panduan : </label>
@@ -83,7 +83,7 @@ const EditPanduan = () => {
           marginTop: 16,
         }}
       >
-        {uploading ? 'Uploading' : 'Start Upload'}
+        {uploading ? 'Uploading' : 'Upload'}
       </Button>
       </div>
       <div className="w-60 h-80 bg-zinc-300 rounded-3xl text-neutral-300 p-4 flex flex-col items-start justify-center gap-5">

@@ -11,7 +11,7 @@ export default function EditProfile() {
 
   return (
     <div className="lex flex-col bg-white min-h-full rounded-lg p-4 shadow-sm">
-      <h2 className="mt-4 mb-5 text-black font-bold text-3xl">Edit Profile</h2>
+      <h2 className="mt-4 mb-5 text-black font-bold text-3xl">Profile</h2>
 
       <div className="mt-4">
           <label className="text-black" id="name">Tentang</label>

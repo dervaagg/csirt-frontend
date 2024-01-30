@@ -26,7 +26,7 @@ const EditNews = () => {
 
   return (
     <div className="flex flex-col min-h-full bg-white rounded-lg p-4 shadow-sm">
-      <h2 className="mt-4 mb-5 text-black font-bold text-3xl">Edit Berita</h2>
+      <h2 className="mt-4 mb-5 text-black font-bold text-3xl">Berita</h2>
       <div className="mb-6 text-neutral-300">        
         <button className="bg-black font-extrabold p-2 px-8 rounded-xl hover:bg-sky-700 transition-colors" type="primary" onClick={showModal}>
           Tambah Berita
