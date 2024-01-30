@@ -14,9 +14,10 @@ import { Link } from "react-router-dom";
 
 const ListMenu = () => {
   return (
-    <Menu style={{background: 'none', color:'white'}}>
+    <Menu style={{ background: "none", color: "white" }}>
       <Menu.Item key="edit-layanan" icon={<HomeOutlined />}>
-        <Link to="/admin/e-layanan" />Home
+        <Link to="/admin/e-layanan" />
+        Home
       </Menu.Item>
       <Menu.Item key="edit-news" icon={<UserOutlined />}>
         Profil
@@ -44,6 +45,5 @@ const ListMenu = () => {
     </Menu>
   );
 };
-
 
 export default ListMenu;
