@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { UploadOutlined } from '@ant-design/icons';
-import { Button, message, Popconfirm, Upload } from 'antd';
+import { Button, message, Popconfirm, Upload, Modal } from 'antd';
+import Epanduan from './Epanduan';
 
 const confirm = (e) => {
   console.log(e);
@@ -50,6 +51,18 @@ const EditPanduan = () => {
     },
     fileList,
   };
+
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const showModal = () => {
+    setIsModalOpen(true);
+  };
+  const handleOk = () => {
+    setIsModalOpen(false);
+  };
+  const handleCancel = () => {
+    setIsModalOpen(false);
+  };
+
   return (
     <div className="flex flex-col min-h-full bg-white rounded-lg p-4 shadow-sm">
       <h2 className="mt-4 mb-5 text-black font-bold text-3xl">Panduan</h2>
@@ -94,7 +107,7 @@ const EditPanduan = () => {
             <p className="font-extrabold">Judul Panduan</p>
         </div>
         <div className="mt-1 flex gap-3">        
-          <button className="bg-black font-extrabold p-2 px-8 rounded-xl hover:bg-sky-700 transition-colors">Edit</button>
+          <button className="bg-black font-extrabold p-2 px-8 rounded-xl hover:bg-sky-700 transition-colors" onClick={showModal}>Edit</button>
           <Popconfirm
             title="Hapus Panduan"
             description="Yakin Dihapus?"
@@ -107,6 +120,9 @@ const EditPanduan = () => {
           </Popconfirm>
         </div>
       </div>
+        <Modal title="Panduan" open={isModalOpen} onOk={handleOk} onCancel={handleCancel}>
+          <Epanduan />
+        </Modal>
     </div>
   );
 };
