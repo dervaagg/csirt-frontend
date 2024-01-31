@@ -1,6 +1,6 @@
-import { Upload, Button } from "antd";
-import { UploadOutlined } from "@ant-design/icons";
 import { useRef } from "react";
+import { Upload, Button, Image, Descriptions } from "antd";
+import { UploadOutlined } from "@ant-design/icons";
 
 export default function EditProfile() {
   const textareaRef = useRef();
@@ -10,10 +10,28 @@ export default function EditProfile() {
     textareaRef.current.style.height = `${textareaRef.current.scrollHeight}px`;
   };
 
+  const formItems = [
+    {
+      key: "Tentang",
+      label: "Tentang",
+      children: "",
+    },
+  ];
+
   return (
     <div className="lex flex-col bg-white min-h-full rounded-lg p-4 shadow-sm">
       <h2 className="mt-4 mb-5 text-black font-bold text-3xl">DESKRIPSI</h2>
 
+      <Image
+        className="rounded-md"
+        width={200}
+        src="https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png"
+      />
+      <br />
+      <br />
+      <Descriptions items={formItems} />
+
+      <h1 className="mt-3 mb-1 text-black text-xl">Edit Deskripsi</h1>
       <div className="mt-4">
         <label className="text-black" id="name">
           Tentang :{" "}
