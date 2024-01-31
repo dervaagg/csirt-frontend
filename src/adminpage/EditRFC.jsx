@@ -54,21 +54,12 @@ export default function EditRFC() {
             <button className="bg-black font-extrabold p-2 px-5 rounded-xl hover:bg-sky-700 transition-colors">
               Upload
             </button>
-            <Popconfirm
-              title="Hapus RFC"
-              description="Yakin Dihapus?"
-              onConfirm={confirm}
-              onCancel={cancel}
-              okText="Ya"
-              cancelText="Tidak"
-            >
-              <button className="bg-black font-extrabold p-2 px-5 rounded-xl hover:bg-sky-700 transition-colors">
-                Delete
-              </button>
-            </Popconfirm>
           </div>
         </div>
       </div>
+
+      <br />
+      <h1 className="mt-3 mb-1 text-black text-xl">Edit Kontak</h1>
       <div className="mt-5 flex bg-zinc-300 rounded-lg p-4">
         {rfcData.map((items, index) => (
           <object
@@ -86,6 +77,20 @@ export default function EditRFC() {
           </object>
         ))}
       </div>
+      <br />
+      <Popconfirm
+        title="Hapus RFC"
+        description="Yakin Dihapus?"
+        onConfirm={confirm}
+        onCancel={cancel}
+        okText="Ya"
+        cancelText="Tidak"
+      >
+        <button className="bg-transparent outline-double text-black font-extrabold p-2 px-2 rounded-xl hover:bg-red-500 transition-colors flex-row-reverse">
+          Delete
+        </button>
+      </Popconfirm>
+      <br />
     </div>
   );
 }

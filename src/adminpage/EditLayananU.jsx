@@ -7,14 +7,11 @@ export default function EditLayananU() {
 
   useEffect(() => {
     getPrimary();
-  }, []);
-
-  useEffect(() => {
     const refreshInterval = setInterval(() => {
       getPrimary();
     }, 1000);
     return () => clearInterval(refreshInterval);
-  }, [primary]);
+  }, []);
 
   const getPrimary = async () => {
     const response = await axios.get("http://localhost:4001/primary");
