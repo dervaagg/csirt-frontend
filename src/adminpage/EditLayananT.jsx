@@ -6,6 +6,7 @@ export default function EditLayananT() {
   const [services, setServices] = useState("");
 
   useEffect(() => {
+    getOther();
     const refreshInterval = setInterval(() => {
       getOther();
     }, 1000);

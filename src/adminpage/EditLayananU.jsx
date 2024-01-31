@@ -6,6 +6,7 @@ export default function EditLayananU() {
   const [services, setServices] = useState("");
 
   useEffect(() => {
+    getPrimary();
     const refreshInterval = setInterval(() => {
       getPrimary();
     }, 1000);

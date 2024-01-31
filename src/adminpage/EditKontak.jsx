@@ -11,6 +11,7 @@ export default function EditKontak() {
   const [operasional, setOperasional] = useState("");
 
   useEffect(() => {
+    getContact();
     const refreshInterval = setInterval(() => {
       getContact();
     }, 1000);
@@ -22,7 +23,7 @@ export default function EditKontak() {
     setContact(response.data);
   };
 
-  const createContact = async (e) => {
+  const updateContact = async (e) => {
     e.preventDefault();
     const formData = new FormData();
     formData.append("address", address);
@@ -30,7 +31,7 @@ export default function EditKontak() {
     formData.append("email", email);
     formData.append("operasional", operasional);
     try {
-      await axios.patch("http://localhost:4001/contact/4", formData, {
+      await axios.patch("http://localhost:4001/contact/1", formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },
@@ -77,7 +78,7 @@ export default function EditKontak() {
       <br />
 
       <h1 className="mt-3 mb-1 text-black text-xl">Edit Kontak</h1>
-      <form onSubmit={createContact}>
+      <form onSubmit={updateContact}>
         <div className="mt-4">
           <label className="text-black" id="name">
             Alamat
