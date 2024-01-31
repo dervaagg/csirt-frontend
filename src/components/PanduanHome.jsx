@@ -1,6 +1,7 @@
 import TitleOne from "../UI/TitleOne"
 import { PanduanData } from "../data/datas"
 import { Link } from "react-router-dom"
+import { IoIosArrowForward } from "react-icons/io";
 import "../css/Panduan.css"
 
 export default function PanduanHome() {
@@ -23,7 +24,12 @@ export default function PanduanHome() {
                 </Link>
               ))}
               <Link to="/panduan" className="book">
-              
+                <div className="btn-content">
+                  <span className="btn-title">Lihat Lebih Detail</span>
+                  <span className="icon-arrow">
+                    <IoIosArrowForward />
+                  </span> 
+                </div>
               </Link>
             </div>
         </div>

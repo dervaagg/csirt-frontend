@@ -136,85 +136,69 @@ nav {
 }
 .footer-container {
     display: grid;
-    grid-template-columns: 64% 30%;
     justify-content: center;
     align-items: center;
 }
-.footer-left {
-    display: flex;
-    flex-direction: column;
+.footer-title {
+    display: grid;
     justify-content: center;
 }
-.footer-left h4 {
+.footer-konten {
+    display: grid;
+    justify-content: center;
+}
+.footer-konten h4 {
     font-weight: 700;
     font-size: 35px;
     margin-bottom: 2.5rem;
 }
-.footer-left p {
+.footer-konten p {
     font-size: 15px;
     font-weight: bold;
     color: var(--color-black);
 }
-.footer-left p a {
+.footer-konten p a {
     color: var(--color-black);
     transition: var(--transition);
 }
-.footer-left p a:hover {
+.footer-konten p a:hover {
     color: var(--color-primary);
 }
 .footer-right {
     display: flex-end;
     margin-right: 10rem;
 }
-.kontak {
+.footer-kontak {
     display: flex;
     flex-direction: row;
     gap: 60px;
 }
-.kontak .icon-kontak {
+.footer-kontak .icon-kontak {
     color: var(--color-danger);
     font-size: 20px;
 }
-.kontak .lokasi {
+.footer-kontak .lokasi {
+    display: flex;
+    gap: 10px;
+    max-width: 300px;
+}
+.footer-kontak .lokasi .icon-kontak {
+    font-size: 35px;
+}
+.footer-kontak .telephone {
     display: flex;
     gap: 10px;
 }
-.kontak .telephone {
+.footer-kontak .email {
     display: flex;
     gap: 10px;
-}
-.kontak .email {
-    display: flex;
-    gap: 10px;
-}
-.social {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-}
-.social a {
-    font-size: 22px;
-    color: var(--color-white);
-    cursor: pointer;
-    transition: var(--transition);
-}
-.social a:hover {
-    color: var(--color-primary) !important;
-}
-.social a:nth-child(2) {
-    color: var(--color-danger);
-}
-.social a:nth-child(4) {
-    color: var(--color-danger);
 }
 /* ----------------End Footer---------------- */
 
 /* .....................Start Media Screen(1280)..................... */
 @media (max-width:1280px) {
     .kontak {
-        display: grid;
-        grid-template-columns: repeat(2, 200px) !important;
+        display: flex;
         gap: 30px;
     }
 }
@@ -282,7 +266,7 @@ nav {
     .footer-container h4 {
         margin-bottom: 20px;
     }
-    .footer-left .social {
+    .footer-konten .social {
         margin-top: 20px;
     }
     .footer-right {
