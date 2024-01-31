@@ -14,8 +14,8 @@ export default function About() {
             <div className="contrainer about-right">
               <div className="aboutMe-header">
                 <TitleOne
-                  title={"Tentang "}
-                  titleEx={"CSIRT"}
+                  title={"CSIRT "}
+                  titleEx={"Waskita"}
                   className="about-main"
                 />
               </div>

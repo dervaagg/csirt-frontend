@@ -1,11 +1,15 @@
-import { MdLocationOn, MdEmail } from "react-icons/md";
-import { BsFillTelephoneFill } from "react-icons/bs";
+import {
+    FiPhone,
+    FiMail,
+    FiMapPin,
+  } from "react-icons/fi";
 import { useLocation } from "react-router-dom";
 
 export default function Footer() {
     const { pathname } = useLocation();
     if (pathname === "/kontak") return null;
     return (
+        <>
         <div className="Footer">
             <div className="container footer-container">
                 <div className="footer-konten">
@@ -14,23 +18,34 @@ export default function Footer() {
                     </div>
                     <div className="footer-kontak">                    
                         <div className="telephone">
-                            <BsFillTelephoneFill className="icon-kontak" />
-                            <p>(021)8508510/ <br />
-                            20 ext 247</p>
+                            <FiPhone className="icon-kontak" />
+                            <br />
+                            <p>(021)8508510/20 ext 247</p>
                         </div>
                         <div className="lokasi">
-                            <MdLocationOn className="icon-kontak" />
-                            <p>Waskita Heritage
-                            MT Haryono Kav. 10
-                            Cawang, Jakarta 13340</p>
+                            <FiMapPin className="icon-kontak" />
+                            <br />
+                            <p>
+                                Waskita Heritage, MT Haryono Kav. 10
+                                Cawang, Jakarta 13340
+                            </p>
                         </div>
                         <div className="email">
-                            <MdEmail className="icon-kontak" />
-                            <p><a href="mailto:waskita@waskita.co.id">csirt@waskita.co.id</a></p>
+                            <FiMail className="icon-kontak" />
+                            <br />
+                            <p className="text-email">
+                                <a className="emailto" href="mailto:waskita@waskita.co.id">
+                                csirt@waskita.co.id
+                                </a>
+                            </p>
                         </div>
                     </div>
-                </div>
-            </div>
+                </div>                
+            </div>            
         </div>
+        <div className="footer-copyright">                       
+            <small>Waskita Karya © 2024</small>
+        </div>
+        </>
     )
 }

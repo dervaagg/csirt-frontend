@@ -14,6 +14,7 @@
 .container-layanan {
     width: 100%;
     justify-content: center;
+    margin-bottom: 80px;
 }
 .layanan-utama {
     height: 80vh;
