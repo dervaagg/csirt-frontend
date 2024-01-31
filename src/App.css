@@ -149,7 +149,7 @@ nav {
 /* ----------------Start Footer---------------- */
 .Footer {
     background: transparent;
-    padding: 5rem 0 !important;
+    padding: 3rem 0 !important;
 }
 .footer-container {
     display: grid;
@@ -181,44 +181,52 @@ nav {
 .footer-konten p a:hover {
     color: var(--color-primary);
 }
-.footer-right {
-    display: flex-end;
-    margin-right: 10rem;
-}
 .footer-kontak {
-    display: flex;
-    flex-direction: row;
-    gap: 60px;
+    display: grid;
+    grid-template-columns: repeat(3, 250px);
+    gap: 30px;
 }
 
 .footer-kontak .icon-kontak {
-    color: var(--color-danger);
     font-size: 20px;
-    height: fit-content;
 }
 .footer-kontak .lokasi {
     display: flex;
     gap: 10px;
-    max-width: 300px;
+    max-width: 500px;
 }
 .footer-kontak .lokasi .icon-kontak {
     font-size: 35px;
 }
 .footer-kontak .telephone {
     display: flex;
+    margin-right: -20px;
     gap: 10px;
 }
 .footer-kontak .email {
     display: flex;
     gap: 10px;
 }
+.footer-copyright {
+    background: var(--color-dark);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto 0 auto;
+}
+.footer-copyright small {
+    margin-top: 20px;
+    color: var(--color-white);
+}
 /* ----------------End Footer---------------- */
 
 /* .....................Start Media Screen(1280)..................... */
 @media (max-width:1280px) {
-    .kontak {
-        display: flex;
-        gap: 30px;
+    .footer-kontak {
+        display: grid;
+        gap: 50px;
     }
 }
 
@@ -278,21 +286,14 @@ nav {
     }
     /* ..........Start Footer.......... */
     .footer-container {
-        display: flex;
-        flex-direction: column;
+        display: grid;
         gap: 50px;
     }
     .footer-container h4 {
         margin-bottom: 20px;
     }
-    .footer-konten .social {
-        margin-top: 20px;
-    }
-    .footer-right {
-        margin-right: 0 !important;
-    }
-    .kontak {
-        grid-template-columns: repeat(3, 200px) !important;
+    .footer-kontak {
+        grid-template-columns: repeat(1, 250px) !important;
     }
 }
 
@@ -329,11 +330,5 @@ nav {
     .navbar-logo img {
         max-width: 100px;
     }
-    /* ..........Start Footer.......... */
-    .footer-container {
-        grid-template-columns: repeat(1);
-    }
-    .kontak {
-        grid-template-columns: repeat(1, 200px) !important;
-    }
+    /* ..........Start Footer.......... */    
 } 

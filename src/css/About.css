@@ -14,6 +14,7 @@
 #About {
     background: url(/src/assets/1252907_3133.jpg);
     padding: 4rem 0;
+    margin-bottom: 80px;
 }
 .about-container {
     display: grid;
@@ -49,10 +50,6 @@
     gap: 30px;
 }
 
-/* .....................Start Media Screen(1024)..................... */
-@media (max-width:1024px) {
-
-}
 /* .....................Start Media Screen(666)..................... */
 @media (max-width:666px) {
     .about-container {
