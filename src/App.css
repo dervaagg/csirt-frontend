@@ -82,6 +82,23 @@ span {
     max-width: 1480px;
 }
 
+.icon-kontak-fi {
+margin-top: 15px;
+}
+
+.icon-kontak-fi-mail {
+margin-top: 7px
+}
+
+.icon-kontak-fi-phone {
+margin-top: 5px;
+}
+
+.kontak-title {
+    margin-bottom: -10px;
+    align-items: center;
+}
+
 /* ----------------Start Navbar---------------- */
 .menus {
     display: none;
@@ -173,9 +190,11 @@ nav {
     flex-direction: row;
     gap: 60px;
 }
+
 .footer-kontak .icon-kontak {
     color: var(--color-danger);
     font-size: 20px;
+    height: fit-content;
 }
 .footer-kontak .lokasi {
     display: flex;

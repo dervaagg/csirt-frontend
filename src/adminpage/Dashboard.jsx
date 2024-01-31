@@ -3,7 +3,8 @@ import EditLayananU from "./EditLayananU";
 import EditLayananT from "./EditLayananT";
 import EditNews from "./EditNews";
 import EditPanduan from "./EditPanduan";
-import EditProfile from "./EditProfile";
+import EditDeskripsi from "./EditDeskripsi";
+import EditVisiMisi from "./EditVisiMisi";
 import EditRFC from "./EditRFC";
 import logoWK from "../assets/Logo WSKT.svg";
 
@@ -21,6 +22,8 @@ import {
   FileExclamationOutlined,
   FileOutlined,
   LoginOutlined,
+  SolutionOutlined,
+  ProfileOutlined,
 } from "@ant-design/icons";
 import { Layout, Menu, Button, theme } from "antd";
 import EditKontak from "./EditKontak";
@@ -73,9 +76,14 @@ const Dashboard = () => {
           <Menu.Item key="" icon={<HomeOutlined />}>
             Home
           </Menu.Item>
-          <Menu.Item key="edit-profile" icon={<UserOutlined />}>
-            Profil
-          </Menu.Item>
+          <Menu.SubMenu key="subprofil" icon={<UserOutlined />} title="Profil">
+            <Menu.Item key="edit-deskripsi" icon={<SolutionOutlined />}>
+              Deskripsi
+            </Menu.Item>
+            <Menu.Item key="edit-visimisi" icon={<ProfileOutlined />}>
+              Visi & Misi
+            </Menu.Item>
+          </Menu.SubMenu>
           <Menu.Item key="edit-kontak" icon={<ContactsOutlined />}>
             Kontak
           </Menu.Item>
@@ -156,7 +164,8 @@ const Dashboard = () => {
           }}
         >
           {currentPage === "" && <BackgroundVideo />}
-          {currentPage === "edit-profile" && <EditProfile />}
+          {currentPage === "edit-deskripsi" && <EditDeskripsi />}
+          {currentPage === "edit-visimisi" && <EditVisiMisi />}
           {currentPage === "edit-kontak" && <EditKontak />}
           {currentPage === "edit-utama" && <EditLayananU />}
           {currentPage === "edit-tambahan" && <EditLayananT />}

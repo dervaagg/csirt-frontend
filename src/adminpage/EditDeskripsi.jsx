@@ -12,7 +12,7 @@ export default function EditProfile() {
 
   return (
     <div className="lex flex-col bg-white min-h-full rounded-lg p-4 shadow-sm">
-      <h2 className="mt-4 mb-5 text-black font-bold text-3xl">PROFIL</h2>
+      <h2 className="mt-4 mb-5 text-black font-bold text-3xl">DESKRIPSI</h2>
 
       <div className="mt-4">
         <label className="text-black" id="name">
@@ -24,32 +24,6 @@ export default function EditProfile() {
           onChange={handleChange}
           className="w-full h-auto bg-zinc-300 rounded-md border-gray-700 text-black px-2 py-1"
           type="text"
-        ></textarea>
-      </div>
-
-      <div className="mt-4">
-        <label className="text-black" id="address">
-          Visi :{" "}
-        </label>
-        <textarea
-          placeholder=""
-          ref={textareaRef}
-          onChange={handleChange}
-          className="w-full bg-zinc-300 rounded-md border-gray-700 text-black px-2 py-1"
-          id="address"
-        ></textarea>
-      </div>
-
-      <div className="mt-4 mb-4">
-        <label className="text-black" id="address">
-          Misi :{" "}
-        </label>
-        <textarea
-          placeholder=""
-          ref={textareaRef}
-          onChange={handleChange}
-          className="w-full bg-zinc-300 rounded-md border-gray-700 text-black px-2 py-1"
-          id="address"
         ></textarea>
       </div>
 
