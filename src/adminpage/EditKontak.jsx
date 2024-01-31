@@ -1,4 +1,5 @@
 import { useRef } from "react";
+import { Descriptions } from "antd";
 
 export default function EditKontak() {
   const textareaRef = useRef();
@@ -7,12 +8,38 @@ export default function EditKontak() {
     textareaRef.current.style.height = "auto";
     textareaRef.current.style.height = `${textareaRef.current.scrollHeight}px`;
   };
-  
+
+  const formItems = [
+    {
+      key: "1",
+      label: "Alamat",
+      children: "",
+    },
+    {
+      key: "2",
+      label: "Nomor Telephone",
+      children: "",
+    },
+    {
+      key: "3",
+      label: "Email",
+      children: "",
+    },
+    {
+      key: "4",
+      label: "Jam Operasional",
+      children: "",
+    },
+  ];
 
   return (
     <div className="flex flex-col bg-white min-h-full rounded-lg p-4 shadow-sm">
-      <h2 className="mt-4 mb-5 text-black font-bold text-3xl">Kontak</h2>
+      <h2 className="mt-4 mb-5 text-black font-bold text-3xl">KONTAK</h2>
 
+      <Descriptions items={formItems} />
+
+      <br />
+      <h1 className="mt-3 mb-1 text-black text-2xl" >Edit Kontak</h1>
       <div className="mt-4">
         <label className="text-black" id="name">
           Alamat
