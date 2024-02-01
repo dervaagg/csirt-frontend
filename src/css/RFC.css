@@ -18,7 +18,6 @@
     align-items: center;
     background: transparent;
     gap: 2.5rem;
-    margin-bottom: 50px;
 }
 .title-rfc h3 {
     font-size: 25px !important;
@@ -28,7 +27,6 @@
 .pdf-rfc {
     max-height: 870px;
     height: 100vh;
-    
 }
 
 @media (max-width:700px) {

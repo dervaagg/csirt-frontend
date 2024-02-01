@@ -148,25 +148,26 @@ nav {
 
 /* ----------------Start Footer---------------- */
 .Footer {
-    background: transparent;
+    background: var(--color-light);
     padding: 3rem 0 !important;
 }
 .footer-container {
     display: grid;
-    justify-content: center;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: space-between;
     align-items: center;
 }
 .footer-title {
     display: grid;
-    justify-content: center;
 }
 .footer-konten {
     display: grid;
     justify-content: center;
+    margin-left: 50px;
 }
 .footer-konten h4 {
     font-weight: 700;
-    font-size: 35px;
+    font-size: 30px;
     margin-bottom: 2.5rem;
 }
 .footer-konten p {
@@ -186,7 +187,6 @@ nav {
     grid-template-columns: repeat(3, 250px);
     gap: 30px;
 }
-
 .footer-kontak .icon-kontak {
     font-size: 20px;
 }
@@ -206,6 +206,19 @@ nav {
 .footer-kontak .email {
     display: flex;
     gap: 10px;
+}
+.footer-right {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+.footer-right img {
+    width: 250px;
+}
+.footer-right h4 {
+    font-size: 40px;
+    margin-left: 5px;
+    margin-bottom: -10px;
 }
 .footer-copyright {
     background: var(--color-dark);
@@ -281,10 +294,10 @@ nav {
         border-radius: 50%;
         display: flex;
         font-size: 1.1rem;
-        color: var(--color-white);
+        color: var(--color-primary);
     }
     .menus .active {
-        background: var(--color-danger);
+        background: var(--color-light);
     }
     /* ..........Start Footer.......... */
     .footer-container {
@@ -328,6 +341,9 @@ nav {
     }
     /* ..........Start Footer.......... */
     .footer-copyright {
+        display: none;
+    }
+    .footer-right {
         display: none;
     }    
 } 

@@ -11,8 +11,8 @@ export default function RFC() {
             {
                 rfcData.map((items, index)=>(
                     <object key={index} data={items.pdfRFC} type="application/pdf" width="100%" height="100%">
-                        <p>It appears you don`t have a PDF plugin for this browser. No biggie... you can 
-                        <a href={items.pdfRFC}>click here to download the PDF file.</a></p>
+                        <p>Sepertinya browser anda tidak mempunyai plugin pdf, tapi tenang, anda bisa 
+                        <a className="text-white" href={items.pdfRFC} download={items.pdfRFC}> klik disini</a> untuk mendownload file PDF-nya</p>
                     </object>
                 ))
             }
