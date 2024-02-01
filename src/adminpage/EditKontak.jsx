@@ -55,24 +55,20 @@ export default function EditKontak() {
       <h2 className="mt-4 mb-5 text-black font-bold text-3xl">KONTAK</h2>
 
       <Descriptions>
-        <>
-          {contact.map((contact) => (
-            <>
-              <Descriptions.Item label="Alamat">
-                {contact.address}
-              </Descriptions.Item>
-              <Descriptions.Item label="Nomor Telephone">
-                {contact.phone}
-              </Descriptions.Item>
-              <Descriptions.Item label="Email">
-                {contact.email}
-              </Descriptions.Item>
-              <Descriptions.Item label="Jam Operasional">
-                {contact.operasional}
-              </Descriptions.Item>
-            </>
-          ))}
-        </>
+        {contact.map((contact) => (
+          <>
+            <Descriptions.Item label="Alamat">
+              {contact.address}
+            </Descriptions.Item>
+            <Descriptions.Item label="Nomor Telephone">
+              {contact.phone}
+            </Descriptions.Item>
+            <Descriptions.Item label="Email">{contact.email}</Descriptions.Item>
+            <Descriptions.Item label="Jam Operasional">
+              {contact.operasional}
+            </Descriptions.Item>
+          </>
+        ))}
       </Descriptions>
 
       <br />
