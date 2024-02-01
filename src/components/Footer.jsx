@@ -4,6 +4,7 @@ import {
     FiMapPin,
   } from "react-icons/fi";
 import { useLocation } from "react-router-dom";
+import icoImg from "../assets/Logo WSKT.svg"
 
 export default function Footer() {
     const { pathname } = useLocation();
@@ -17,11 +18,6 @@ export default function Footer() {
                         <h4>Kontak Kami</h4>                
                     </div>
                     <div className="footer-kontak">                    
-                        <div className="telephone">
-                            <FiPhone className="icon-kontak" />
-                            <br />
-                            <p>(021)8508510/20 ext 247</p>
-                        </div>
                         <div className="lokasi">
                             <FiMapPin className="icon-kontak" />
                             <br />
@@ -29,6 +25,11 @@ export default function Footer() {
                                 Waskita Heritage, MT Haryono Kav. 10
                                 Cawang, Jakarta 13340
                             </p>
+                        </div>
+                        <div className="telephone">
+                            <FiPhone className="icon-kontak" />
+                            <br />
+                            <p>(021)8508510/20 ext 247</p>
                         </div>
                         <div className="email">
                             <FiMail className="icon-kontak" />
@@ -40,6 +41,12 @@ export default function Footer() {
                             </p>
                         </div>
                     </div>
+                </div>
+                <div className="footer-right">
+                    <h4 className='name'>
+                        CSIRT
+                    </h4>
+                    <img src={icoImg} alt="icon" />
                 </div>                
             </div>            
         </div>

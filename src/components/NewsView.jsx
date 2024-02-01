@@ -8,7 +8,7 @@ export default function NewsView() {
   const items = NewsViewData.find((items) => items.id === Number(id));
 
   return (
-    <div>
+    <div className="container-newsview">
       <div className="container header-news">
           <img src={items.newsImage} alt="" />                  
           <div className="title">
