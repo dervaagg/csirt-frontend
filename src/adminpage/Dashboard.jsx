@@ -121,9 +121,16 @@ const Dashboard = () => {
             transition: "margin-left 0.3s ease-in-out",
           }}
         >
-          <p className="tracking-tighter text-1xl font-black text-gray-900">
-            Admin
-          </p>
+          <div className="flex items-center gap-4 tracking-tighter left-10 flex-col">
+            <img
+              className="w-10 h-10 rounded-full ml-1"
+              src="./public/avatar.svg"
+              alt="avatar"
+            />
+            <div className="font-medium dark:text-black">
+              <h5>Admin</h5>
+            </div>
+          </div>
         </div>
       </Sider>
       <Layout
