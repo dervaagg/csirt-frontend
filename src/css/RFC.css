@@ -18,6 +18,7 @@
     align-items: center;
     background: transparent;
     gap: 2.5rem;
+    margin-bottom: 50px;
 }
 .title-rfc h3 {
     font-size: 25px !important;

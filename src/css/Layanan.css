@@ -52,3 +52,20 @@
 .layanan-tambahan-right li {
     font-weight: 500;
 }
+
+@media (max-width:666px) {
+    .layanan-utama {
+        display: flex;
+        flex-direction: column;
+    }
+    .layanan-utama img {
+        width: 450px;
+    }
+    .layanan-tambahan {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+    .layanan-tambahan img {
+        width: 450px;
+    }
+}

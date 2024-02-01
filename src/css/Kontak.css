@@ -48,7 +48,7 @@
     padding: 2rem;
     margin-top: -20px;    
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 600px);
     justify-content: center;
     align-items: center;
 }
@@ -100,6 +100,11 @@
     margin-bottom: 20px;
 }
 
+@media (max-width:1250px) {
+    .kontak-warpper {
+        grid-template-columns: repeat(2, 500px) !important;
+    }
+}
 @media (max-width:1024px) {
     .kontak-warpper {
         margin-top: 15px;
