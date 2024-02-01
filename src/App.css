@@ -218,6 +218,8 @@ nav {
 }
 .footer-copyright small {
     margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 15px !important;
     color: var(--color-white);
 }
 /* ----------------End Footer---------------- */
@@ -314,12 +316,6 @@ nav {
     h5 {
         font-size: 20px; 
     }
-    .hero-text {
-        font-size: 34px;
-    }
-    .btn {
-        padding: 16px 30px;
-    }
     /* ..........Start Nav.......... */
     nav {
         display: grid;
@@ -330,5 +326,8 @@ nav {
     .navbar-logo img {
         max-width: 100px;
     }
-    /* ..........Start Footer.......... */    
+    /* ..........Start Footer.......... */
+    .footer-copyright {
+        display: none;
+    }    
 } 
