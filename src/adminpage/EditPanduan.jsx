@@ -3,16 +3,17 @@ import { UploadOutlined } from "@ant-design/icons";
 import { Button, message, Popconfirm, Upload, Modal } from "antd";
 import Epanduan from "./Epanduan";
 
-const confirm = (e) => {
-  console.log(e);
-  message.success("Berhasil Menghapus");
-};
-const cancel = (e) => {
-  console.log(e);
-  message.error("Batal Menghapus");
-};
 
-const EditPanduan = () => {
+export default function EditPanduan() {
+  
+  const confirm = (e) => {
+    console.log(e);
+    message.success("Berhasil Menghapus");
+  };
+  const cancel = (e) => {
+    console.log(e);
+    message.error("Batal Menghapus");
+  };
   const [fileList, setFileList] = useState([]);
   const [uploading, setUploading] = useState(false);
   const handleUpload = () => {
@@ -146,5 +147,4 @@ const EditPanduan = () => {
       </div>
     </div>
   );
-};
-export default EditPanduan;
+}

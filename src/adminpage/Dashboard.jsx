@@ -124,7 +124,7 @@ const Dashboard = () => {
           <div className="flex items-center gap-4 tracking-tighter left-10 flex-col">
             <img
               className="w-10 h-10 rounded-full ml-1"
-              src="./public/avatar.svg"
+              src="../src/assets/avatar.svg"
               alt="avatar"
             />
             <div className="font-medium dark:text-black">
