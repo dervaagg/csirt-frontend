@@ -4,12 +4,13 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite --port 5005",
+    "dev": "vite --port 9696",
     "build": "vite build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
   },
   "dependencies": {
+    "@azure/msal-browser": "^3.7.1",
     "antd": "^5.13.3",
     "axios": "^1.6.7",
     "bulma": "^0.9.4",
