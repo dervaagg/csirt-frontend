@@ -228,8 +228,8 @@ nav {
   margin: 0 auto 0 auto;
 }
 .footer-copyright small {
-  margin-top: 20px;
-  margin-bottom: 20px;
+  margin-top: 5px;
+  margin-bottom: 5px;
   font-size: 15px !important;
   color: var(--color-white);
 }
