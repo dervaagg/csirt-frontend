@@ -88,7 +88,7 @@ export default function EditProfile() {
       <form onSubmit={updateProfile}>
         <div className="mt-4">
           <label className="text-black" id="name">
-            Nama :{" "}
+            Nama :
           </label>
           <input
             placeholder="Masukkan Nama Profil"
@@ -100,7 +100,7 @@ export default function EditProfile() {
         </div>
         <div className="mt-4">
           <label className="text-black" id="name">
-            Tentang :{" "}
+            Tentang :
           </label>
           <textarea
             placeholder="Masukan Deskripsi Profil"

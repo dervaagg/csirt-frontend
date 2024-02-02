@@ -58,7 +58,7 @@ export default function EditProfile() {
       <form onSubmit={createVission}>
         <div className="mt-4 mb-4">
           <label className="text-black" id="address">
-            Visi :{" "}
+            Visi :
           </label>
           <textarea
             placeholder="Masukan Visi"

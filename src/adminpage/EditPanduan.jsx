@@ -105,7 +105,7 @@ export default function EditPanduan() {
 
       <div className="mt-4">
         <label className="text-black" id="name">
-          Judul Panduan :{" "}
+          Judul Panduan :
         </label>
         <input
           placeholder=""
@@ -116,7 +116,7 @@ export default function EditPanduan() {
 
       <div className="mt-4 flex flex-col gap-2">
         <label className="text-black" id="name">
-          Screenshoot Halaman Awal :{" "}
+          Screenshoot Halaman Awal :
         </label>
         <Upload {...props}>
           <Button icon={<UploadOutlined />}>Select File</Button>
@@ -125,7 +125,7 @@ export default function EditPanduan() {
 
       <div className="mt-4 flex flex-col gap-2">
         <label className="text-black" id="name">
-          File PDF :{" "}
+          File PDF :
         </label>
         <Upload {...props}>
           <Button icon={<UploadOutlined />}>Select File</Button>

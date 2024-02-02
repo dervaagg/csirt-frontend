@@ -58,7 +58,7 @@ export default function EditProfile() {
       <form onSubmit={createMission}>
         <div className="mt-4 mb-4">
           <label className="text-black" id="address">
-            Misi :{" "}
+            Misi :
           </label>
           <textarea
             placeholder="Masukan Misi"
