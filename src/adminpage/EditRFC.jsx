@@ -106,7 +106,7 @@ export default function EditRFC() {
       </div>
 
       <br />
-      <h1 className="mt-3 mb-1 text-black text-xl">Edit Kontak</h1>
+      <h1 className="mt-3 mb-1 text-black text-xl">Edit RFC 2350</h1>
       <div className="mt-5 flex flex-col-reverse bg-zinc-300 rounded-lg p-4">
         {fileList.map((rfc, index) => (
           <React.Fragment key={index}>
