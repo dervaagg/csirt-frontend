@@ -3,6 +3,7 @@ import { UploadOutlined } from "@ant-design/icons";
 import { useRef } from "react";
 
 export default function EditProfile() {
+
   const textareaRef = useRef();
 
   const handleChange = () => {
@@ -16,7 +17,7 @@ export default function EditProfile() {
 
       <div className="mt-4">
         <label className="text-black" id="name">
-          Tentang :{" "}
+          Tentang :
         </label>
         <textarea
           placeholder=""
@@ -29,7 +30,7 @@ export default function EditProfile() {
 
       <div className="mt-4">
         <label className="text-black" id="address">
-          Visi :{" "}
+          Visi :
         </label>
         <textarea
           placeholder=""
@@ -42,7 +43,7 @@ export default function EditProfile() {
 
       <div className="mt-4 mb-4">
         <label className="text-black" id="address">
-          Misi :{" "}
+          Misi :
         </label>
         <textarea
           placeholder=""
@@ -55,7 +56,7 @@ export default function EditProfile() {
 
       <div className="mt-4 flex flex-col gap-2">
         <label className="text-black" id="address">
-          Image :{" "}
+          Image :
         </label>
         <Upload>
           <Button icon={<UploadOutlined />}>Select File</Button>

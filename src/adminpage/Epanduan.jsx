@@ -6,7 +6,7 @@ const Epanduan = () => {
     <div className="flex flex-col min-h-full bg-white rounded-lg p-4 shadow-sm">
       <div className="mt-4">
         <label className="text-black" id="name">
-          Judul Panduan :{" "}
+          Judul Panduan :
         </label>
         <input
           placeholder=""
@@ -17,7 +17,7 @@ const Epanduan = () => {
 
       <div className="mt-4 flex flex-col gap-2">
         <label className="text-black" id="name">
-          Screenshoot Halaman Awal :{" "}
+          Screenshoot Halaman Awal :
         </label>
         <Upload>
           <Button icon={<UploadOutlined />}>Select File</Button>
@@ -26,7 +26,7 @@ const Epanduan = () => {
 
       <div className="mt-4 flex flex-col gap-2">
         <label className="text-black" id="name">
-          File PDF :{" "}
+          File PDF :
         </label>
         <Upload>
           <Button icon={<UploadOutlined />}>Select File</Button>

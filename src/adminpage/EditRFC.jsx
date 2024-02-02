@@ -117,7 +117,7 @@ export default function EditRFC() {
               height="450px"
             >
               <p>
-                {" "}
+                
                 Dokunen hanya bisa di tampilkan pada Mode Desktop saja. Tidak
                 bisa pada Mode Mobile.
               </p>

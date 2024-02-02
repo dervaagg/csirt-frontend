@@ -52,7 +52,7 @@ export default function EditLayananU() {
       <form onSubmit={createServices}>
         <div className="mt-4">
           <label className="text-black" id="name">
-            Layanan Utama :{" "}
+            Layanan Utama :
           </label>
           <input
             placeholder="Isikan Layanan Utama"
