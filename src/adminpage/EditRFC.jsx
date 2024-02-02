@@ -24,18 +24,15 @@ export default function EditRFC() {
     formData.append("file", file);
 
     try {
-      // Check if the file with the same name already exists in fileList
       const existingFile = fileList.find((rfc) => rfc.url === file.url);
 
       if (existingFile) {
-        // If file exists, update using PATCH
         await axios.patch(
           `http://localhost:4001/rfc/${existingFile.id}`,
           formData
         );
         message.success(`${file.name} file updated successfully.`);
       } else {
-        // If file doesn't exist, upload using POST
         await axios.post("http://localhost:4001/rfc", formData);
         message.success(`${file.name} file uploaded successfully.`);
       }
@@ -105,12 +102,6 @@ export default function EditRFC() {
               Ketika memilih dokumen akan langsung ter upload disini.
             </p>
           </Dragger>
-
-          {/* <div className="mt-1 w-full flex justify-center gap-4">
-            <button className="mt-2 bg-black font-extrabold p-2 px-5 rounded-xl hover:bg-sky-700 transition-colors">
-              Upload
-            </button>
-          </div> */}
         </div>
       </div>
 
