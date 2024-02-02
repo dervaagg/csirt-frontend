@@ -1,349 +1,373 @@
 /* .........Google Font......... */
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Bubblegum+Sans&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bubblegum+Sans&display=swap");
 
 /* .........Custom Styles......... */
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    text-decoration: none;
-    list-style: none;
-    outline: none;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+  outline: none;
 }
 
 :root {
-    --color-primary: rgb(30 27 75);
-    --color-danger: #bd002f;
+  --color-primary: rgb(30 27 75);
+  --color-danger: #bd002f;
 
-    --color-white: #ffffff;
-    --color-light: #d4dadf;
+  --color-white: #ffffff;
+  --color-light: #d4dadf;
 
-    --color-black: #0c0c10;
-    --color-dark: #0e1013;
+  --color-black: #0c0c10;
+  --color-dark: #0e1013;
 
-    --transition: .4s ease;
+  --transition: 0.4s ease;
 }
 
 html {
-    scroll-behavior: smooth;
-    font-family: 'Poppins', sans-serif;
-    
+  scroll-behavior: smooth;
+  font-family: "Poppins", sans-serif;
 }
 
 body {
-    background: url(/src/assets/bg.jpg);
-    color: var(--color-black);
+  background: url(/src/assets/bg.jpg);
+  color: var(--color-black);
 }
 
 h1 {
-    font-size: 52px;
-    font-weight: 500;
-    line-height: 60px;
-    
+  font-size: 52px;
+  font-weight: 500;
+  line-height: 60px;
 }
 h2 {
-    font-size: 48px;
-    font-weight: 500;
-    line-height: 56px;
+  font-size: 48px;
+  font-weight: 500;
+  line-height: 56px;
 }
 h3 {
-    font-size: 46px;
-    font-weight: 400;
-    line-height: 54px;
+  font-size: 46px;
+  font-weight: 400;
+  line-height: 54px;
 }
 h4 {
-    font-size: 40px;
-    font-weight: 300;
-    line-height: 48px;
+  font-size: 40px;
+  font-weight: 300;
+  line-height: 48px;
 }
 h5 {
-    font-size: 25px;
-    font-weight: 300;
-    line-height: 34px;
+  font-size: 25px;
+  font-weight: 300;
+  line-height: 34px;
 }
 p {
-    font-size: 16px;
-    line-height: 26px;
+  font-size: 16px;
+  line-height: 26px;
 }
 small {
-    color: var(--color-black);
-    font-size: 20px !important;
+  color: var(--color-black);
+  font-size: 20px !important;
 }
 span {
-    color: var(--color-primary);
+  color: var(--color-primary);
 }
 
 .container {
-    width: 90%;
-    margin: 0 auto;
-    max-width: 1480px;
+  width: 90%;
+  margin: 0 auto;
+  max-width: 1480px;
 }
 
 .icon-kontak-fi {
-margin-top: 15px;
+  margin-top: 15px;
 }
 
 .icon-kontak-fi-mail {
-margin-top: 7px
+  margin-top: 7px;
 }
 
 .icon-kontak-fi-phone {
-margin-top: 5px;
+  margin-top: 5px;
 }
 
 .kontak-title {
-    margin-bottom: -10px;
-    align-items: center;
+  margin-bottom: -10px;
+  align-items: center;
 }
 
 /* ----------------Start Navbar---------------- */
 .menus {
-    display: none;
+  display: none;
 }
 nav {
-    height: 6rem;
-    display: grid;
-    background: var(--color-white);
-    place-items: center;
-    position: sticky;
-    border-bottom: 2px solid var(--color-light);
-    width: 100%;
-    top: 0;
-    z-index: 999;
+  height: 6rem;
+  display: grid;
+  background: var(--color-white);
+  place-items: center;
+  position: sticky;
+  border-bottom: 2px solid var(--color-light);
+  width: 100%;
+  top: 0;
+  z-index: 999;
 }
 .nav-container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 .navbar-logo img {
-    margin-top: -5px;
-    max-width: 130px;
+  margin-top: -5px;
+  max-width: 130px;
 }
 .nav-links {
-    display: flex;
-    align-items: center;
-    gap: 3rem;
+  display: flex;
+  align-items: center;
+  gap: 3rem;
 }
 .nav-links li a {
-    font-weight: 700;
-    color: var(--color-black);
-    transition: var(--transition);
+  font-weight: 700;
+  color: var(--color-black);
+  transition: var(--transition);
 }
 .nav-links li a:hover {
-    color: var(--color-primary);
+  color: var(--color-primary);
 }
 .nav-links li a:active {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 .name {
-    font-size: 32px;
-    font-weight: 800;
-    line-height: normal;
+  font-size: 32px;
+  font-weight: 800;
+  line-height: normal;
 }
 /* ----------------End Navbar---------------- */
 
 /* ----------------Start Footer---------------- */
 .Footer {
-    background: var(--color-light);
-    padding: 3rem 0 !important;
+  background: var(--color-light);
+  padding: 3rem 0 !important;
 }
 .footer-container {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    justify-content: space-between;
-    align-items: center;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-content: space-between;
+  align-items: center;
 }
 .footer-title {
-    display: grid;
+  display: grid;
 }
 .footer-konten {
-    display: grid;
-    justify-content: center;
-    margin-left: 50px;
+  display: grid;
+  justify-content: center;
+  margin-left: 50px;
 }
 .footer-konten h4 {
-    font-weight: 700;
-    font-size: 30px;
-    margin-bottom: 2.5rem;
+  font-weight: 700;
+  font-size: 30px;
+  margin-bottom: 2.5rem;
 }
 .footer-konten p {
-    font-size: 15px;
-    font-weight: bold;
-    color: var(--color-black);
+  font-size: 15px;
+  font-weight: bold;
+  color: var(--color-black);
 }
 .footer-konten p a {
-    color: var(--color-black);
-    transition: var(--transition);
+  color: var(--color-black);
+  transition: var(--transition);
 }
 .footer-konten p a:hover {
-    color: var(--color-primary);
+  color: var(--color-primary);
 }
 .footer-kontak {
-    display: grid;
-    grid-template-columns: repeat(3, 250px);
-    gap: 30px;
+  display: grid;
+  grid-template-columns: repeat(3, 250px);
+  gap: 30px;
 }
 .footer-kontak .icon-kontak {
-    font-size: 20px;
+  font-size: 20px;
 }
 .footer-kontak .lokasi {
-    display: flex;
-    gap: 10px;
-    max-width: 500px;
+  display: flex;
+  gap: 10px;
+  max-width: 500px;
 }
 .footer-kontak .lokasi .icon-kontak {
-    font-size: 35px;
+  font-size: 35px;
 }
 .footer-kontak .telephone {
-    display: flex;
-    margin-right: -20px;
-    gap: 10px;
+  display: flex;
+  margin-right: -20px;
+  gap: 10px;
 }
 .footer-kontak .email {
-    display: flex;
-    gap: 10px;
+  display: flex;
+  gap: 10px;
 }
 .footer-right {
-    display: grid;
-    justify-content: center;
-    align-items: center;
+  display: grid;
+  justify-content: center;
+  align-items: center;
 }
 .footer-right img {
-    width: 250px;
+  width: 250px;
 }
 .footer-right h4 {
-    font-size: 40px;
-    margin-left: 5px;
-    margin-bottom: -10px;
+  font-size: 40px;
+  margin-left: 5px;
+  margin-bottom: -10px;
 }
 .footer-copyright {
-    background: var(--color-dark);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-    margin: 0 auto 0 auto;
+  background: var(--color-dark);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  margin: 0 auto 0 auto;
 }
 .footer-copyright small {
-    margin-top: 20px;
-    margin-bottom: 20px;
-    font-size: 15px !important;
-    color: var(--color-white);
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-size: 15px !important;
+  color: var(--color-white);
+}
+
+.auth {
+  .container {
+    width: 100%;
+    height: 100%;
+
+    background: #000000;
+    --gap: 5em;
+    --line: 1px;
+    --color: rgba(255, 255, 255, 0.2);
+
+    background-image: linear-gradient(
+        -90deg,
+        transparent calc(var(--gap) - var(--line)),
+        var(--color) calc(var(--gap) - var(--line) + 1px),
+        var(--color) var(--gap)
+      ),
+      linear-gradient(
+        0deg,
+        transparent calc(var(--gap) - var(--line)),
+        var(--color) calc(var(--gap) - var(--line) + 1px),
+        var(--color) var(--gap)
+      );
+    background-size: var(--gap) var(--gap);
+  }
 }
 /* ----------------End Footer---------------- */
 
 /* .....................Start Media Screen(1280)..................... */
-@media (max-width:1280px) {
-    .footer-kontak {
-        display: grid;
-        gap: 50px;
-    }
+@media (max-width: 1280px) {
+  .footer-kontak {
+    display: grid;
+    gap: 50px;
+  }
 }
 
 /* .....................Start Media Screen(1024)..................... */
-@media (max-width:1024px) {
-    h1 {
-        font-size: 46px;
-    }
-    h2 {
-        font-size: 38px !important;
-    }
-    h3 {
-        font-size: 34px !important;
-    }
-    h4 {
-        font-size: 24px !important;
-    }
-    h5 {
-        font-size: 20px; 
-    }
-    .hero-text {
-        font-size: 38px;
-    }
-    .btn {
-        padding: 16px 36px;
-    }
-    /* ..........Start Nav.......... */
-    .nav-links {
-        display: none;
-    }
-    /* ..........Start Menus.......... */
-    .menus {
-        display: flex;
-        position: sticky;
-        left: 0;
-        right: 0;
-        margin: auto;
-        bottom: 2rem;
-        width: max-content;
-        background: rgba(0, 0, 0, 0.3);
-        backdrop-filter: blur(15px);
-        display: flex;
-        gap: .7rem;
-        z-index: 11;
-        padding: .7rem 1.7rem;
-        border-radius: 2rem;
-    }
-    .menus a {
-        padding: .8rem;
-        border-radius: 50%;
-        display: flex;
-        font-size: 1.1rem;
-        color: var(--color-primary);
-    }
-    .menus .active {
-        background: var(--color-light);
-    }
-    /* ..........Start Footer.......... */
-    .footer-container {
-        display: grid;
-        gap: 50px;
-    }
-    .footer-container h4 {
-        margin-bottom: 20px;
-    }
-    .footer-kontak {
-        grid-template-columns: repeat(1, 250px) !important;
-    }
+@media (max-width: 1024px) {
+  h1 {
+    font-size: 46px;
+  }
+  h2 {
+    font-size: 38px !important;
+  }
+  h3 {
+    font-size: 34px !important;
+  }
+  h4 {
+    font-size: 24px !important;
+  }
+  h5 {
+    font-size: 20px;
+  }
+  .hero-text {
+    font-size: 38px;
+  }
+  .btn {
+    padding: 16px 36px;
+  }
+  /* ..........Start Nav.......... */
+  .nav-links {
+    display: none;
+  }
+  /* ..........Start Menus.......... */
+  .menus {
+    display: flex;
+    position: sticky;
+    left: 0;
+    right: 0;
+    margin: auto;
+    bottom: 2rem;
+    width: max-content;
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(15px);
+    display: flex;
+    gap: 0.7rem;
+    z-index: 11;
+    padding: 0.7rem 1.7rem;
+    border-radius: 2rem;
+  }
+  .menus a {
+    padding: 0.8rem;
+    border-radius: 50%;
+    display: flex;
+    font-size: 1.1rem;
+    color: var(--color-primary);
+  }
+  .menus .active {
+    background: var(--color-light);
+  }
+  /* ..........Start Footer.......... */
+  .footer-container {
+    display: grid;
+    gap: 50px;
+  }
+  .footer-container h4 {
+    margin-bottom: 20px;
+  }
+  .footer-kontak {
+    grid-template-columns: repeat(1, 250px) !important;
+  }
 }
 
 /* .....................Start Media Screen(666)..................... */
-@media (max-width:666px) {
-    h1 {
-        font-size: 34px !important;
-    }
-    h2 {
-        font-size: 30px !important;
-    }
-    h3 {
-        font-size: 20px !important;
-    }
-    h4 {
-        font-size: 17px !important;
-    }
-    h5 {
-        font-size: 20px; 
-    }
-    /* ..........Start Nav.......... */
-    nav {
-        display: grid;
-        grid-template-columns: 80% 5%;
-        justify-content: center;
-        height: 5rem !important;
-    }
-    .navbar-logo img {
-        max-width: 100px;
-    }
-    /* ..........Start Footer.......... */
-    .footer-copyright {
-        display: none;
-    }
-    .footer-right {
-        display: none;
-    }    
-} 
+@media (max-width: 666px) {
+  h1 {
+    font-size: 34px !important;
+  }
+  h2 {
+    font-size: 30px !important;
+  }
+  h3 {
+    font-size: 20px !important;
+  }
+  h4 {
+    font-size: 17px !important;
+  }
+  h5 {
+    font-size: 20px;
+  }
+  /* ..........Start Nav.......... */
+  nav {
+    display: grid;
+    grid-template-columns: 80% 5%;
+    justify-content: center;
+    height: 5rem !important;
+  }
+  .navbar-logo img {
+    max-width: 100px;
+  }
+  /* ..........Start Footer.......... */
+  .footer-copyright {
+    display: none;
+  }
+  .footer-right {
+    display: none;
+  }
+}
