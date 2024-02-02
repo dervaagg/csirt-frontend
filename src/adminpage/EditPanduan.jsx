@@ -3,16 +3,17 @@ import { UploadOutlined } from "@ant-design/icons";
 import { Button, message, Popconfirm, Upload, Modal } from "antd";
 import Epanduan from "./Epanduan";
 
-const confirm = (e) => {
-  console.log(e);
-  message.success("Berhasil Menghapus");
-};
-const cancel = (e) => {
-  console.log(e);
-  message.error("Batal Menghapus");
-};
 
-const EditPanduan = () => {
+export default function EditPanduan() {
+  
+  const confirm = (e) => {
+    console.log(e);
+    message.success("Berhasil Menghapus");
+  };
+  const cancel = (e) => {
+    console.log(e);
+    message.error("Batal Menghapus");
+  };
   const [fileList, setFileList] = useState([]);
   const [uploading, setUploading] = useState(false);
   const handleUpload = () => {
@@ -67,6 +68,41 @@ const EditPanduan = () => {
     <div className="flex flex-col min-h-full bg-white rounded-lg p-4 shadow-sm">
       <h2 className="mt-4 mb-5 text-black font-bold text-3xl">Panduan</h2>
 
+      <div className="w-60 h-80 bg-zinc-300 rounded-3xl text-neutral-300 p-4 flex flex-col items-start justify-center gap-5">
+        <div className="w-52 h-44 bg-sky-700 rounded-2xl"></div>
+        <div className="text-black">
+          <p className="font-extrabold">Judul Panduan</p>
+        </div>
+        <div className="mt-1 flex gap-3">
+          <button
+            className="bg-black font-extrabold p-2 px-8 rounded-xl hover:bg-sky-700 transition-colors"
+            onClick={showModal}
+          >
+            Edit
+          </button>
+          <Popconfirm
+            title="Hapus Panduan"
+            description="Yakin Dihapus?"
+            onConfirm={confirm}
+            onCancel={cancel}
+            okText="Ya"
+            cancelText="Tidak"
+          >
+            <button className="bg-black font-extrabold p-2 px-8 rounded-xl hover:bg-sky-700 transition-colors">
+              Delete
+            </button>
+          </Popconfirm>
+        </div>
+      </div>
+      <Modal
+        title="Panduan"
+        open={isModalOpen}
+        onOk={handleOk}
+        onCancel={handleCancel}
+      >
+        <Epanduan />
+      </Modal>
+
       <div className="mt-4">
         <label className="text-black" id="name">
           Judul Panduan :{" "}
@@ -109,41 +145,6 @@ const EditPanduan = () => {
           {uploading ? "Uploading" : "Upload"}
         </Button>
       </div>
-      <div className="w-60 h-80 bg-zinc-300 rounded-3xl text-neutral-300 p-4 flex flex-col items-start justify-center gap-5">
-        <div className="w-52 h-44 bg-sky-700 rounded-2xl"></div>
-        <div className="text-black">
-          <p className="font-extrabold">Judul Panduan</p>
-        </div>
-        <div className="mt-1 flex gap-3">
-          <button
-            className="bg-black font-extrabold p-2 px-8 rounded-xl hover:bg-sky-700 transition-colors"
-            onClick={showModal}
-          >
-            Edit
-          </button>
-          <Popconfirm
-            title="Hapus Panduan"
-            description="Yakin Dihapus?"
-            onConfirm={confirm}
-            onCancel={cancel}
-            okText="Ya"
-            cancelText="Tidak"
-          >
-            <button className="bg-black font-extrabold p-2 px-8 rounded-xl hover:bg-sky-700 transition-colors">
-              Delete
-            </button>
-          </Popconfirm>
-        </div>
-      </div>
-      <Modal
-        title="Panduan"
-        open={isModalOpen}
-        onOk={handleOk}
-        onCancel={handleCancel}
-      >
-        <Epanduan />
-      </Modal>
     </div>
   );
-};
-export default EditPanduan;
+}

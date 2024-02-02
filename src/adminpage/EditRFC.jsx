@@ -1,91 +1,144 @@
-import { rfcData } from "../data/datas";
 import { InboxOutlined } from "@ant-design/icons";
 import { message, Popconfirm, Upload } from "antd";
-
-const confirm = (e) => {
-  console.log(e);
-  message.success("Berhasil Menghapus");
-};
-const cancel = (e) => {
-  console.log(e);
-  message.error("Batal Menghapus");
-};
-
-const { Dragger } = Upload;
-const props = {
-  name: "file",
-  multiple: true,
-  action: "https://run.mocky.io/v3/435e224c-44fb-4773-9faf-380c5e6a2188",
-  onChange(info) {
-    const { status } = info.file;
-    if (status !== "uploading") {
-      console.log(info.file, info.fileList);
-    }
-    if (status === "done") {
-      message.success(`${info.file.name} file uploaded successfully.`);
-    } else if (status === "error") {
-      message.error(`${info.file.name} file upload failed.`);
-    }
-  },
-  onDrop(e) {
-    console.log("Dropped files", e.dataTransfer.files);
-  },
-};
+import axios from "axios";
+import React, { useEffect, useState } from "react";
 
 export default function EditRFC() {
+  const [fileList, setFileList] = useState([]);
+
+  useEffect(() => {
+    getRFC();
+  }, []);
+
+  const getRFC = async () => {
+    try {
+      const response = await axios.get("http://localhost:4001/rfc");
+      setFileList(response.data);
+    } catch (error) {
+      console.error("Error loading RFC", error.message);
+    }
+  };
+
+  const handleUpload = async ({ file, onSuccess, onError }) => {
+    const formData = new FormData();
+    formData.append("file", file);
+
+    try {
+      const existingFile = fileList.find((rfc) => rfc.url === file.url);
+
+      if (existingFile) {
+        await axios.patch(
+          `http://localhost:4001/rfc/${existingFile.id}`,
+          formData
+        );
+        message.success(`${file.name} file updated successfully.`);
+      } else {
+        await axios.post("http://localhost:4001/rfc", formData);
+        message.success(`${file.name} file uploaded successfully.`);
+      }
+
+      getRFC();
+      onSuccess();
+    } catch (error) {
+      message.error(`${file.name} file upload failed.`);
+      console.error("Error uploading RFC file", error.message);
+      onError();
+    }
+  };
+
+  const handleDelete = async (rfcId) => {
+    try {
+      await axios.delete(`http://localhost:4001/rfc/${rfcId}`);
+      message.success("RFC deleted successfully.");
+      getRFC();
+    } catch (error) {
+      message.error("Error deleting RFC file");
+      console.error("Error deleting RFC file", error.message);
+    }
+  };
+
+  const cancel = (e) => {
+    console.log(e);
+    message.error("Batal Menghapus");
+  };
+
+  const { Dragger } = Upload;
+  const props = {
+    name: "file",
+    multiple: true,
+    action: "https://run.mocky.io/v3/435e224c-44fb-4773-9faf-380c5e6a2188",
+    onChange(info) {
+      const { status } = info.file;
+      if (status !== "uploading") {
+        console.log(info.file, info.fileList);
+      }
+      if (status === "done") {
+        message.success(`${info.file.name} file uploaded successfully.`);
+      } else if (status === "error") {
+        message.error(`${info.file.name} file upload failed.`);
+      }
+      if (info.file.status === "done" || info.file.status === "error") {
+        getRFC();
+      }
+    },
+    onDrop(e) {
+      console.log("Dropped files", e.dataTransfer.files);
+    },
+  };
+
   return (
     <div className="flex flex-col min-h-full bg-white rounded-lg p-4 shadow-sm">
       <h2 className="mt-4 mb-5 text-black font-bold text-3xl">RFC 2350</h2>
-      <div className="w-60 h-90 bg-zinc-300 rounded-3xl text-neutral-300 p-4 flex flex-col items-start justify-center gap-3">
+      <div className="w-60 h-90 bg-zinc-300 rounded-3xl text-neutral- p-4 flex flex-col items-start justify-center gap-3">
         <div className="w-52 border-dashed rounded-2xl">
-          <Dragger {...props}>
+          <Dragger {...props} customRequest={handleUpload}>
             <p className="ant-upload-drag-icon">
               <InboxOutlined />
             </p>
             <p className="ant-upload-text">
-              Click or drag file to this area to upload
+              Klik atau seret dokumen kesini untuk upload.
             </p>
             <p className="ant-upload-hint">
-              Support for a single or bulk upload.
+              Ketika memilih dokumen akan langsung ter upload disini.
             </p>
           </Dragger>
+        </div>
+      </div>
 
-          <div className="mt-1 w-full flex justify-center gap-4">
-            <button className="bg-black font-extrabold p-2 px-5 rounded-xl hover:bg-sky-700 transition-colors">
-              Upload
-            </button>
-            <Popconfirm
-              title="Hapus RFC"
-              description="Yakin Dihapus?"
-              onConfirm={confirm}
-              onCancel={cancel}
-              okText="Ya"
-              cancelText="Tidak"
+      <br />
+      <h1 className="mt-3 mb-1 text-black text-xl">Edit RFC 2350</h1>
+      <div className="mt-5 flex flex-col-reverse bg-zinc-300 rounded-lg p-4">
+        {fileList.map((rfc, index) => (
+          <React.Fragment key={index}>
+            <object
+              data={rfc.url}
+              type="application/pdf"
+              width="100%"
+              height="450px"
             >
-              <button className="bg-black font-extrabold p-2 px-5 rounded-xl hover:bg-sky-700 transition-colors">
+              <p>
+                {" "}
+                Dokunen hanya bisa di tampilkan pada Mode Desktop saja. Tidak
+                bisa pada Mode Mobile.
+              </p>
+            </object>
+            <Popconfirm
+              key={index}
+              title="Apakah Kamu Mau Hapus RFC?"
+              description="Kalau dihapus tidak bisa dikembalikan lagi loh"
+              onConfirm={() => handleDelete(rfc.id)}
+              onCancel={cancel}
+              okText="Iya Dong"
+              cancelText="Gak Jadi Deh"
+            >
+              <button className="mb-7 bg-transparent outline-double text-black font-extrabold p-2 px-2 rounded-xl hover:bg-red-500 transition-colors flex-row-reverse">
                 Delete
               </button>
             </Popconfirm>
-          </div>
-        </div>
-      </div>
-      <div className="mt-5 flex bg-zinc-300 rounded-lg p-4">
-        {rfcData.map((items, index) => (
-          <object
-            key={index}
-            data={items.pdfRFC}
-            type="application/pdf"
-            width="100%"
-            height="450px"
-          >
-            <p>
-              It appears you don`t have a PDF plugin for this browser. No
-              biggie... you can
-              <a href={items.pdfRFC}>click here to download the PDF file.</a>
-            </p>
-          </object>
+          </React.Fragment>
         ))}
       </div>
+      <br />
     </div>
   );
 }

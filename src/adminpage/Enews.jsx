@@ -158,7 +158,7 @@ export default function Enews() {
                     }}
                     icon={<PlusOutlined />}
                   >
-                    Tamabah Paragraf
+                    Tambah Paragraf
                   </Button>
                   <Button
                     type="dashed"
