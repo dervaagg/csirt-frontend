@@ -1,11 +1,13 @@
 import BackgroundVideo from "./BackgroundVideo";
 import EditLayananU from "./EditLayananU";
 import EditLayananT from "./EditLayananT";
-import EditNews from "./EditNews";
+import EditNews from "./AddNews";
 import EditPanduan from "./EditPanduan";
 import EditDeskripsi from "./EditDeskripsi";
-import EditVisiMisi from "./EditVisiMisi";
+import EditVisi from "./EditVisi";
+import EditMisi from "./EditMisi";
 import EditRFC from "./EditRFC";
+import AddNews from "./EditNews";
 import logoWK from "../assets/Logo WSKT.svg";
 
 import { useState } from "react";
@@ -24,6 +26,9 @@ import {
   LoginOutlined,
   SolutionOutlined,
   ProfileOutlined,
+  ProjectOutlined,
+  AppstoreAddOutlined,
+  AppstoreOutlined,
 } from "@ant-design/icons";
 import { Layout, Menu, Button, theme } from "antd";
 import EditKontak from "./EditKontak";
@@ -80,8 +85,11 @@ const Dashboard = () => {
             <Menu.Item key="edit-deskripsi" icon={<SolutionOutlined />}>
               Deskripsi
             </Menu.Item>
-            <Menu.Item key="edit-visimisi" icon={<ProfileOutlined />}>
-              Visi & Misi
+            <Menu.Item key="edit-visi" icon={<ProjectOutlined />}>
+              Visi
+            </Menu.Item>
+            <Menu.Item key="edit-misi" icon={<ProfileOutlined />}>
+              Misi
             </Menu.Item>
           </Menu.SubMenu>
           <Menu.Item key="edit-kontak" icon={<ContactsOutlined />}>
@@ -99,9 +107,14 @@ const Dashboard = () => {
               Tambahan
             </Menu.Item>
           </Menu.SubMenu>
-          <Menu.Item key="edit-news" icon={<ReadOutlined />}>
-            Berita
-          </Menu.Item>
+          <Menu.SubMenu key="subberita" icon={<ReadOutlined />} title="Berita">
+            <Menu.Item key="tambah-berita" icon={<AppstoreAddOutlined />}>
+              Tambah Berita
+            </Menu.Item>
+            <Menu.Item key="list-berita" icon={<AppstoreOutlined />}>
+              Edit Berita
+            </Menu.Item>
+          </Menu.SubMenu>
           <Menu.Item key="edit-rfc" icon={<FilePdfOutlined />}>
             RFC 2350
           </Menu.Item>
@@ -116,9 +129,16 @@ const Dashboard = () => {
             transition: "margin-left 0.3s ease-in-out",
           }}
         >
-          <p className="tracking-tighter text-1xl font-black text-gray-900">
-            Admin
-          </p>
+          <div className="flex items-center gap-4 tracking-tighter left-10 flex-col">
+            <img
+              className="w-10 h-10 rounded-full ml-1"
+              src="../src/assets/avatar.svg"
+              alt="avatar"
+            />
+            <div className="font-medium dark:text-black">
+              <h5>Admin</h5>
+            </div>
+          </div>
         </div>
       </Sider>
       <Layout
@@ -165,13 +185,16 @@ const Dashboard = () => {
         >
           {currentPage === "" && <BackgroundVideo />}
           {currentPage === "edit-deskripsi" && <EditDeskripsi />}
-          {currentPage === "edit-visimisi" && <EditVisiMisi />}
+          {currentPage === "edit-visi" && <EditVisi />}
+          {currentPage === "edit-misi" && <EditMisi />}
           {currentPage === "edit-kontak" && <EditKontak />}
           {currentPage === "edit-utama" && <EditLayananU />}
           {currentPage === "edit-tambahan" && <EditLayananT />}
           {currentPage === "edit-news" && <EditNews />}
           {currentPage === "edit-rfc" && <EditRFC />}
           {currentPage === "edit-panduan" && <EditPanduan />}
+          {currentPage === "tambah-berita" && <EditNews />}
+          {currentPage === "list-berita" && <AddNews />}
         </Content>
       </Layout>
     </Layout>

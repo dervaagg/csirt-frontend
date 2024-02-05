@@ -7,14 +7,11 @@ export default function EditLayananT() {
 
   useEffect(() => {
     getOther();
-  }, []);
-
-  useEffect(() => {
     const refreshInterval = setInterval(() => {
       getOther();
     }, 1000);
     return () => clearInterval(refreshInterval);
-  }, [other]);
+  }, []);
 
   const getOther = async () => {
     const response = await axios.get("http://localhost:4001/other");
@@ -49,14 +46,14 @@ export default function EditLayananT() {
 
   return (
     <div className="flex flex-col bg-white min-h-full rounded-lg p-4 shadow-sm">
-      <h2 className="mt-4 mb-5 text-black font-bold text-3xl">Layanan Utama</h2>
+      <h2 className="mt-4 mb-5 text-black font-bold text-3xl">Layanan Tambahan</h2>
       <form onSubmit={createServices}>
         <div className="mt-4">
           <label className="text-black" id="name">
-            Layanan Utama :{" "}
+            Layanan Utama :
           </label>
           <input
-            placeholder="Isikan Layanan Utama"
+            placeholder="Isi Layanan Tambahan"
             className="w-full h-auto bg-zinc-300 rounded-md border-gray-700 text-black px-2 py-1"
             type="text"
             value={services}

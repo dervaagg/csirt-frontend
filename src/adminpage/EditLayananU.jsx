@@ -7,14 +7,11 @@ export default function EditLayananU() {
 
   useEffect(() => {
     getPrimary();
-  }, []);
-
-  useEffect(() => {
     const refreshInterval = setInterval(() => {
       getPrimary();
     }, 1000);
     return () => clearInterval(refreshInterval);
-  }, [primary]);
+  }, []);
 
   const getPrimary = async () => {
     const response = await axios.get("http://localhost:4001/primary");
@@ -55,7 +52,7 @@ export default function EditLayananU() {
       <form onSubmit={createServices}>
         <div className="mt-4">
           <label className="text-black" id="name">
-            Layanan Utama :{" "}
+            Layanan Utama :
           </label>
           <input
             placeholder="Isikan Layanan Utama"
