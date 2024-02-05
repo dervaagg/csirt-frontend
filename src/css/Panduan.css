@@ -189,7 +189,7 @@
     display: flex;
     align-items: center;
     height: 70px;
-    border-radius: 100vw 0 0 100vw;    
+    border-radius: 100vw 0 0 100vw;       
     margin-left: 2rem;
     font-size: 16px !important;   
 }
@@ -201,6 +201,7 @@
 .side-list .sidebar-button {
     margin-left: 20px;
     color: var(--color-black);
+    max-width: 250px; 
     font-weight: 700;
     text-decoration: none;    
 }
