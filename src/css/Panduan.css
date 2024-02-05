@@ -8,206 +8,211 @@
   --color-black: #0c0c10;
   --color-dark: #0e1013;
 
-  --transition: .4s ease;
+  --transition: 0.4s ease;
 }
 
 /* Start Panduan At Home */
 #PanduanH {
-    background: transparent;
-    margin-bottom: 50px;
-  }
-  .panduanH-container {
-    position: relative;
-  }
-  .panduanH-title {
-    text-align: center;
-    margin-bottom: 4rem;
-    font-size: 35px;
-  }
+  background: transparent;
+  margin-bottom: 50px;
+}
+.panduanH-container {
+  position: relative;
+}
+.panduanH-title {
+  text-align: center;
+  margin-bottom: 4rem;
+  font-size: 35px;
+}
 
-  .card-panduanH-warpper {
-    display: grid;
-    grid-template-columns: repeat(4,17rem);
-    grid-gap: 30px;
-    justify-content: center;
-  }
+.card-panduanH-warpper {
+  display: grid;
+  grid-template-columns: repeat(4, 17rem);
+  grid-gap: 30px;
+  justify-content: center;
+}
 
-  .book {
-    display: flex;
-    flex-direction: column;
-    gap: 50px;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    border-radius: 10px;
-    width: 220px;
-    height: 280px;
-    background-color: var(--color-light);
-    -webkit-box-shadow: 1px 1px 12px #000;
-    box-shadow: 1px 1px 12px #000;
-    -webkit-transform: preserve-3d;
-    -ms-transform: preserve-3d;
-    transform: preserve-3d;
-    -webkit-perspective: 2000px;
-    perspective: 2000px;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    color: #000;
-  }
+.book {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  border-radius: 10px;
+  width: 220px;
+  height: 280px;
+  background-color: transparent;
+  backdrop-filter: blur(10px);
+  -webkit-box-shadow: 1px 1px 12px #000;
+  box-shadow: 1px 1px 12px #000;
+  -webkit-transform: preserve-3d;
+  -ms-transform: preserve-3d;
+  transform: preserve-3d;
+  -webkit-perspective: 2000px;
+  perspective: 2000px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  color: #000;
+}
 
-  .book-cover {
-    top: 0;
-    position: absolute;
-    background-color: var(--color-light);
-    width: 100%;
-    height: 100%;
-    border-radius: 10px;
-    cursor: pointer;
-    -webkit-transition: all 0.5s;
-    transition: all 0.5s;
-    -webkit-transform-origin: 0;
-    -ms-transform-origin: 0;
-    transform-origin: 0;
-    -webkit-box-shadow: 1px 1px 12px #000;
-    box-shadow: 1px 1px 12px #000;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    flex-flow: column;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-  }
-  .book-cover img {    
-    width: 200px;
-    height: 260px;
-  }
-  
-  .book:hover .book-cover {
-    -webkit-transition: all 0.5s;
-    transition: all 0.5s;
-    -webkit-transform: rotatey(-80deg);
-    -ms-transform: rotatey(-80deg);
-    transform: rotatey(-80deg);
-  }
+.book-cover {
+  top: 0;
+  position: absolute;
+  background-color: transparent;
+  backdrop-filter: blur(10px);
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  cursor: pointer;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  -webkit-transform-origin: 0;
+  -ms-transform-origin: 0;
+  transform-origin: 0;
+  -webkit-box-shadow: 1px 1px 12px #000;
+  box-shadow: 1px 1px 12px #000;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-flow: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+.book-cover img {
+  width: 200px;
+  height: 260px;
+}
 
-  .book-content {
-    display: grid;
-    grid-template-rows: 120%;
-    margin-left: 42px;
-    margin-right: 10px;
-    margin-bottom: 30px;
-  }
-  .book-content .book-title{
-    font-weight: 700;
-  }
-  .book-content .book-footer{
-    font-size: 12px;
-    font-weight: 700;
-  }
-  
-  .btn-content {
-    height: 100%;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    padding: 5px 30px;
-    text-decoration: none;
-    font-family: 'Poppins', sans-serif;
-    font-weight: 600;
-    font-size: 20px;
-    transition: 1s;
-    border-radius: 10px;
-  }
-  
-  .btn-content:hover, .btn-content:focus {
-    transition: 0.5s;
-    -webkit-animation: btn-content 1s;
-    animation: btn-content 1s;
-    outline: 0.1em solid transparent;
-    outline-offset: 0.2em;
-    box-shadow: 0 0 0.4em 0 var(--color-light);
-  }
-  
-  .btn-content .btn-title {
-    max-width: 160px;
-    color: var(--color-black);
-  }
+.book:hover .book-cover {
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  -webkit-transform: rotatey(-80deg);
+  -ms-transform: rotatey(-80deg);
+  transform: rotatey(-80deg);
+}
 
-  .btn-content .icon-arrow {
-    font-size: 50px;
-    width: 20px;
-    margin-left: -40px;
-    position: relative;
-    color: var(--color-black);
-  }  
+.book-content {
+  display: grid;
+  grid-template-rows: 120%;
+  margin-left: 42px;
+  margin-right: 10px;
+  margin-bottom: 30px;
+}
+.book-content .book-title {
+  font-weight: 700;
+}
+.book-content .book-footer {
+  font-size: 12px;
+  font-weight: 700;
+}
 
-  .btn-content .icon-arrow {
-    transition: 0.5s;
-    margin-right: 0px;
-    transform: scale(0.6);
-  }
-  
-  .btn-content:hover .icon-arrow {
-    transition: 1s;
-    margin-left: 0;
-  }
-  
+.btn-content {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 5px 30px;
+  text-decoration: none;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+  transition: 1s;
+  border-radius: 10px;
+}
+
+.btn-content:hover,
+.btn-content:focus {
+  transition: 0.5s;
+  -webkit-animation: btn-content 1s;
+  animation: btn-content 1s;
+  outline: 0.1em solid transparent;
+  outline-offset: 0.2em;
+  box-shadow: 0 0 0.4em 0 var(--color-light);
+}
+
+.btn-content .btn-title {
+  max-width: 160px;
+  color: var(--color-black);
+}
+
+.btn-content .icon-arrow {
+  font-size: 50px;
+  width: 20px;
+  margin-left: -40px;
+  position: relative;
+  color: var(--color-black);
+}
+
+.btn-content .icon-arrow {
+  transition: 0.5s;
+  margin-right: 0px;
+  transform: scale(0.6);
+}
+
+.btn-content:hover .icon-arrow {
+  transition: 1s;
+  margin-left: 0;
+}
+
 /* ...................Halaman Panduan......................... */
 .panduan-container {
-    min-height: 100vh;
-    margin: 0;
-    font-size: 1.25rem;
-    display: grid;
-    grid-template-columns: 20rem 1fr;
-    justify-content: center;
+  min-height: 100vh;
+  margin: 0;
+  font-size: 1.25rem;
+  display: grid;
+  grid-template-columns: 20rem 1fr;
+  justify-content: center;
 }
 
 .sidebar {
-    position: sticky;
-    top: 0;
-    max-height: 100svh;
-    background-color: var(--color-light);
-    overflow-y: auto;
+  position: sticky;
+  top: 0;
+  max-height: calc(100vh - 50px); /* 50px adalah jarak yang diinginkan dari bawah */
+  background-color: transparent;
+  overflow-y: auto;
+  backdrop-filter: blur(10px);
+  padding-bottom: 20px; /* Sesuaikan dengan jumlah jarak yang diinginkan */
 }
 
 .side-list {
-    list-style: none;
-    display: grid;
-    padding-block: 10px;
+  list-style: none;
+  display: grid;
+  padding-block: 10px;
 }
 
 .side-list li {
-    display: flex;
-    align-items: center;
-    height: 70px;
-    border-radius: 100vw 0 0 100vw;       
-    margin-left: 2rem;
-    font-size: 16px !important;   
+  display: flex;
+  align-items: center;
+  height: 70px;
+  border-radius: 100vw 0 0 100vw;
+  margin-left: 2rem;
+  font-size: 16px !important;
 }
 
 .side-list li.active {
-  background: var(--color-white);
+  background: grey;
 }
 
 .side-list .sidebar-button {
-    margin-left: 20px;
-    color: var(--color-black);
-    max-width: 250px; 
-    font-weight: 700;
-    text-decoration: none;    
+  margin-left: 20px;
+  color: var(--color-black);
+  max-width: 250px;
+  font-weight: 700;
+  text-decoration: none;
 }
 
 .side-list .sidebar-button:hover {
-    color: var(--color-primary);   
+  color: var(--color-primary);
 }
 
 .pdfbar {
@@ -224,9 +229,9 @@
 .dropdown {
   display: none;
 }
-  
+
 /* .....................Start Media Screen(1230)..................... */
-@media (max-width:1230px) {
+@media (max-width: 1230px) {
   .card-panduanH-warpper {
     grid-template-columns: repeat(3, 17rem);
   }
@@ -239,14 +244,14 @@
   }
 }
 /* .....................Start Media Screen(850)..................... */
-@media (max-width:850px) {
+@media (max-width: 850px) {
   .card-panduanH-warpper {
     grid-template-columns: repeat(2, 15rem);
   }
 }
 
 /* .....................Start Media Screen(755)..................... */
-@media (max-width:666px) {
+@media (max-width: 666px) {
   .panduan {
     display: grid;
     gap: 50px;
@@ -270,12 +275,12 @@
     position: relative;
     display: block;
     margin-left: 50px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     margin-top: 10px;
   }
-  
+
   .button {
-    background-color: #4CAF50;
+    background-color: #4caf50;
     color: #212121;
     padding: 10px 15px;
     font-size: 15px;
@@ -284,7 +289,7 @@
     border-radius: 15px;
     cursor: pointer;
   }
-  
+
   .dropdown-content {
     display: none;
     font-size: 13px;
@@ -292,48 +297,48 @@
     z-index: 1;
     min-width: 200px;
     background-color: #212121;
-    border: 2px solid #4CAF50;
+    border: 2px solid #4caf50;
     border-radius: 0px 15px 15px 15px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   }
-  
+
   .dropdown-content a {
-    color: #4CAF50;
+    color: #4caf50;
     padding: 8px 10px;
     text-decoration: none;
     display: block;
     transition: 0.1s;
   }
-  
+
   .dropdown-content a:hover {
-    background-color: #4CAF50;
+    background-color: #4caf50;
     color: #212121;
   }
-  
+
   .dropdown-content a:focus {
     background-color: #212121;
-    color: #4CAF50;
+    color: #4caf50;
   }
-  
+
   .dropdown-content #top:hover {
     border-radius: 0px 13px 0px 0px;
   }
-  
+
   .dropdown-content #bottom:hover {
     border-radius: 0px 0px 13px 13px;
   }
-  
+
   .paste-button:hover button {
     border-radius: 15px 15px 0px 0px;
   }
-  
+
   .paste-button:hover .dropdown-content {
     display: block;
   }
 }
 
 /* .....................Start Media Screen(500)..................... */
-@media (max-width:500px) {
+@media (max-width: 500px) {
   .card-panduanH-warpper {
     grid-template-columns: repeat(2, 13rem);
     gap: 15px;
@@ -353,7 +358,7 @@
 }
 
 /* .....................Start Media Screen(420)..................... */
-@media (max-width:420px) {
+@media (max-width: 420px) {
   .card-panduanH-warpper {
     grid-template-columns: repeat(2, 11rem);
     gap: 13px;
@@ -384,4 +389,3 @@
     margin-right: 20px;
   }
 }
-    

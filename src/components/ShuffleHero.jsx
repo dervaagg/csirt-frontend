@@ -7,19 +7,17 @@ export const ShuffleHero = () => {
     <section className="w-full px-8 py-12 grid grid-cols-1 md:grid-cols-2 items-center gap-8 max-w-6xl mx-auto">
       <div>
         <span className="block ml-1 -mb-2 text-xs md:text-sm text-indigo-9500 font-medium">
-          Pastikan Anda Selalu <br/> Aman Di Dunia Maya
+          Pastikan Keamanan Data Anda
         </span>
         <br />
-        <h3 className="text-4xl md:text-6xl font-semibold">
-          CSIRT Waskita
-        </h3>
+        <h3 className="text-4xl md:text-6xl font-semibold">CSIRT Waskita</h3>
         <p className="ml-1 text-base md:text-lg text-slate-700 my-4 md:my-6">
-            Waskita Computer Security Incident Response Team
+          Waskita Computer Security Incident Response Team
         </p>
         <br />
         <a href="/about">
           <button className="bg-indigo-950 text-white font-medium py-2 px-4 rounded transition-all hover:bg-indigo-600 active:scale-95">
-            Profil
+            Pelajari Tentang CSIRT Waskita
           </button>
         </a>
       </div>
