@@ -1,12 +1,13 @@
 import BackgroundVideo from "./BackgroundVideo";
 import EditLayananU from "./EditLayananU";
 import EditLayananT from "./EditLayananT";
-import EditNews from "./EditNews";
+import EditNews from "./AddNews";
 import EditPanduan from "./EditPanduan";
 import EditDeskripsi from "./EditDeskripsi";
 import EditVisi from "./EditVisi";
 import EditMisi from "./EditMisi";
 import EditRFC from "./EditRFC";
+import AddNews from "./EditNews";
 import logoWK from "../assets/Logo WSKT.svg";
 
 import { useState } from "react";
@@ -26,6 +27,8 @@ import {
   SolutionOutlined,
   ProfileOutlined,
   ProjectOutlined,
+  AppstoreAddOutlined,
+  AppstoreOutlined,
 } from "@ant-design/icons";
 import { Layout, Menu, Button, theme } from "antd";
 import EditKontak from "./EditKontak";
@@ -104,9 +107,14 @@ const Dashboard = () => {
               Tambahan
             </Menu.Item>
           </Menu.SubMenu>
-          <Menu.Item key="edit-news" icon={<ReadOutlined />}>
-            Berita
-          </Menu.Item>
+          <Menu.SubMenu key="subberita" icon={<ReadOutlined />} title="Berita">
+            <Menu.Item key="tambah-berita" icon={<AppstoreAddOutlined />}>
+              Tambah Berita
+            </Menu.Item>
+            <Menu.Item key="list-berita" icon={<AppstoreOutlined />}>
+              Edit Berita
+            </Menu.Item>
+          </Menu.SubMenu>
           <Menu.Item key="edit-rfc" icon={<FilePdfOutlined />}>
             RFC 2350
           </Menu.Item>
@@ -185,6 +193,8 @@ const Dashboard = () => {
           {currentPage === "edit-news" && <EditNews />}
           {currentPage === "edit-rfc" && <EditRFC />}
           {currentPage === "edit-panduan" && <EditPanduan />}
+          {currentPage === "tambah-berita" && <EditNews />}
+          {currentPage === "list-berita" && <AddNews />}
         </Content>
       </Layout>
     </Layout>
