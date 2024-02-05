@@ -1,6 +1,5 @@
 import { useRef, useState, useEffect } from "react";
 import { Image, Descriptions } from "antd";
-// import { UploadOutlined } from "@ant-design/icons";
 import axios from "axios";
 
 export default function EditProfile() {
@@ -116,7 +115,7 @@ export default function EditProfile() {
         </div>
         <div className="mt-2 flex flex-col gap-2">
           <label className="label text-black">
-            Image : 
+            Gambar :
             <div className="mt-2 control">
               <div className="file">
                 <label className="file-label">
