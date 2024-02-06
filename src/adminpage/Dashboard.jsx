@@ -7,7 +7,7 @@ import EditDeskripsi from "./EditDeskripsi";
 import EditVisi from "./EditVisi";
 import EditMisi from "./EditMisi";
 import EditRFC from "./EditRFC";
-import AddNews from "./EditNews";
+import AddNews from "./ENews";
 import logoWK from "../assets/Logo WSKT.svg";
 
 import { useState } from "react";
@@ -32,6 +32,7 @@ import {
 } from "@ant-design/icons";
 import { Layout, Menu, Button, theme } from "antd";
 import EditKontak from "./EditKontak";
+import AddPanduan from "./AddPanduan";
 
 const { Header, Sider, Content } = Layout;
 const Dashboard = () => {
@@ -118,9 +119,14 @@ const Dashboard = () => {
           <Menu.Item key="edit-rfc" icon={<FilePdfOutlined />}>
             RFC 2350
           </Menu.Item>
-          <Menu.Item key="edit-panduan" icon={<FileSearchOutlined />}>
-            Panduan
-          </Menu.Item>
+          <Menu.SubMenu key="subpanduan" icon={<FileSearchOutlined />} title="Panduan">
+            <Menu.Item key="tambah-panduan" icon={<AppstoreAddOutlined />}>
+              Tambah Panduan
+            </Menu.Item>
+            <Menu.Item key="list-panduan" icon={<AppstoreOutlined />}>
+              List Panduan
+            </Menu.Item>
+          </Menu.SubMenu>
         </Menu>
         <div
           className="mb-8 fixed flex justify-center bottom-0 uppercase"
@@ -192,7 +198,8 @@ const Dashboard = () => {
           {currentPage === "edit-tambahan" && <EditLayananT />}
           {currentPage === "edit-news" && <EditNews />}
           {currentPage === "edit-rfc" && <EditRFC />}
-          {currentPage === "edit-panduan" && <EditPanduan />}
+          {currentPage === "tambah-panduan" && <AddPanduan />}
+          {currentPage === "list-panduan" && <EditPanduan />}
           {currentPage === "tambah-berita" && <EditNews />}
           {currentPage === "list-berita" && <AddNews />}
         </Content>

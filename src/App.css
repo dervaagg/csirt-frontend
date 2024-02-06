@@ -273,7 +273,7 @@ nav {
   /* ..........Start Menus.......... */
   .menus {
     display: flex;
-    position: sticky;
+    position: fixed;
     left: 0;
     right: 0;
     margin: auto;
@@ -301,6 +301,7 @@ nav {
   .footer-container {
     display: grid;
     gap: 50px;
+    margin-bottom: 40px;
   }
   .footer-container h4 {
     margin-bottom: 20px;
@@ -338,9 +339,6 @@ nav {
     max-width: 100px;
   }
   /* ..........Start Footer.......... */
-  .footer-copyright {
-    display: none;
-  }
   .footer-right {
     display: none;
   }
