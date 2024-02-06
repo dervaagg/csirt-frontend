@@ -259,6 +259,9 @@ export const NewsViewData = [
         paragraf2: 'The GitHub release of the BlackLotus source code, stripped of the specific CVE-2022-21894 exploit, underscores the potential for combining old rootkit and bootkit techniques with new exploits to create novel attack opportunities. Alex Matrosov from Binarly points out that the leak exposes the effectiveness of such techniques in evading modern endpoint security solutions. Despite the patching of CVE-2022-21894 last year, BlackLotus was able to utilize the exploit due to the vulnerable binaries not being added to the UEFI revocation list. This incident highlights the enduring risks associated with patched vulnerabilities, emphasizing the importance for enterprise defenders and CISOs to recognize the ongoing dangers posed by threats operating below the operating system. Matrosov warns that this attack vector is likely to become more sophisticated and complex, requiring a proactive and comprehensive security approach.',
         sub_title3: 'MALWARE & THREATS',
         paragraf3: 'In summary, the public availability of the BlackLotus UEFI bootkit`s source code, even with specific exploits removed, presents a significant cybersecurity risk. The incident underscores the challenges in the Microsoft supply chain, the need for comprehensive solutions addressing vulnerabilities below the operating system, and the persistent threat of sophisticated attacks despite patching efforts. Enterprise defenders are urged to stay vigilant and adopt proactive security measures in response to evolving threats.',
+        namaPenulis: "Thuffail",
+        tanggalUpload: "01-01-2024",
+        linkSumber: "/",
     },
     {
         id: 2,
@@ -272,6 +275,9 @@ export const NewsViewData = [
         paragraf2: 'The researchers identified over 40 known malware families distributed by CustomerLoader, encompassing info-stealers like Redline, Formbook, Vidar, Stealc, Raccoon, and Lumma, marketed as Malware-as-a-Service. Additionally, they encountered Remote Access Trojans (RATs) available on GitHub, including AsyncRAT, QuasarRAT, Remcos, njRAT, and XWorm, along with other threats such as Agent Tesla, LgoogLoader, SectopRAT, Darkcloud, and WarzoneRAT. The investigation also unveiled botnets associated with specific malware families distributed through CustomerLoader, with Redline having over 80 botnets, Quasar with 45, Vidar with 9, Remcos with 6, Stealc with 4, and Formbook with 4.',
         sub_title3: 'The Bottom Line',
         paragraf3: 'Although CustomerLoader may not employ advanced techniques on its own, when combined with the dotRunpeX injector, it effectively lowers the detection rate of the final payload, enabling attackers to enhance their success rate in compromising systems. The multitude and diversity of malware families loaded by CustomerLoader during the first half of June indicate a widespread threat.',
+        namaPenulis: "Thuffail",
+        tanggalUpload: "01-01-2024",
+        linkSumber: "/",
     },
     {
         id: 3,
@@ -285,6 +291,9 @@ export const NewsViewData = [
         paragraf2: 'Exploiting the guise of an exploit for the high-severity CVE-2023-35829 in the Linux kernel before version 6.3.2, a deceptive proof of concept (PoC) actually mimics an older legitimate exploit targeting a different vulnerability, namely CVE-2022-34918. The code cleverly utilizes Linux namespaces, which partition kernel resources, to create the illusion of a root shell, albeit with restricted privileges within the user namespace. This tactic aims to deceive observers into believing the exploit`s authenticity, providing attackers with extended access to the compromised system. Upon initiation, the PoC establishes persistence by generating a `kworker` file and updating its path in the `/etc/bashrc` file. Furthermore, the PoC communicates with a Command and Control (C2) server, downloading and executing a Linux bash script from an external URL. This script, operating under the guise of kernel-level processes, steals sensitive data from the `/etc/passwd` file, manipulates the `~/.ssh/authorized_keys` to grant unauthorized remote access, and employs curl to exfiltrate data via `transfer.sh.` The stolen information includes the username, hostname, and contents of the victim`s home directory, empowering the threat actor with remote control over the server for further manual data theft, leveraging the trust typically placed in kernel-level processes to evade detection by system administrators.',
         sub_title3: 'Don`t trust exploit code',
         paragraf3: 'Uptycs advises researchers who have downloaded and utilized the deceptive proof of concept (PoC) to take precautionary measures, including the removal of any unauthorized SSH keys, deletion of the `kworker` file, elimination of the `kworker` path from the `bashrc` file, and checking for potential threats in `/tmp/.iCE-unix.pid.` Emphasizing the importance of testing PoCs in isolated environments like virtual machines and recommending code inspection before execution, Uptycs also suggests submitting binaries to VirusTotal for a quick and efficient identification of malicious files. The deployment of fake PoCs as a tactic to target both researchers and potential threat actors with malware is not a new phenomenon, as evidenced by recent campaigns impersonating cybersecurity researchers and the North Korean Lazarus hackers` 2021 use of social media to distribute fake PoCs that installed backdoors. These incidents underscore the ongoing challenges faced by the cybersecurity community in navigating the landscape of deceptive tactics employed by malicious.',
+        namaPenulis: "Thuffail",
+        tanggalUpload: "01-01-2024",
+        linkSumber: "/",
     },
     {
         id: 4,
@@ -298,6 +307,9 @@ export const NewsViewData = [
         paragraf2: 'The SOGU malware, upon execution, conducted various nefarious activities, including capturing screenshots, recording keystrokes, establishing remote desktop connections, and exfiltrating stolen data through a custom binary protocol to a Command and Control (C2) server. The attack spanned diverse industries, underscoring the broad range of sectors at risk, including construction, engineering, government, manufacturing, retail, media, and pharmaceutical. In a separate attack, the SNOWYDRIVE malware exploited victims who clicked on seemingly legitimate executable files within USB drives. Triggering an infection chain, the attack resulted in the deployment of a shellcode-based backdoor, copying itself to removable drives, executing file-related operations, and facilitating a reverse shell command.',
         sub_title3: '',
         paragraf3: 'The prevalence of USB-based attacks extends beyond individual campaigns, as evidenced by the documented efforts of China-based Camaro Dragon targeting a healthcare institution in Europe. This attack utilized updated versions of the malware toolset, including WispRider and HopperTick, emphasizing the broader geographic scope of USB-based threats across Myanmar, South Korea, Great Britain, India, and Russia. In response to these evolving tactics, organizations are advised to prioritize access restrictions on USB devices, conduct thorough scans for malicious files before connecting them to the network, and enhance visibility into such attack campaigns. The implementation of a robust and automated Threat Intelligence Platform (TIP) is emphasized to ensure real-time monitoring of tactical and technical details, enabling proactive threat mitigation at the initial stages of an attack.',
+        namaPenulis: "Thuffail",
+        tanggalUpload: "01-01-2024",
+        linkSumber: "/",
     },
     {
         id: 5,
@@ -311,6 +323,9 @@ export const NewsViewData = [
         paragraf2: 'The researchers identified over 40 known malware families distributed by CustomerLoader, encompassing info-stealers like Redline, Formbook, Vidar, Stealc, Raccoon, and Lumma, marketed as Malware-as-a-Service. Additionally, they encountered Remote Access Trojans (RATs) available on GitHub, including AsyncRAT, QuasarRAT, Remcos, njRAT, and XWorm, along with other threats such as Agent Tesla, LgoogLoader, SectopRAT, Darkcloud, and WarzoneRAT. The investigation also unveiled botnets associated with specific malware families distributed through CustomerLoader, with Redline having over 80 botnets, Quasar with 45, Vidar with 9, Remcos with 6, Stealc with 4, and Formbook with 4.',
         sub_title3: 'The bottom line',
         paragraf3: 'Although CustomerLoader may not employ advanced techniques on its own, when combined with the dotRunpeX injector, it effectively lowers the detection rate of the final payload, enabling attackers to enhance their success rate in compromising systems. The multitude and diversity of malware families loaded by CustomerLoader during the first half of June indicate a widespread threat.',
+        namaPenulis: "Thuffail",
+        tanggalUpload: "01-01-2024",
+        linkSumber: "/",
     },
 ]
 //Start News View Data...................
