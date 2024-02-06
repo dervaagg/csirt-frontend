@@ -219,7 +219,7 @@ export default function EditNews() {
                 }`}
               >
                 <Link
-                  className="ml-5 font-semibold hover:text-zinc-500 w-full"
+                  className="ml-5 font-semibold hover:text-black w-full"
                   onClick={() => setSelectedNews(news.id)}
                 >
                   {news.title}
@@ -269,6 +269,44 @@ export default function EditNews() {
                   // setOperasional(e.target.value);
                 }}
               ></textarea>
+            </div>
+            <div className="flex w-full justify-between gap-6">
+              <div className="grid w-full">
+                <label className="text-black" id="address">
+                  Nama Penulis :
+                </label>
+                <input
+                  placeholder="Masukkan Penulis Berita"
+                  className="w-full bg-zinc-300 rounded-md border-gray-700 text-black px-2 py-1"
+                  id="address"
+                  value={currentNewsItem?.namaPenulis || ""}
+                  // onChange={(e) => setPhone(e.target.value)}
+                ></input>
+              </div>
+              <div className="grid w-full">
+                <label className="text-black" id="address">
+                  Tanggal Dibuat :
+                </label>
+                <input
+                  placeholder="Masukkan Tanggal Dibuatnya Berita"
+                  className="w-full bg-zinc-300 rounded-md border-gray-700 text-black px-2 py-1"
+                  id="address"
+                  value={currentNewsItem?.tanggalUpload || ""}
+                  // onChange={(e) => setEmail(e.target.value)}
+                ></input>
+              </div>
+              <div className="grid w-full">
+                <label className="text-black" id="address">
+                  Link Sumber :
+                </label>
+                <input
+                  placeholder="Masukkan Link Sumber Berita"
+                  className="w-full bg-zinc-300 rounded-md border-gray-700 text-black px-2 py-1"
+                  id="address"
+                  value={currentNewsItem?.linkSumber || ""}
+                  // onChange={(e) => setEmail(e.target.value)}
+                ></input>
+              </div>
             </div>
             <div className="mt-4">
               <label className="text-black" id="address">
