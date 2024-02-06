@@ -240,11 +240,11 @@ export const PanduanData = {
 // Panduan Data End.......................
 
 //Start News View Data...................
-import NewsImage1 from '../assets/project1.png'
-import NewsImage2 from '../assets/project2.png'
-import NewsImage3 from '../assets/project3.png'
-import NewsImage4 from '../assets/project4.png'
-import NewsImage5 from '../assets/project5.png'
+import NewsImage1 from '../assets/Heroimg/pic_01.jpg'
+import NewsImage2 from '../assets/Heroimg/pic_02.jpg'
+import NewsImage3 from '../assets/Heroimg/pic_03.jpg'
+import NewsImage4 from '../assets/Heroimg/pic_04.jpg'
+import NewsImage5 from '../assets/Heroimg/pic_05.jpg'
 
 export const NewsViewData = [
     {
