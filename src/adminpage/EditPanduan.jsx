@@ -15,7 +15,7 @@ export default function EditPanduan() {
           {PanduanData.DataPanduan.map((items, index)=>(
               <ul key={index} className="list-none grid pb-2">
                   <li className={`flex items-center w-full h-16 rounded-l-full text-base ${selectedPdf === items.filePdf ? 'bg-zinc-500 text-white' : ''}`}>
-                    <Link className="ml-5 font-semibold hover:text-zinc-500 w-full" onClick={() => setSelectedPdf(items.filePdf)}>{items.title}</Link>
+                    <Link className="ml-5 font-semibold hover:text-black w-full" onClick={() => setSelectedPdf(items.filePdf)}>{items.title}</Link>
                   </li>
               </ul>
           ))}
