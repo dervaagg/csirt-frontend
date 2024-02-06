@@ -80,12 +80,12 @@ export default function EditNews() {
         return;
       }
 
-      formData.append("title", title);
-      formData.append("category", category);
-      formData.append("content", content);
-      formData.append("source", source);
-      formData.append("date", date);
-      formData.append("image", file);
+      // formData.append("title", title);
+      // formData.append("category", category);
+      // formData.append("content", content);
+      // formData.append("source", source);
+      // formData.append("date", date);
+      // formData.append("image", file);
 
       await axios.post("http://localhost:4001/news", formData, {
         headers: {
@@ -181,7 +181,7 @@ export default function EditNews() {
 
   return (
     // SECTION TAMBAH BERITA
-    <div className="flex flex-col  bg-white min-h-full rounded-lg p-4 shadow-sm">
+    <div className="flex flex-col bg-white min-h-full rounded-lg p-4 shadow-sm">
       <h2 className="mt-4 mb-5 text-black font-bold text-3xl">TAMBAH BERITA</h2>
       <div className="mb-6 text-neutral-300">
         <Button
