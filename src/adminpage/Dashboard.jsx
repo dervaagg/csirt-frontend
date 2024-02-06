@@ -7,7 +7,9 @@ import EditDeskripsi from "./EditDeskripsi";
 import EditVisi from "./EditVisi";
 import EditMisi from "./EditMisi";
 import EditRFC from "./EditRFC";
-import AddNews from "./ENews";
+import AddNews from "./EditNews";
+import EditKontak from "./EditKontak";
+import AddPanduan from "./AddPanduan";
 import logoWK from "../assets/Logo WSKT.svg";
 
 import { useState } from "react";
@@ -31,8 +33,6 @@ import {
   AppstoreOutlined,
 } from "@ant-design/icons";
 import { Layout, Menu, Button, theme } from "antd";
-import EditKontak from "./EditKontak";
-import AddPanduan from "./AddPanduan";
 
 const { Header, Sider, Content } = Layout;
 const Dashboard = () => {
