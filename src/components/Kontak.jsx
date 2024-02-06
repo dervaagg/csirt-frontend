@@ -17,6 +17,26 @@ export default function Kontak() {
           <h2 className="uppercase">Hubungi Kami</h2>
         </div>
         <div className="kontak-warpper">
+          <div className="kontak-left">
+            <h2 className="-mb-5 uppercase"> Disclaimer</h2>
+            <br />
+            <ul>
+              <li>
+                Bagi konstituen, sampai saat ini WASKITA-CSIRT hanya merespon
+                dan menangani insiden keamanan siber yang terjadi pada perangkat
+                kerja yang bersifat dinas.
+              </li>
+              <li>
+                Terkait penanganan jenis malware tergantung dari ketersediaan
+                dan kehandalan tools yang dimiliki WASKITA.
+              </li>
+              <li>
+                Apabila dibutuhkan, segala konsekuensi hukum yang disebabkan
+                oleh insiden keamanan siber akan diteruskan ke institusi penegak
+                hukum sesuai dengan peraturan perundang – undangan yang berlaku.
+              </li>
+            </ul>
+          </div>
           <div className="kontak-right">
             <div className="lokasi">
               <FiMapPin className="icon-kontak-fi" />
@@ -49,26 +69,6 @@ export default function Kontak() {
                 Pukul 08.00 s/d 17.00 WIB ( GMT+7 )
               </p>
             </div>
-          </div>
-          <div className="kontak-left">
-            <h2 className="-mb-5 uppercase"> Disclaimer</h2>
-            <br />
-            <ul>
-              <li>
-                Bagi konstituen, sampai saat ini WASKITA-CSIRT hanya merespon
-                dan menangani insiden keamanan siber yang terjadi pada perangkat
-                kerja yang bersifat dinas.
-              </li>
-              <li>
-                Terkait penanganan jenis malware tergantung dari ketersediaan
-                dan kehandalan tools yang dimiliki WASKITA.
-              </li>
-              <li>
-                Apabila dibutuhkan, segala konsekuensi hukum yang disebabkan
-                oleh insiden keamanan siber akan diteruskan ke institusi penegak
-                hukum sesuai dengan peraturan perundang – undangan yang berlaku.
-              </li>
-            </ul>
           </div>
         </div>
       </div>

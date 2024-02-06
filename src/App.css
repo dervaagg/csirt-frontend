@@ -144,10 +144,22 @@ nav {
 }
 /* ----------------End Navbar---------------- */
 
+/* START RFC*/
+
+.title-rfc {
+  font-weight: 700;
+}
+
+/* END RFC */
+
 /* ----------------Start Footer---------------- */
+
 .Footer {
   background: var(--color-light);
-  padding: 3rem 0 !important;
+  padding: 2rem 0 !important;
+  outline: 0.5px thick black;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
+  margin-top: 20px;
 }
 .footer-container {
   display: grid;
@@ -232,6 +244,9 @@ nav {
   margin-bottom: 5px;
   font-size: 15px !important;
   color: var(--color-white);
+}
+.footer-copyright small span {
+  color: rgb(0, 123, 255);
 }
 /* ----------------End Footer---------------- */
 
