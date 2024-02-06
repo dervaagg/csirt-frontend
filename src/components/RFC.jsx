@@ -5,11 +5,14 @@ export default function RFC() {
   return (
     <div className="container rfc-container">
       <div className="title-rfc mt-3">
-        <button className="bg-transparent blur-0 rounded-md ml-10 text-3xl  text-black animate-bounce hover:animate-none leading-loose">
+        <button className="bg-transparent blur-0 rounded-md ml-10 text-3xl text-black animate-pulse hover:animate-none leading-loose">
           Dokumen <br /> RFC2350 <br /> WASKITA-CSIRT.
         </button>
-        <img className="mt-10 w-80"
-        src="../src/assets/reading-book.png" alt="" />
+        <img
+          className="mt-10 w-80"
+          src="../src/assets/reading-book.png"
+          alt=""
+        />
       </div>{" "}
       {/* Add your image below the title */}
       <div className="pdf-rfc">
