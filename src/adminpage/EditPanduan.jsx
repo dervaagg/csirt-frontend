@@ -8,8 +8,8 @@ export default function EditPanduan() {
   const [selectedPdf, setSelectedPdf] = useState(null);
 
   return (
-    <div className="flex flex-col min-h-full bg-white rounded-lg p-4 shadow-sm">
-      <h2 className="mt-4 mb-5 text-black font-bold text-3xl">List Panduan</h2>    
+    <div className="mt-10 flex flex-col min-h-full bg-white rounded-lg p-1 shadow-sm">
+      <h2 className="mt-4 mb-5 text-black font-bold text-xl">Edit Panduan</h2>    
       <div className="flex mt-5 max-h-full">
         <div className="flex flex-col mr-6">
           {PanduanData.DataPanduan.map((items, index)=>(

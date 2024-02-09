@@ -22,19 +22,17 @@ export default function EditRFC() {
   const handleUpload = async ({ file, onSuccess, onError }) => {
     const formData = new FormData();
     formData.append("file", file);
-
     try {
       const existingFile = fileList.find((rfc) => rfc.url === file.url);
-
       if (existingFile) {
         await axios.patch(
           `http://localhost:4001/rfc/${existingFile.id}`,
           formData
         );
-        message.success(`${file.name} file updated successfully.`);
+        message.success(`${file.name} Uploaded Successfully.`);
+        
       } else {
         await axios.post("http://localhost:4001/rfc", formData);
-        message.success(`${file.name} file uploaded successfully.`);
       }
 
       getRFC();
@@ -53,7 +51,6 @@ export default function EditRFC() {
       getRFC();
     } catch (error) {
       message.error("Error deleting RFC file");
-      console.error("Error deleting RFC file", error.message);
     }
   };
 
@@ -73,9 +70,9 @@ export default function EditRFC() {
         console.log(info.file, info.fileList);
       }
       if (status === "done") {
-        message.success(`${info.file.name} file uploaded successfully.`);
+        message.success(`${info.file.name} uploaded Successfully.`);
       } else if (status === "error") {
-        message.error(`${info.file.name} file upload failed.`);
+        message.error(`${info.file.name} Upload Failed.`);
       }
       if (info.file.status === "done" || info.file.status === "error") {
         getRFC();
