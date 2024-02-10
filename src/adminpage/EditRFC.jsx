@@ -1,10 +1,12 @@
 import { InboxOutlined } from "@ant-design/icons";
 import { message, Popconfirm, Upload } from "antd";
 import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 
 export default function EditRFC() {
   const [fileList, setFileList] = useState([]);
+  const { Dragger } = Upload;
+  const editRFCRef = useRef(null);
 
   useEffect(() => {
     getRFC();
@@ -22,23 +24,12 @@ export default function EditRFC() {
   const handleUpload = async ({ file, onSuccess, onError }) => {
     const formData = new FormData();
     formData.append("file", file);
-
     try {
-      const existingFile = fileList.find((rfc) => rfc.url === file.url);
-
-      if (existingFile) {
-        await axios.patch(
-          `http://localhost:4001/rfc/${existingFile.id}`,
-          formData
-        );
-        message.success(`${file.name} file updated successfully.`);
-      } else {
-        await axios.post("http://localhost:4001/rfc", formData);
-        message.success(`${file.name} file uploaded successfully.`);
-      }
-
+      await axios.post("http://localhost:4001/rfc", formData);
+      message.success(`${file.name} Uploaded Successfully.`);
       getRFC();
       onSuccess();
+      scrollToBottom();
     } catch (error) {
       message.error(`${file.name} file upload failed.`);
       console.error("Error uploading RFC file", error.message);
@@ -53,7 +44,6 @@ export default function EditRFC() {
       getRFC();
     } catch (error) {
       message.error("Error deleting RFC file");
-      console.error("Error deleting RFC file", error.message);
     }
   };
 
@@ -62,7 +52,10 @@ export default function EditRFC() {
     message.error("Batal Menghapus");
   };
 
-  const { Dragger } = Upload;
+  const scrollToBottom = () => {
+    window.scrollTo(0, document.body.scrollHeight);
+  };
+
   const props = {
     name: "file",
     multiple: true,
@@ -73,9 +66,9 @@ export default function EditRFC() {
         console.log(info.file, info.fileList);
       }
       if (status === "done") {
-        message.success(`${info.file.name} file uploaded successfully.`);
+        message.success(`${info.file.name} uploaded Successfully.`);
       } else if (status === "error") {
-        message.error(`${info.file.name} file upload failed.`);
+        message.error(`${info.file.name} Upload Failed.`);
       }
       if (info.file.status === "done" || info.file.status === "error") {
         getRFC();
@@ -88,7 +81,9 @@ export default function EditRFC() {
 
   return (
     <div className="flex flex-col min-h-full bg-white rounded-lg p-4 shadow-sm">
-      <h2 className="mt-4 mb-5 text-black font-bold text-3xl">RFC 2350</h2>
+      <h2 ref={editRFCRef} className="mt-4 mb-5 text-black font-bold text-3xl">
+        RFC 2350
+      </h2>
       <div className="w-60 h-90 bg-zinc-300 rounded-3xl text-neutral- p-4 flex flex-col items-start justify-center gap-3">
         <div className="w-52 border-dashed rounded-2xl">
           <Dragger {...props} customRequest={handleUpload}>
@@ -107,17 +102,22 @@ export default function EditRFC() {
 
       <br />
       <h1 className="mt-3 mb-1 text-black text-xl">Edit RFC 2350</h1>
-      <div className="mt-5 flex flex-col-reverse bg-zinc-300 rounded-lg p-4">
+      <div className="mt-2 flex flex-col-reverse bg-zinc-300 rounded-lg p-4">
         {fileList.map((rfc, index) => (
           <React.Fragment key={index}>
             <object
               data={rfc.url}
               type="application/pdf"
               width="100%"
-              height="450px"
+              height="800px"
+              style={{
+                marginBottom: "20px",
+                borderRadius: "5px",
+                boxShadow: "0 0 5px 0 rgba(0, 0, 0, 3)",
+              }}
             >
               <p>
-                Dokunen hanya bisa di tampilkan pada Mode Desktop saja. Tidak
+                Dokumen hanya bisa di tampilkan pada Mode Desktop saja. Tidak
                 bisa pada Mode Mobile.
               </p>
             </object>

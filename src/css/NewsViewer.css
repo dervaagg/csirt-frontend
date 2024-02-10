@@ -16,7 +16,7 @@
     margin-bottom: 90px;
 }
 
-.header-news{
+.header-news {
     height: 60vh;
     width: 100%;
     display: flex;
@@ -24,7 +24,7 @@
     justify-content: center;
     object-fit: contain;
 }
-.header-news img{
+.header-news img {
     position: absolute;
     top: 0;
     left: 0;
@@ -33,36 +33,57 @@
     z-index: -1;
     object-fit: cover;
 }
-.header-news .title{
+.header-news .title {
     font-weight: 500;
     font-size: 40px;
-    margin-left: 50px;
+    margin-right: 45px;
+    margin-left: 45px;
+    max-width: 550px;
+    background-color: transparent;
+    backdrop-filter: blur(10px);
     text-shadow: 2px 2px 3px rgba(0, 0, 0, 4);
 }
-.header-news .title h3{
+.header-news .title h3 {
+    color: var(--color-white);
     max-width: 600px;
-    margin-bottom: 10px;
+    margin: 0 0 10px 30px;
+    text-shadow: 2px 2px 3px rgba(0, 0, 0, 4);
 }
-.header-news .title small{
+.header-news .title small {
     background: var(--color-dark);
     color: var(--color-danger);
     border: 2px solid var(--color-danger);
     padding: 2px 5px;
+    margin-left: 30px;
+    margin-bottom: 20px;
     border-radius: 3px;
     font-weight: bold;
 }
-.content-news{
+.content-news {
     height: auto;
     width: 100%;
     justify-content: center;
     align-items: center;
 }
-.content-news .text p{
+.content-news .container-sumber {
+    display: flex;
+    justify-content: space-between;
+    height: 40px;
+    margin: 40px 50px 50px 50px;
+    border-bottom: 2px solid var(--color-light);
+}
+.content-news .text p {
     margin: 0 50px 20px 50px;
     text-align: justify;
 }
-.content-news .text .sub-title{
+.content-news .text .sub-title {
     font-size: 25px;
     font-weight: bold;
     margin-top: 30px;
+}
+
+@media(max-width:666px) {
+    .content-news .container-sumber p {
+        font-size: 13px;
+    }
 }

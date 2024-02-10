@@ -84,7 +84,7 @@ export default function EditLayananT() {
               </th>
             </tr>
           </thead>
-          <tbody>
+          <tbody className="capitalize">
             {other.map((other, index) => (
               <tr
                 className="odd:bg-white even:bg-gray-50 border-b"
