@@ -105,24 +105,11 @@ export default function EditNews() {
       formData.append("paragraph3", paragraph3);
     }
     try {
-      await axios.patch(`http://localhost:4001/news/${id}`, formData, {
+      await axios.patch(`http://localhost:4001/news/2`, formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },
       });
-      setTitle("");
-      setCategory("");
-      setContent("");
-      setSource("");
-      setDate("");
-      setFile("");
-      setPreview("");
-      setSub_title1("");
-      setParagraph1("");
-      setSub_title2("");
-      setParagraph2("");
-      setSub_title3("");
-      setParagraph3("");
     } catch (error) {
       console.error("Error submitting news form:", error.message);
     }
@@ -160,7 +147,7 @@ export default function EditNews() {
         <div className="flex flex-col mr-6 min-w-3.5">
           {newses.map((news, index) => (
             <React.Fragment key={index}>
-              <div className="flex items-center justify-between max-w-full h-16 rounded-l-full text-base">
+              <div className="flex items-center justify-between max-w-50 h-16 rounded-l-full text-base">
                 <Link
                   className=" font-semibold hover:text-black max-w-50"
                   onClick={() => handleNewsClick(news.id)}
@@ -176,7 +163,7 @@ export default function EditNews() {
                     okText="Iya Dong"
                     cancelText="Gak Jadi Deh"
                   >
-                    <button className="mr-4 bg-transparent outline outline-1 font-bold p-2 px-2 rounded-lg bg-red-600 hover:bg-red-400 transition-colors">
+                    <button className="ml-1 mr-2 bg-transparent outline outline-1 font-bold p-2 px-2 rounded-lg bg-red-600 hover:bg-red-400 transition-colors">
                       <DeleteOutlined />
                     </button>
                   </Popconfirm>
@@ -196,7 +183,7 @@ export default function EditNews() {
                   placeholder="Masukkan Judul Berita"
                   className="w-full bg-zinc-300 rounded-md border-gray-700 text-black px-2 py-1"
                   id="title"
-                  value={title || ""}
+                  value={title}
                   onChange={(e) => setTitle(e.target.value)}
                 ></input>
               </div>
@@ -235,20 +222,20 @@ export default function EditNews() {
                   placeholder="Masukkan Kategori Berita"
                   className="w-full bg-zinc-300 rounded-md border-gray-700 text-black px-2 py-1"
                   id="category"
-                  value={category || ""}
+                  value={category}
                   onChange={(e) => setCategory(e.target.value)}
                 ></input>
               </div>
               <div className="mt-4 mb-4">
                 <label className="text-black" id="content">
-                  Deskripsi Berita :
+                  Informasi Berita :
                 </label>
                 <textarea
-                  placeholder="Masukkan Info Berita"
+                  placeholder="Masukkan Informasi Singkat Mengenai Berita"
                   ref={textareaRef}
                   className="w-full bg-zinc-300 rounded-md border-gray-700 text-black px-2 py-1"
                   id="content"
-                  value={content || ""}
+                  value={content}
                   onChange={(e) => {
                     handleChange(e);
                     setContent(e.target.value);
@@ -264,7 +251,7 @@ export default function EditNews() {
                     placeholder="Masukkan Tanggal Dibuatnya Berita"
                     className="w-full bg-zinc-300 rounded-md border-gray-700 text-black px-2 py-1"
                     id="date"
-                    value={date || ""}
+                    value={date}
                     onChange={(e) => setDate(e.target.value)}
                   ></input>
                 </div>
@@ -276,7 +263,7 @@ export default function EditNews() {
                     placeholder="Masukkan Link Sumber Berita"
                     className="w-full bg-zinc-300 rounded-md border-gray-700 text-black px-2 py-1"
                     id="source"
-                    value={source || ""}
+                    value={source}
                     onChange={(e) => setSource(e.target.value)}
                   ></input>
                 </div>
@@ -287,10 +274,10 @@ export default function EditNews() {
                   Sub Judul 1 :
                 </label>
                 <input
-                  placeholder="Masukkan Kategori Berita"
+                  placeholder="Masukkan Judul 1 Dari Berita"
                   className="w-full bg-zinc-300 rounded-md border-gray-700 text-black px-2 py-1"
                   id="subtitle1"
-                  value={sub_title1 || ""}
+                  value={sub_title1}
                   onChange={(e) => setSub_title1(e.target.value)}
                 ></input>
               </div>
@@ -299,11 +286,11 @@ export default function EditNews() {
                   Paragraf 1 :
                 </label>
                 <textarea
-                  placeholder="Masukkan Info Berita"
+                  placeholder="Masukkan Paragraf 1 Dari Berita"
                   ref={textareaRef}
                   className="w-full bg-zinc-300 rounded-md border-gray-700 text-black px-2 py-1"
                   id="paragraph1"
-                  value={paragraph1 || ""}
+                  value={paragraph1}
                   onChange={(e) => {
                     handleChange(e);
                     setParagraph1(e.target.value);
@@ -315,10 +302,10 @@ export default function EditNews() {
                   Sub Judul 2 :
                 </label>
                 <input
-                  placeholder="Masukkan Kategori Berita"
+                  placeholder="Masukkan Judul 2 Dari Berita"
                   className="w-full bg-zinc-300 rounded-md border-gray-700 text-black px-2 py-1"
                   id="subtitle2"
-                  value={sub_title2 || ""}
+                  value={sub_title2}
                   onChange={(e) => setSub_title2(e.target.value)}
                 ></input>
               </div>
@@ -327,11 +314,11 @@ export default function EditNews() {
                   Paragrah 2 :
                 </label>
                 <textarea
-                  placeholder="Masukkan Info Berita"
+                  placeholder="Masukkan Paragraf 2 Dari Berita"
                   ref={textareaRef}
                   className="w-full bg-zinc-300 rounded-md border-gray-700 text-black px-2 py-1"
                   id="paragraph2"
-                  value={paragraph2 || ""}
+                  value={paragraph2}
                   onChange={(e) => {
                     handleChange(e);
                     setParagraph2(e.target.value);
@@ -343,10 +330,10 @@ export default function EditNews() {
                   Sub Judul 3 :
                 </label>
                 <input
-                  placeholder="Masukkan Kategori Berita"
+                  placeholder="Masukkan Judul 3 Dari Berita"
                   className="w-full bg-zinc-300 rounded-md border-gray-700 text-black px-2 py-1"
                   id="subtitle3"
-                  value={sub_title3 || ""}
+                  value={sub_title3}
                   onChange={(e) => setSub_title3(e.target.value)}
                 ></input>
               </div>
@@ -355,11 +342,11 @@ export default function EditNews() {
                   Paragraf 3 :
                 </label>
                 <textarea
-                  placeholder="Masukkan Info Berita"
+                  placeholder="Masukkan Paragraf 3 Dari Berita"
                   ref={textareaRef}
                   className="w-full bg-zinc-300 rounded-md border-gray-700 text-black px-2 py-1"
                   id="paragraph3"
-                  value={paragraph3 || ""}
+                  value={paragraph3}
                   onChange={(e) => {
                     handleChange(e);
                     setParagraph3(e.target.value);

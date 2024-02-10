@@ -57,13 +57,13 @@ export default function EditKontak() {
       <Descriptions>
         {contact.map((contact) => (
           <>
-            <Descriptions.Item label="Alamat">
-              {contact.address}
-            </Descriptions.Item>
             <Descriptions.Item label="Nomor Telephone">
               {contact.phone}
             </Descriptions.Item>
             <Descriptions.Item label="Email">{contact.email}</Descriptions.Item>
+            <Descriptions.Item label="Alamat">
+              {contact.address}
+            </Descriptions.Item>
             <Descriptions.Item label="Jam Operasional">
               {contact.operasional}
             </Descriptions.Item>
