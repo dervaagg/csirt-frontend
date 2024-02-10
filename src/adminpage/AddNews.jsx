@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import { Modal, Space, Alert } from "antd";
+import { Modal } from "antd";
 import axios from "axios";
 import { Card, Button } from "antd";
 import { BiLinkExternal } from "react-icons/bi";
@@ -21,7 +21,30 @@ export default function EditNews() {
   const [paragraph2, setParagraph2] = useState("");
   const [sub_title3, setSub_title3] = useState("");
   const [paragraph3, setParagraph3] = useState("");
-  const [errorAlert, setErrorAlert] = useState(null);
+  const [isFormValid, setIsFormValid] = useState(true);
+  const [warningMessage, setWarningMessage] = useState("");
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const validateForm = () => {
+    if (
+      !title ||
+      !source ||
+      !date ||
+      !category ||
+      !content ||
+      !file ||
+      !paragraph1 ||
+      !sub_title1
+    ) {
+      setIsFormValid(false);
+      setWarningMessage("Harap isi semua kolom yang wajib diisi.");
+      return false;
+    } else {
+      setIsFormValid(true);
+      setWarningMessage("");
+      return true;
+    }
+  };
 
   const loadImage = (e) => {
     const image = e.target.files[0];
@@ -60,56 +83,6 @@ export default function EditNews() {
     if (file) {
       formData.append("image", file);
     }
-    try {
-      const allowedType = ["jpeg", "jpg", "png"];
-      const extension = file.name.split(".").pop();
-      if (!allowedType.includes(extension.toLowerCase())) {
-        setErrorAlert({
-          type: "error",
-          message: "Image type must be jpeg/jpg/png",
-        });
-        return;
-      }
-
-      const fileSize = file.size / 1024 / 1024;
-      if (fileSize > 10) {
-        setErrorAlert({
-          type: "error",
-          message: "Image must be less than 10 mb",
-        });
-        return;
-      }
-
-      // formData.append("title", title);
-      // formData.append("category", category);
-      // formData.append("content", content);
-      // formData.append("source", source);
-      // formData.append("date", date);
-      // formData.append("image", file);
-
-      await axios.post("http://localhost:4001/news", formData, {
-        headers: {
-          "Content-Type": "multipart/form-data",
-        },
-      });
-
-      setTitle("");
-      setCategory("");
-      setContent("");
-      setSource("");
-      setDate("");
-      setFile("");
-      setPreview("");
-    } catch (error) {
-      console.error("Error submitting news form:", error.message);
-    }
-  };
-
-  const createContents = async (e) => {
-    if (e) {
-      e.preventDefault();
-    }
-    const formData = new FormData();
     if (sub_title1.trim() !== "") {
       formData.append("sub_title1", sub_title1);
     }
@@ -129,11 +102,19 @@ export default function EditNews() {
       formData.append("paragraph3", paragraph3);
     }
     try {
-      await axios.post("http://localhost:4001/content", formData, {
+      await axios.post("http://localhost:4001/news", formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },
       });
+
+      setTitle("");
+      setCategory("");
+      setContent("");
+      setSource("");
+      setDate("");
+      setFile("");
+      setPreview("");
       setSub_title1("");
       setParagraph1("");
       setSub_title2("");
@@ -141,16 +122,8 @@ export default function EditNews() {
       setSub_title3("");
       setParagraph3("");
     } catch (error) {
-      console.log(error);
+      console.error("Error submitting news form:", error.message);
     }
-    console.log("Submitting content form:", {
-      sub_title1,
-      paragraph1,
-      sub_title2,
-      paragraph2,
-      sub_title3,
-      paragraph3,
-    });
   };
 
   const getNews = async () => {
@@ -158,16 +131,18 @@ export default function EditNews() {
     setNewses(response.data);
   };
 
-  const [isModalOpen, setIsModalOpen] = useState(false);
   const showModal = () => {
     setIsModalOpen(true);
   };
 
   const handleOk = async (e) => {
     e.preventDefault();
-    await createNews();
-    await createContents();
-    setIsModalOpen(false);
+    if (validateForm()) {
+      await createNews();
+      setIsModalOpen(false);
+      setIsFormValid(true);
+      setWarningMessage("");
+    }
   };
 
   const handleCancel = () => {
@@ -197,23 +172,7 @@ export default function EditNews() {
           Tambah
         </Button>
       </div>
-      {errorAlert && (
-        <Space
-          direction="vertical"
-          style={{
-            width: "100%",
-          }}
-        >
-          <Alert
-            message="Error"
-            description={errorAlert.message}
-            type={errorAlert.type}
-            showIcon
-          />
-        </Space>
-      )}
       <br />
-      {/* SECTION TAMPILKAN LIST BERITA  */}
       <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3">
         {newses.map((news, index) => (
           <div key={index} className="mb-4 flex flex-col items-center">
@@ -240,7 +199,11 @@ export default function EditNews() {
               <img
                 alt="picture"
                 src={news.url}
-                style={{ width: "100%", height: "auto", borderRadius: "10px" }}
+                style={{
+                  width: "100%",
+                  height: "auto",
+                  borderRadius: "10px",
+                }}
               />
               <br />
               <p>
@@ -264,12 +227,25 @@ export default function EditNews() {
         open={isModalOpen}
         onOk={handleOk}
         onCancel={handleCancel}
+        footer={[
+          <Button key="cancel" onClick={handleCancel}>
+            Cancel
+          </Button>,
+          <Button key="ok" onClick={handleOk}>
+            OK
+          </Button>,
+        ]}
       >
-        <div className="flex flex-col bg-white min-h-full rounded-lg p-4 shadow-sm">
+        <div
+          className={`flex flex-col bg-white min-h-full rounded-lg p-4 shadow-sm ${
+            !isFormValid && "border border-red-500"
+          }`}
+        >
           <form onSubmit={createNews}>
+            {!isFormValid && <p className="text-red-600">{warningMessage}</p>}
             <div className="mt-4">
               <label className="text-black" id="title">
-                Judul :
+                Judul <span className="text-red-500">*</span> :
               </label>
               <input
                 placeholder="contoh : Berita Terkini"
@@ -277,11 +253,12 @@ export default function EditNews() {
                 type="text"
                 value={title}
                 onChange={(e) => setTitle(e.target.value)}
+                required
               ></input>
             </div>
             <div className="mt-2 flex flex-col gap-2">
               <label className="label text-black">
-                Gambar :
+                Gambar <span className="text-red-500">*</span> :
                 <div className="mt-2 control">
                   <div className="file">
                     <label className="file-label">
@@ -289,7 +266,13 @@ export default function EditNews() {
                         type="file"
                         className="file-input"
                         onChange={loadImage}
+                        required
                       />
+                      {
+                        <h5 className="text-red-600">
+                          Format Gambar PNG/JPG/JPEG dan Ukuran Maksimal 10Mb
+                        </h5>
+                      }
                     </label>
                   </div>
                 </div>
@@ -308,7 +291,7 @@ export default function EditNews() {
             </div>
             <div className="mt-4">
               <label className="text-black" id="source">
-                Sumber Berita :
+                Sumber Berita <span className="text-red-500">*</span> :
               </label>
               <input
                 placeholder="contoh : www.contoh.com"
@@ -316,11 +299,13 @@ export default function EditNews() {
                 type="text"
                 value={source}
                 onChange={(e) => setSource(e.target.value)}
+                required
               ></input>
             </div>
             <div className="mt-4">
               <label className="text-black" id="date">
-                Tanggal Upload {"(Penerbit Mengupload Berita)"} :
+                Tanggal Upload {"(Penerbit Mengupload Berita)"}{" "}
+                <span className="text-red-500">*</span> :
               </label>
               <input
                 placeholder="contoh : 1 Januari 2024"
@@ -328,11 +313,12 @@ export default function EditNews() {
                 type="text"
                 value={date}
                 onChange={(e) => setDate(e.target.value)}
+                required
               ></input>
             </div>
             <div className="mt-4">
               <label className="text-black" id="category">
-                Kategori :
+                Kategori <span className="text-red-500">*</span> :
               </label>
               <input
                 placeholder="contoh : Malware"
@@ -340,11 +326,12 @@ export default function EditNews() {
                 type="text"
                 value={category}
                 onChange={(e) => setCategory(e.target.value)}
+                required
               ></input>
             </div>
             <div className="mt-4">
               <label className="text-black" id="name">
-                Sinopsis :
+                Sinopsis <span className="text-red-500">*</span> :
               </label>
               <textarea
                 placeholder="Ringkasan Singkat Tentang Berita"
@@ -352,71 +339,72 @@ export default function EditNews() {
                 type="text"
                 value={content}
                 onChange={(e) => setContent(e.target.value)}
+                required
               ></textarea>
             </div>
           </form>
           <br />
-          <form onSubmit={createContents}>
-            <div className="flex flex-col gap-4">
-              <label className="text-black" id="isi-berita">
-                Isi Berita :
-              </label>
-              <input
-                placeholder="Sub Judul 1"
-                className="w-full h-auto bg-zinc-300 rounded-md border-gray-700 text-black px-2 py-1"
-                type="text"
-                value={sub_title1}
-                onChange={(e) => setSub_title1(e.target.value)}
-              ></input>
-              <textarea
-                placeholder="Paragraf 1"
-                ref={textareaRef}
-                onChange={(e) => {
-                  handleChange(e);
-                  setParagraph1(e.target.value);
-                }}
-                value={paragraph1}
-                className="w-full bg-zinc-300 rounded-md border-gray-700 text-black px-2 py-1"
-                id="paragraph1"
-              ></textarea>
-              <input
-                placeholder="Sub Judul 2 (Opsional)"
-                className="w-full h-auto bg-zinc-300 rounded-md border-gray-700 text-black px-2 py-1"
-                type="text"
-                value={sub_title2}
-                onChange={(e) => setSub_title2(e.target.value)}
-              ></input>
-              <textarea
-                placeholder="Paragraf 2 (Opsional)"
-                ref={textareaRef}
-                value={paragraph2}
-                onChange={(e) => {
-                  handleChange(e);
-                  setParagraph2(e.target.value);
-                }}
-                className="w-full bg-zinc-300 rounded-md border-gray-700 text-black px-2 py-1"
-                id="paragraph2"
-              ></textarea>
-              <input
-                placeholder="Sub Judul 3 (Opsional)"
-                className="w-full h-auto bg-zinc-300 rounded-md border-gray-700 text-black px-2 py-1"
-                type="text"
-                value={sub_title3}
-                onChange={(e) => setSub_title3(e.target.value)}
-              ></input>
-              <textarea
-                placeholder="Paragraf 3 (Opsional)"
-                ref={textareaRef}
-                value={paragraph3}
-                onChange={(e) => {
-                  handleChange(e);
-                  setParagraph3(e.target.value);
-                }}
-                className="w-full bg-zinc-300 rounded-md border-gray-700 text-black px-2 py-1"
-                id="address"
-              ></textarea>
-            </div>
-          </form>
+          <div className="flex flex-col gap-4">
+            <label className="text-black" id="isi-berita">
+              Isi Berita <span className="text-red-500">*</span> :
+            </label>
+            <input
+              placeholder="Sub Judul 1"
+              className="w-full h-auto bg-zinc-300 rounded-md border-gray-700 text-black px-2 py-1"
+              type="text"
+              value={sub_title1}
+              onChange={(e) => setSub_title1(e.target.value)}
+              required
+            ></input>
+            <textarea
+              placeholder="Paragraf 1"
+              ref={textareaRef}
+              onChange={(e) => {
+                handleChange(e);
+                setParagraph1(e.target.value);
+              }}
+              value={paragraph1}
+              className="w-full bg-zinc-300 rounded-md border-gray-700 text-black px-2 py-1"
+              id="paragraph1"
+              required
+            ></textarea>
+            <input
+              placeholder="Sub Judul 2 (Opsional)"
+              className="w-full h-auto bg-zinc-300 rounded-md border-gray-700 text-black px-2 py-1"
+              type="text"
+              value={sub_title2}
+              onChange={(e) => setSub_title2(e.target.value)}
+            ></input>
+            <textarea
+              placeholder="Paragraf 2 (Opsional)"
+              ref={textareaRef}
+              value={paragraph2}
+              onChange={(e) => {
+                handleChange(e);
+                setParagraph2(e.target.value);
+              }}
+              className="w-full bg-zinc-300 rounded-md border-gray-700 text-black px-2 py-1"
+              id="paragraph2"
+            ></textarea>
+            <input
+              placeholder="Sub Judul 3 (Opsional)"
+              className="w-full h-auto bg-zinc-300 rounded-md border-gray-700 text-black px-2 py-1"
+              type="text"
+              value={sub_title3}
+              onChange={(e) => setSub_title3(e.target.value)}
+            ></input>
+            <textarea
+              placeholder="Paragraf 3 (Opsional)"
+              ref={textareaRef}
+              value={paragraph3}
+              onChange={(e) => {
+                handleChange(e);
+                setParagraph3(e.target.value);
+              }}
+              className="w-full bg-zinc-300 rounded-md border-gray-700 text-black px-2 py-1"
+              id="address"
+            ></textarea>
+          </div>
         </div>
       </Modal>
     </div>

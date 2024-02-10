@@ -2,7 +2,6 @@ import BackgroundVideo from "./BackgroundVideo";
 import EditLayananU from "./EditLayananU";
 import EditLayananT from "./EditLayananT";
 import EditNews from "./AddNews";
-import EditPanduan from "./EditPanduan";
 import EditDeskripsi from "./EditDeskripsi";
 import EditVisi from "./EditVisi";
 import EditMisi from "./EditMisi";
@@ -17,7 +16,6 @@ import {
   MenuFoldOutlined,
   MenuUnfoldOutlined,
   HomeOutlined,
-  FileSearchOutlined,
   UserOutlined,
   FilePdfOutlined,
   ContactsOutlined,
@@ -119,14 +117,9 @@ const Dashboard = () => {
           <Menu.Item key="edit-rfc" icon={<FilePdfOutlined />}>
             RFC 2350
           </Menu.Item>
-          <Menu.SubMenu key="subpanduan" icon={<FileSearchOutlined />} title="Panduan">
-            <Menu.Item key="tambah-panduan" icon={<AppstoreAddOutlined />}>
-              Tambah Panduan
-            </Menu.Item>
-            <Menu.Item key="list-panduan" icon={<AppstoreOutlined />}>
-              List Panduan
-            </Menu.Item>
-          </Menu.SubMenu>
+          <Menu.Item key="edit-panduan" icon={<AppstoreAddOutlined />}>
+            Panduan
+          </Menu.Item>
         </Menu>
         <div
           className="mb-8 fixed flex justify-center bottom-0 uppercase"
@@ -198,8 +191,7 @@ const Dashboard = () => {
           {currentPage === "edit-tambahan" && <EditLayananT />}
           {currentPage === "edit-news" && <EditNews />}
           {currentPage === "edit-rfc" && <EditRFC />}
-          {currentPage === "tambah-panduan" && <AddPanduan />}
-          {currentPage === "list-panduan" && <EditPanduan />}
+          {currentPage === "edit-panduan" && <AddPanduan />}
           {currentPage === "tambah-berita" && <EditNews />}
           {currentPage === "list-berita" && <AddNews />}
         </Content>

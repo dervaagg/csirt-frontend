@@ -86,7 +86,7 @@ export default function EditLayananU() {
               </th>
             </tr>
           </thead>
-          <tbody>
+          <tbody className="capitalize">
             {primary.map((primary, index) => (
               <tr
                 className="odd:bg-white even:bg-gray-50 border-b"
