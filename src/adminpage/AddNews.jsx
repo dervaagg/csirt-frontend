@@ -155,7 +155,6 @@ export default function EditNews() {
   };
 
   return (
-    // SECTION TAMBAH BERITA
     <div className="flex flex-col bg-white min-h-full rounded-lg p-4 shadow-sm">
       <h2 className="mt-4 mb-5 text-black font-bold text-3xl">TAMBAH BERITA</h2>
       <div className="mb-6 text-neutral-300">
@@ -221,7 +220,6 @@ export default function EditNews() {
         ))}
       </div>
 
-      {/* MODAL TAMBAH BERITA */}
       <Modal
         title="Berita"
         open={isModalOpen}
@@ -331,7 +329,7 @@ export default function EditNews() {
             </div>
             <div className="mt-4">
               <label className="text-black" id="name">
-                Sinopsis <span className="text-red-500">*</span> :
+                Ringkasan <span className="text-red-500">*</span> :
               </label>
               <textarea
                 placeholder="Ringkasan Singkat Tentang Berita"

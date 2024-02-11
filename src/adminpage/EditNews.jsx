@@ -147,6 +147,8 @@ export default function EditNews() {
         <div className="flex flex-col mr-6 min-w-3.5">
           {newses.map((news, index) => (
             <React.Fragment key={index}>
+              <br />
+              <br />
               <div className="flex items-center justify-between max-w-50 h-16 rounded-l-full text-base">
                 <Link
                   className=" font-semibold hover:text-black max-w-50"
@@ -228,7 +230,7 @@ export default function EditNews() {
               </div>
               <div className="mt-4 mb-4">
                 <label className="text-black" id="content">
-                  Informasi Berita :
+                  Ringkasan Berita :
                 </label>
                 <textarea
                   placeholder="Masukkan Informasi Singkat Mengenai Berita"

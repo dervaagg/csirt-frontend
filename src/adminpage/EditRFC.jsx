@@ -26,13 +26,11 @@ export default function EditRFC() {
     formData.append("file", file);
     try {
       await axios.post("http://localhost:4001/rfc", formData);
-      message.success(`${file.name} Uploaded Successfully.`);
       getRFC();
       onSuccess();
       scrollToBottom();
     } catch (error) {
       message.error(`${file.name} file upload failed.`);
-      console.error("Error uploading RFC file", error.message);
       onError();
     }
   };
