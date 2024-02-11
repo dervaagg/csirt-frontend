@@ -4,15 +4,15 @@ import { rfcData } from "../data/datas";
 export default function RFC() {
   return (
     <div className="container rfc-container">
-      <div className="title-rfc mt-3">
+      <div className="flex justify-center title-rfc mt-6 -ml-3 -mb-5">
         <button className="bg-transparent blur-0 rounded-md ml-10 text-3xl text-black animate-pulse hover:animate-none leading-loose">
-          Dokumen <br /> RFC2350 <br /> WASKITA-CSIRT.
+          Dokumen RFC-2350 WASKITA-CSIRT.
         </button>
-        <img
+        {/* <img
           className="mt-10 w-80"
           src="../src/assets/reading-book.png"
           alt=""
-        />
+        /> */}
       </div>{" "}
       {/* Add your image below the title */}
       <div className="pdf-rfc">

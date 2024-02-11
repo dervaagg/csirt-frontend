@@ -106,17 +106,54 @@
   .kontak-warpper {
     grid-template-columns: repeat(2, 500px) !important;
   }
+  .kontak-left {
+    margin-left: 4rem;
+  }
+  .kontak-right {
+    margin-left: 8rem;
+  }
 }
 @media (max-width: 1024px) {
   .kontak-warpper {
     margin-top: 15px;
-    margin-bottom: 80px;
+    margin-bottom: 20rem;
     grid-template-columns: repeat(1, 1fr) !important;
   }
   .kontak-left {
-    margin-top: 20px;
+    margin-top: 2rem;
   }
   .kontak-left h2 {
     font-size: 20px !important;
+  }
+  .kontak-right {
+    margin-top: 3.5rem;
+    margin-left: 14rem;
+  }
+}
+@media (Max-width: 666px) {
+  .kontak-warpper {
+    margin-bottom: 21rem;
+  }
+  .kontak-left {
+    margin-left: 0;
+  }
+  .kontak-right {
+    margin-left: 7.5rem;
+  }
+}
+@media (Max-width: 500px) {
+  .kontak-warpper {
+    margin-bottom: 27rem;
+  }
+  .kontak-right {
+    margin-left: 2rem;
+  }
+}
+@media (Max-width: 400px) {
+  .kontak-warpper {
+    margin-bottom: 37rem;
+  }
+  .kontak-right {
+    margin-left: 0;
   }
 }
