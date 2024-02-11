@@ -8,6 +8,7 @@ export default function EditKontak() {
   const [address, setAddress] = useState("");
   const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
+  const [disclaimer, setDisclaimer] = useState("");
   const [operasional, setOperasional] = useState("");
 
   useEffect(() => {
@@ -30,6 +31,7 @@ export default function EditKontak() {
     formData.append("phone", phone);
     formData.append("email", email);
     formData.append("operasional", operasional);
+    formData.append("disclaimer", disclaimer);
     try {
       await axios.patch("http://localhost:4001/contact/1", formData, {
         headers: {
@@ -40,6 +42,7 @@ export default function EditKontak() {
       setPhone("");
       setEmail("");
       setOperasional("");
+      setDisclaimer("");
     } catch (error) {
       console.log(error);
     }
@@ -66,6 +69,9 @@ export default function EditKontak() {
             </Descriptions.Item>
             <Descriptions.Item label="Jam Operasional">
               {contact.operasional}
+            </Descriptions.Item>
+            <Descriptions.Item label="Disclaimer">
+              {contact.disclaimer}
             </Descriptions.Item>
           </>
         ))}
@@ -111,7 +117,7 @@ export default function EditKontak() {
             onChange={(e) => setEmail(e.target.value)}
           ></input>
         </div>
-        <div className="mt-4 mb-4">
+        <div className="mt-4 ">
           <label className="text-black" id="address">
             Jam Operasional
           </label>
@@ -124,6 +130,22 @@ export default function EditKontak() {
             onChange={(e) => {
               handleChange(e);
               setOperasional(e.target.value);
+            }}
+          ></textarea>
+        </div>
+        <div className="mt-3 mb-4">
+          <label className="text-black" id="address">
+            Disclaimer
+          </label>
+          <textarea
+            placeholder="Masukkan Waktu Operasional"
+            ref={textareaRef}
+            className="w-full bg-zinc-300 rounded-md border-gray-700 text-black px-2 py-1"
+            id="address"
+            value={disclaimer}
+            onChange={(e) => {
+              handleChange(e);
+              setDisclaimer(e.target.value);
             }}
           ></textarea>
         </div>

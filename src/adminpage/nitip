@@ -115,3 +115,32 @@ export default function EditPanduan() {
 }
 
 
+// 
+const [primary, setPrimary] = useState([]);
+const [other, setOther] = useState([]);
+
+useEffect(() => {
+  getPrimary();
+  const refreshInterval = setInterval(() => {
+    getPrimary();
+  }, 1000);
+  return () => clearInterval(refreshInterval);
+}, [primary]);
+
+useEffect(() => {
+  getOther();
+  const refreshInterval = setInterval(() => {
+    getOther();
+  }, 1000);
+  return () => clearInterval(refreshInterval);
+}, [other]);
+
+const getPrimary = async () => {
+  const response = await axios.get("http://localhost:4001/primary");
+  setPrimary(response.data.primary);
+};
+
+const getOther = async () => {
+  const response = await axios.get("http://localhost:4001/other");
+  setOther(response.data.other);
+};

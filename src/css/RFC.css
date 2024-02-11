@@ -1,14 +1,14 @@
 :root {
-    --color-primary: rgb(30 27 75);
-    --color-danger: #bd002f;
+  --color-primary: rgb(30 27 75);
+  --color-danger: #bd002f;
 
-    --color-white: #ffffff;
-    --color-light: #d4dadf;
+  --color-white: #ffffff;
+  --color-light: #d4dadf;
 
-    --color-black: #0c0c10;
-    --color-dark: #0e1013;
+  --color-black: #0c0c10;
+  --color-dark: #0e1013;
 
-    --transition: .4s ease;
+  --transition: 0.4s ease;
 }
 
 .rfc-container {
@@ -21,37 +21,44 @@
 }
 
 .title-rfc {
-    font-size: 25px !important;
-    margin-left: 50px;
-    margin-top: -3rem; /* Adjusted margin-top value */
+  font-size: 25px !important;
+  margin-left: 50px;
+  margin-top: -3rem; /* Adjusted margin-top value */
 }
 
 .logo-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .img-rfc {
-    max-width: 100px; /* Adjust the max-width as needed */
-    max-height: 100px; /* Adjust the max-height as needed */
+  max-width: 100px; /* Adjust the max-width as needed */
+  max-height: 100px; /* Adjust the max-height as needed */
 }
 
 .pdf-rfc {
-    max-height: 870px;
-    height: 100vh;
+  max-height: 870px;
+  height: 100vh;
+  width: 800px;
+  max-width: 800px;
+  margin-top: 8rem;
+  display: flex;
+  justify-content: center; /* Membuat objek berada di tengah horizontal */
+  align-items: center;
 }
 
 @media (max-width: 700px) {
-    .rfc-container {
-        display: flex;
-        flex-direction: column;
-        padding-top: 9rem;
-    }
+  .rfc-container {
+    display: flex;
+    flex-direction: column;
+    padding-top: 9rem;
+  }
 
-    .pdf-rfc {
-        width: 60vh;
-        max-height: 500px;
-        max-width: 420px;
-    }
+  .pdf-rfc {
+    width: 100vh;
+    max-height: 500px;
+    max-width: 350px;
+    margin-top: -3rem;
+  }
 }
