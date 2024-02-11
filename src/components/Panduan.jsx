@@ -50,11 +50,12 @@ export default function Panduan() {
             <object
               data={selectedPdf}
               type="application/pdf"
-              width="100%"
+              width="900px"
               height="95%"
               style={{
                 marginBottom: "20px",
                 marginTop: "20px",
+                marginLeft: "20px",
                 borderRadius: "10px",
                 boxShadow: "0 0 10px 0 rgba(0, 0, 0, 3)",
               }}
