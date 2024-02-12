@@ -85,12 +85,9 @@ export const squareData = [
 // Hero Data End.......................
 
 // About Data Start.......................
-import AboutImage from '../assets/about.png'
-
 export const AboutData = {
     aboutInfo: [
         {
-            Image: AboutImage,
             AboutMe: "Waskita Computer Security Incident Response Team, disingkat Waskita-CSIRT merupakan tim tanggap insiden siber pada PT Waskita Karya (Persero) Tbk yang ditetapkan oleh Direktur Utama dengan dokumen Surat Keputusan Board Of Director PT Waskita Karya (Persero) Tbk Nomor : 20/SK/WK/2023.",
         }
     ],
