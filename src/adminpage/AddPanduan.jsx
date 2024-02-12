@@ -4,22 +4,22 @@ import axios from "axios";
 
 export default function AddPanduan() {
   const [file_title, setFileTitle] = useState("");
-  const [file, setFile] = useState(""); 
-  const [cover, setCover] = useState(""); 
-  const [preview, setPreview] = useState(""); 
+  const [file, setFile] = useState("");
+  const [cover, setCover] = useState("");
+  const [preview, setPreview] = useState("");
   const [, setPreviewFile] = useState("");
   const [fileLoaded, setFileLoaded] = useState(false);
   const maxFileSize = 10 * 1024 * 1024; // 10MB
 
   const loadImage = (e) => {
     const image = e.target.files[0];
-    setCover(image); 
+    setCover(image);
     setPreview(URL.createObjectURL(image));
   };
 
   const loadFile = (e) => {
     const document = e.target.files[0];
-    setFile(document); 
+    setFile(document);
     setPreviewFile(URL.createObjectURL(document));
     setFileLoaded(true);
   };
@@ -137,7 +137,7 @@ export default function AddPanduan() {
             className="bg-black text-white rounded-md px-4 py-1 hover:bg-blue-500 hover:text-white transition-all duration-200"
             type="submit"
           >
-            Update
+            Tambah
           </button>
         </div>
       </form>
