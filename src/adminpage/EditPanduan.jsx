@@ -1,13 +1,11 @@
-import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { useState, useEffect } from "react";
+
 import { Popconfirm, message } from "antd";
 import { DeleteOutlined } from "@ant-design/icons";
 import axios from "axios";
 
 export default function EditPanduan() {
-  const [selectedPanduanId, setSelectedPanduanId] = useState([]);
   const [panduan, setPanduan] = useState([]);
-  const [, setFile] = useState("");
 
   useEffect(() => {
     getPanduan();
@@ -40,68 +38,101 @@ export default function EditPanduan() {
     console.log(e);
     message.error("Batal Menghapus Dokumen Panduan");
   };
-
-  const handlePanduanClick = async (panduanId) => {
-    setSelectedPanduanId(panduanId);
-    try {
-      const panduanResponse = await axios.get(
-        `http://localhost:4001/panduan/${panduanId}`
-      );
-      const selectedPanduanData = panduanResponse.data;
-      setFile(selectedPanduanData.file);
-    } catch (error) {
-      console.error("Error fetching selected news data:", error);
-    }
-  };
+  //   setSelectedPanduanId(panduanId);
+  //   try {
+  //     const panduanResponse = await axios.get(
+  //       `http://localhost:4001/panduan/${panduanId}`
+  //     );
+  //     const selectedPanduanData = panduanResponse.data;
+  //     setFile(selectedPanduanData.file);
+  //   } catch (error) {
+  //     console.error("Error fetching selected news data:", error);
+  //   }
+  // };
 
   return (
-    <div className="mt-10 flex flex-col min-h-full bg-white rounded-lg p-1 shadow-sm">
-      <h2 className="mt-4 mb-5 text-black font-bold text-xl">EDIT PANDUAN</h2>
-      <div className="flex mt-5 max-h-full">
-        {panduan.map((panduan, index) => (
-          <React.Fragment key={index}>
-              <Link
-                className=" font-semibold hover:text-black max-w-50"
-                onClick={() => handlePanduanClick(panduan.id)}
+    <div className="flex flex-col bg-white min-h-full rounded-lg p-4 shadow-sm">
+      <h2 className="mt-4 mb-5 text-black font-bold text-3xl">
+        Layanan Tambahan
+      </h2>
+      <div className="mt-5 relative overflow-x-auto shadow-md sm:rounded-lg">
+        <table className="w-full text-sm text-left text-gray-500">
+          <thead className="text-xs text-black uppercase bg-zinc-300">
+            <tr>
+              <th scope="col" className="px-6 py-3">
+                Nomor
+              </th>
+              <th scope="col" className="px-6 py-3">
+                Nama Dokumen Panduan
+              </th>
+              <th scope="col" className="px-6 py-3">
+                Cover Panduan
+              </th>
+              <th scope="col" className="px-6 py-3">
+                Dokumen Panduan
+              </th>
+              <th scope="col" className="px-6 py-3">
+                Aksi
+              </th>
+            </tr>
+          </thead>
+          <tbody className="capitalize">
+            {panduan.map((panduan, index) => (
+              <tr
+                className="odd:bg-white even:bg-gray-50 border-b"
+                key={panduan.id}
               >
-                {panduan.file_title}
-              </Link>
-              {selectedPanduanId === panduan.id && (
-                <>
+                <td
+                  scope="row"
+                  className="px-10 py-4 font-medium text-black whitespace-nowrap"
+                >
+                  {index + 1}
+                </td>
+                <td
+                  scope="row"
+                  className="px-6 py-4 font-medium text-black whitespace-nowrap"
+                >
+                  {panduan.file_title}
+                </td>
+                <td className="px-6 py-4">
+                  <a
+                    href={panduan.urlCover}
+                    className="font-medium text-blue-600 hover:underline"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    Lihat Sampul Panduan
+                  </a>
+                </td>
+                <td className="px-6 py-4">
+                  <a
+                    href={panduan.url}
+                    className="font-medium text-blue-600 hover:underline"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    Lihat Dokumen Panduan
+                  </a>
+                </td>
+
+                <td className="px-6 py-4">
                   <Popconfirm
-                    title="Apakah Kamu Mau Hapus Dokumen Panduan Ini?"
-                    description="Kalau dihapus tidak bisa dikembalikan lagi loh"
+                    title="Yakin Ingin Hapus Dokumen Panduan Ini?"
+                    description="Jika di hapus tidak bisa dikembalikan lagi yaa"
                     onConfirm={() => handleDelete(panduan.id)}
                     onCancel={cancel}
                     okText="Iya Dong"
                     cancelText="Gak Jadi Deh"
                   >
                     <button className="ml-1 mr-2 bg-transparent outline outline-1 font-bold p-2 px-2 rounded-lg bg-red-600 hover:bg-red-400 transition-colors">
-                      <DeleteOutlined />
+                      <DeleteOutlined /> Hapus
                     </button>
                   </Popconfirm>
-
-                  <object
-                    data={panduan.url}
-                    type="application/pdf"
-                    width="100%"
-                    height="800px"
-                    style={{
-                      marginBottom: "20px",
-                      borderRadius: "5px",
-                      boxShadow: "0 0 5px 0 rgba(0, 0, 0, 3)",
-                    }}
-                  >
-                    <p>
-                      Dokumen hanya bisa di tampilkan pada Mode Desktop saja.
-                      Tidak bisa pada Mode Mobile.
-                    </p>
-                  </object>
-                </>
-              )}
-
-          </React.Fragment>
-        ))}
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
       </div>
     </div>
   );

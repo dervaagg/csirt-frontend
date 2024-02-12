@@ -85,6 +85,7 @@ export const squareData = [
 // Hero Data End.......................
 
 // About Data Start.......................
+
 export const AboutData = {
     aboutInfo: [
         {
