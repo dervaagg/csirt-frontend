@@ -1,9 +1,33 @@
-import { useState } from "react";
-import { PanduanData } from "../data/datas";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import axios from "axios";
 
 export default function Panduan() {
-  const [selectedPdf, setSelectedPdf] = useState(null);
+  const [selectedPanduanId, setSelectedPanduanId] = useState(null);
+  const [panduan, setPanduan] = useState([]);
+  const [, setSelectedPanduanUrl] = useState("");
+
+  useEffect(() => {
+    getPanduan();
+    const refreshInterval = setInterval(() => {
+      getPanduan();
+    }, 1000);
+    return () => clearInterval(refreshInterval);
+  }, []);
+
+  const getPanduan = async () => {
+    try {
+      const response = await axios.get("http://localhost:4001/panduan");
+      setPanduan(response.data);
+    } catch (error) {
+      console.error("Gagal Memuat Dokumen Panduan", error.message);
+    }
+  };
+
+  const handlePanduanClick = async (panduanId, url) => {
+    setSelectedPanduanId(panduanId);
+    setSelectedPanduanUrl(url);
+  };
 
   return (
     <div className="panduan">
@@ -11,14 +35,14 @@ export default function Panduan() {
         <div className="paste-button">
           <button className="button">Dokumen Panduan &nbsp; ▼</button>
           <div className="dropdown-content">
-            {PanduanData.DataPanduan.map((items, index) => (
+            {panduan.map((panduan, index) => (
               <ul key={index}>
                 <li>
                   <Link
                     className="sidebar-button"
-                    onClick={() => setSelectedPdf(items.filePdf)}
+                    onClick={() => handlePanduanClick(panduan.id, panduan.url)}
                   >
-                    {items.title}
+                    {panduan.file_title}
                   </Link>
                 </li>
               </ul>
@@ -28,54 +52,57 @@ export default function Panduan() {
       </div>
       <div className="container panduan-container">
         <div className="sidebar">
-          {PanduanData.DataPanduan.map((items, index) => (
+          {panduan.map((panduan, index) => (
             <ul
               key={index}
               className="side-list"
               style={index === 0 ? { marginTop: "5px" } : { marginTop: "0" }}
             >
-              <li className={selectedPdf === items.filePdf ? "active" : ""}>
+              <li className={selectedPanduanId === panduan.id ? "active" : ""}>
                 <Link
                   className="sidebar-button"
-                  onClick={() => setSelectedPdf(items.filePdf)}
+                  onClick={() => setSelectedPanduanId(panduan.id)}
                 >
-                  {items.title}
+                  {panduan.file_title}
                 </Link>
               </li>
             </ul>
           ))}
         </div>
-        <div className="pdfbar">
-          {selectedPdf ? (
-            <object
-              data={selectedPdf}
-              type="application/pdf"
-              width="900px"
-              height="95%"
-              style={{
-                marginBottom: "20px",
-                marginTop: "20px",
-                marginLeft: "20px",
-                borderRadius: "10px",
-                boxShadow: "0 0 10px 0 rgba(0, 0, 0, 3)",
-              }}
-            >
-              <p>
-                Untuk melihat file PDF, anda memerlukan plugin PDF. Anda bisa{" "}
-                <a
-                  href={selectedPdf}
-                  download={selectedPdf}
-                  className="font-bold text-blue-800"
-                >
-                  {" "}
-                  klik disini
-                </a>{" "}
-                untuk mendownload file PDF-nya
-              </p>
-            </object>
-          ) : (
-            <p>PDF Will Show Here</p>
-          )}
+        <div className="pdfbar" style={{ textAlign: "center" }}> 
+          {panduan.map((panduan, index) => (
+            <React.Fragment key={index}>
+              {selectedPanduanId === panduan.id && (
+                <>
+                  <object
+                    data={panduan.url}
+                    type="application/pdf"
+                    width="100%"
+                    height="800px"
+                    style={{
+                      marginTop: "20px",
+                      borderRadius: "5px",
+                      boxShadow: "0 0 5px 0 rgba(0, 0, 0, 3)",
+                    }}
+                  >
+                    <p>
+                      Untuk melihat file PDF, anda memerlukan plugin PDF. Anda
+                      bisa{" "}
+                      <a
+                        href={panduan.url}
+                        download={panduan.url}
+                        className="font-bold text-blue-800"
+                      >
+                        {" "}
+                        klik disini
+                      </a>{" "}
+                      untuk mendownload file PDF-nya
+                    </p>
+                  </object>
+                </>
+              )}
+            </React.Fragment>
+          ))}
         </div>
       </div>
     </div>

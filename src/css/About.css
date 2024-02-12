@@ -25,21 +25,17 @@
 .about-right {
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    gap: 10px;
     text-align: justify;
+    margin-right: 4rem;
 }
-.aboutMe-header .about-main {
-    font-size: 40px;
-}
+
 .aboutMe-header .about-second {
     color: var(--color-black);
     font-weight: 500;
 }
 .about-small-title {
-    font-size: 17px;
-    font-weight: bold;
     color: var(--color-primary);
-    margin-bottom: 7px;
 }
 .aboutMe-info {
     font-weight: 500;

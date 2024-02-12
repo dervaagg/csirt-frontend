@@ -2,6 +2,7 @@ import { FiPhone, FiMail, FiMapPin } from "react-icons/fi";
 import icoImg from "../assets/Logo WSKT.svg";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
 
 export default function Footer() {
   const [kontak, setKontak] = useState([]);
@@ -19,6 +20,11 @@ export default function Footer() {
     setKontak(response.data);
   };
 
+  const { pathname } = useLocation();
+  if (pathname === "/kontak") {
+    return null;
+  }
+
   return (
     <>
       <div className="Footer">
@@ -34,9 +40,7 @@ export default function Footer() {
                     <div className="lokasi">
                       <FiMapPin className="icon-kontak" />
                       <br />
-                      <p>
-                        {kontak.address}
-                      </p>
+                      <p>{kontak.address}</p>
                     </div>
                     <div className="telephone">
                       <FiPhone className="icon-kontak" />

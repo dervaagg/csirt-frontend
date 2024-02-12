@@ -7,7 +7,8 @@ export default function EditProfile() {
   const [profile, setProfile] = useState([]);
   const [file, setFile] = useState("");
   const [preview, setPreview] = useState("");
-  const [name, setName] = useState("");
+  const [first_name, setFirstName] = useState("");
+  const [last_name, setLastName] = useState("");
   const [about, setAbout] = useState("");
 
   const loadImage = (e) => {
@@ -32,8 +33,11 @@ export default function EditProfile() {
   const updateProfile = async (e) => {
     e.preventDefault();
     const formData = new FormData();
-    if (name.trim() !== "") {
-      formData.append("name", name);
+    if (first_name.trim() !== "") {
+      formData.append("first_name", first_name);
+    }
+    if (last_name.trim() !== "") {
+      formData.append("last_name", last_name);
     }
     if (about.trim() !== "") {
       formData.append("about", about);
@@ -48,7 +52,8 @@ export default function EditProfile() {
         },
       });
       setAbout("");
-      setName("");
+      setFirstName("");
+      setLastName("");
       setFile("");
       setPreview("");
     } catch (error) {
@@ -75,24 +80,41 @@ export default function EditProfile() {
           <br />
           <br />
           <Descriptions>
-            <Descriptions.Item label="Nama">{profile.name}</Descriptions.Item>
+            <Descriptions.Item label="Nama Awal">
+              {profile.first_name}
+            </Descriptions.Item>
+            <Descriptions.Item label="Nama Akhir">
+              {profile.last_name}
+            </Descriptions.Item>
             <Descriptions.Item label="Tentang">
               {profile.about}
             </Descriptions.Item>
           </Descriptions>
         </>
       ))}
-
-      <h1 className="mt-3 mb-1 text-black text-xl">Edit Deskripsi</h1>
+      <br />
+      <h1 className="mt-3 mb-7 text-black text-xl">Edit Deskripsi</h1>
       <form onSubmit={updateProfile}>
         <div className="mt-4">
           <label className="text-black" id="name">
-            Nama :
+            Nama Awal :
           </label>
           <input
             placeholder="Masukkan Nama Profil"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
+            value={first_name}
+            onChange={(e) => setFirstName(e.target.value)}
+            className="w-full h-auto bg-zinc-300 rounded-md border-gray-700 text-black px-2 py-1 mt-2"
+            type="text"
+          ></input>
+        </div>
+        <div className="mt-4">
+          <label className="text-black" id="name">
+            Nama Akhir :
+          </label>
+          <input
+            placeholder="Masukkan Nama Profil"
+            value={last_name}
+            onChange={(e) => setLastName(e.target.value)}
             className="w-full h-auto bg-zinc-300 rounded-md border-gray-700 text-black px-2 py-1 mt-2"
             type="text"
           ></input>

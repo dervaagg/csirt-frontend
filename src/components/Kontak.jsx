@@ -7,10 +7,10 @@ export default function Kontak() {
   const [kontak, setKontak] = useState([]);
 
   useEffect(() => {
-    window.scrollTo({
-      top: document.documentElement.scrollHeight,
-      behavior: "smooth",
-    });
+    // window.scrollTo({
+    //   top: document.documentElement.scrollHeight,
+    //   behavior: "smooth",
+    // });
     getContact();
     const refreshInterval = setInterval(() => {
       getContact();
