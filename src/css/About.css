@@ -1,68 +1,80 @@
 :root {
-    --color-primary: rgb(30 27 75);
-    --color-danger: #bd002f;
+  --color-primary: rgb(30 27 75);
+  --color-danger: #bd002f;
 
-    --color-white: #ffffff;
-    --color-light: #d4dadf;
+  --color-white: #ffffff;
+  --color-light: #d4dadf;
 
-    --color-black: #0c0c10;
-    --color-dark: #0e1013;
+  --color-black: #0c0c10;
+  --color-dark: #0e1013;
 
-    --transition: .4s ease;
+  --transition: 0.4s ease;
 }
 
 #About {
-    background: url(/src/assets/1252907_3133.jpg);
-    padding: 4rem 0;
-    margin-bottom: 80px;
+  background: url(/src/assets/1252907_3133.jpg);
+  padding: 4rem 0;
+  margin-bottom: 80px;
 }
+
 .about-container {
-    display: grid;
-    grid-template-columns: 38% auto;
-    gap: 120px;
-    align-items: center;
+  display: grid;
+  grid-template-columns: 38% auto;
+  gap: 120px;
+  align-items: center;
 }
+
 .about-right {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    text-align: justify;
-    margin-right: 4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  text-align: justify;
+  margin-right: 4rem;
 }
 
 .aboutMe-header .about-second {
-    color: var(--color-black);
-    font-weight: 500;
+  color: var(--color-black);
+  font-weight: 500;
 }
+
 .about-small-title {
-    color: var(--color-primary);
+  color: var(--color-primary);
+  text-shadow: 0px 0px 1px rgba(0, 0, 0, 3);
 }
+
 .aboutMe-info {
-    font-weight: 500;
+  font-weight: 500;
 }
+
+.aboutMe-header {
+  text-shadow: 0px 0px 1px rgba(0, 0, 0, 3);
+}
+
 .about-action-aria {
-    display: flex;
-    align-items: center;
-    gap: 30px;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.about-main {
+  color: #a8002a;
 }
 
 /* .....................Start Media Screen(666)..................... */
-@media (max-width:666px) {
-    .about-container {
-        grid-template-columns: 1fr;
-        text-align: center;
-        gap: 20px;
-    }
-    .about-right {
-        padding: 2.5rem;
-    }
-    .about-left {
-        width: 90%;
-        margin: auto;
-    }
-    .about-action-aria {
-        justify-content: center;
-    }
+@media (max-width: 666px) {
+  .about-container {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 20px;
+  }
+  .about-right {
+    padding: 2.5rem;
+  }
+  .about-left {
+    width: 90%;
+    margin: auto;
+  }
+  .about-action-aria {
+    justify-content: center;
+  }
 }
-
-

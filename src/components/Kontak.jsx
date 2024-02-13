@@ -1,5 +1,6 @@
 import "../css/Kontak.css";
 import { FiPhone, FiMail, FiMapPin, FiClock } from "react-icons/fi";
+import { FaWhatsapp } from "react-icons/fa";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 
@@ -7,10 +8,6 @@ export default function Kontak() {
   const [kontak, setKontak] = useState([]);
 
   useEffect(() => {
-    // window.scrollTo({
-    //   top: document.documentElement.scrollHeight,
-    //   behavior: "smooth",
-    // });
     getContact();
     const refreshInterval = setInterval(() => {
       getContact();
@@ -37,7 +34,7 @@ export default function Kontak() {
               </div>
               <div className="kontak-warpper">
                 <div className="kontak-left">
-                  <h2 className="mb-1 uppercase text-xl leading-loose tracking-wide">
+                  <h2 className="mb-1 uppercase text-xl leading-loose tracking-widest text-red-800">
                     Disclaimer
                   </h2>
                   <ul>
@@ -79,6 +76,16 @@ export default function Kontak() {
             </>
           </React.Fragment>
         ))}
+        <div className="floating-whatsapp">
+          <a
+            href="https://wa.link/uiqzk5"
+            className="float"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <FaWhatsapp className="icon" />
+          </a>
+        </div>
       </div>
     </div>
   );

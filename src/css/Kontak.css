@@ -11,6 +11,34 @@
   --transition: 0.4s ease;
 }
 
+.float {
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  bottom: 40px;
+  right: 40px;
+  background-color: #25d366;
+  color: #fff;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 30px;
+  box-shadow: 2px 2px 3px #999;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
+.float:hover {
+  background-color: #128c7e;
+}
+
+.float .icon {
+  margin-top: 1px;
+  margin-left: 1px;
+}
+
 .kontak-container {
   height: 100%;
   width: 100%;
@@ -130,7 +158,7 @@
     margin-left: 14rem;
   }
 }
-@media (Max-width: 666px) {
+@media (max-width: 666px) {
   .kontak-warpper {
     margin-bottom: 21rem;
   }
@@ -141,7 +169,7 @@
     margin-left: 7.5rem;
   }
 }
-@media (Max-width: 500px) {
+@media (max-width: 500px) {
   .kontak-warpper {
     margin-bottom: 27rem;
   }
@@ -149,7 +177,7 @@
     margin-left: 2rem;
   }
 }
-@media (Max-width: 400px) {
+@media (max-width: 400px) {
   .kontak-warpper {
     margin-bottom: 37rem;
   }

@@ -112,12 +112,12 @@ export default function EditLayananT() {
                 </td>
                 <td className="px-6 py-4">
                   <Popconfirm
-                    title="Yakin Ingin Hapus Dokumen Panduan Ini?"
-                    description="Jika di hapus tidak bisa dikembalikan lagi yaa"
+                    title="Apakah Ingin Menghapus Layanan Ini?"
+                    description="Jika Sudah Terhapus, Tidak Dapat Dikembalikan Lagi."
                     onConfirm={() => deleteOther(other.id)}
                     onCancel={cancel}
-                    okText="Iya Dong"
-                    cancelText="Gak Jadi Deh"
+                    okText="Iya"
+                    cancelText="Tidak"
                   >
                     <button className="button-delete">
                       <svg viewBox="0 0 448 512" className="svgIconDelete">
