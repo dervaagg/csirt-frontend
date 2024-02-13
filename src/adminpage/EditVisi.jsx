@@ -121,12 +121,12 @@ export default function EditProfile() {
                   </td>
                   <td className="px-6 py-4">
                     <Popconfirm
-                      title="Yakin Ingin Hapus Dokumen Panduan Ini?"
-                      description="Jika di hapus tidak bisa dikembalikan lagi yaa"
+                      title="Apakah Ingin Menghapus Visi Ini?"
+                      description="Jika Sudah Dihapus, Tidak Dapat Dikembalikan Lagi."
                       onConfirm={() => deleteVission(vission.id)}
                       onCancel={cancel}
-                      okText="Iya Dong"
-                      cancelText="Gak Jadi Deh"
+                      okText="Iya"
+                      cancelText="Tidak"
                     >
                       <button className="button-delete">
                         <svg viewBox="0 0 448 512" className="svgIconDelete">

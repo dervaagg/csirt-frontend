@@ -43,8 +43,12 @@ export default function RFC() {
   return (
     <div className="container rfc-container">
       <div className="title-rfc mt-10">
-        <h2 className="title-rfc mt-5 mb-5 animate-none text-3xl">
-          DOKUMEN RFC 2350 WASKITA-CSIRT
+        <h2 className="title-rfc mt-5 mb-5 text-3xl">
+          DOKUMEN RFC 2350
+          <p className="text-3xl">
+            <span className="text-red-700">‎ WASKITA</span>
+            <span className="text-blue-900">‎ CSIRT</span>
+          </p>
         </h2>
       </div>
       <div className="pdf-rfc">

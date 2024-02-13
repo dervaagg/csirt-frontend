@@ -54,7 +54,7 @@ export default function About() {
       {profile.map((profile, index) => {
         return (
           <div className="container about-container" key={index}>
-            <div className="contrainer about-left ml-20">
+            <div className="contrainer about-left">
               <img
                 src={profile.url}
                 alt="AboutMe"
@@ -67,7 +67,7 @@ export default function About() {
               />
             </div>
             <div className="contrainer about-right">
-              <div className="aboutMe-header text-3xl font-bold">
+              <div className="aboutMe-header text-3xl font-bold tracking-wider">
                 <TitleOne
                   title={profile.first_name}
                   titleEx={profile.last_name}
@@ -80,7 +80,7 @@ export default function About() {
                 </p>
               </div>
               <div className="aboutMe-info">
-                <h5 className="about-small-title font-extrabold tracking-wide text-xl mb-4">
+                <h5 className="about-small-title font-extrabold tracking-widest text-xl mb-4">
                   VISI :{" "}
                 </h5>
                 {vission.map((vission, index) => {
@@ -94,7 +94,7 @@ export default function About() {
                 })}
               </div>
               <div className="aboutMe-info">
-                <h5 className="about-small-title font-extrabold tracking-wide text-xl mb-4">
+                <h5 className="about-small-title font-extrabold tracking-widest text-xl mb-4">
                   MISI :{" "}
                 </h5>
                 {mission.map((mission, index) => {

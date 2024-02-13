@@ -121,12 +121,12 @@ export default function EditRFC() {
             </object>
             <Popconfirm
               key={index}
-              title="Apakah Kamu Mau Hapus RFC?"
-              description="Kalau dihapus tidak bisa dikembalikan lagi loh"
+              title="Apakah Ingin Menghapus Dokumen RFC Ini?"
+              description="Jika Sudah Dihapus, Tidak Dapat Dikembalikan Lagi."
               onConfirm={() => handleDelete(rfc.id)}
               onCancel={cancel}
-              okText="Iya Dong"
-              cancelText="Gak Jadi Deh"
+              okText="Iya"
+              cancelText="Tidak"
             >
               <button className="mb-7 bg-transparent outline-double text-black font-extrabold p-2 px-2 rounded-xl hover:bg-red-500 transition-colors flex-row-reverse">
                 Delete
