@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import { Popconfirm, message } from "antd";
+import { InfoCircleOutlined } from "@ant-design/icons"
 import { useRef } from "react";
 
 export default function EditNews() {
@@ -117,42 +118,69 @@ export default function EditNews() {
   return (
     <div className="flex flex-col min-h-full bg-white rounded-lg p-4 shadow-sm">
       <h2 className="mt-4 mb-5 text-black font-bold text-3xl">EDIT BERITA</h2>
-      <div className="flex mt-5 max-h-full">
-        <div className="flex flex-col mr-6 min-w-3.5">
-          {newses.map((news, index) => (
-            <React.Fragment key={index}>
-              <br />
-              <br />
-              <div className="flex items-center justify-between max-w-50 h-16 rounded-l-full text-base">
-                <Link
-                  className=" font-semibold hover:text-black max-w-50"
-                  onClick={() => handleNewsClick(news.id)}
+      <div className="flex flex-col mt-5 max-h-full">
+        <h2 className="mb-3 text-base font-semibold"><InfoCircleOutlined /> Klik Salah Satu Judul Dan Data Akan Keluar Dibagian Form Edit</h2>
+        <div className="mb-5 relative overflow-x-auto shadow-md sm:rounded-lg">
+          <table className="w-full text-sm text-left text-gray-500">
+            <thead className="text-xs text-black uppercase bg-zinc-300">
+              <tr>
+                <th scope="col" className="px-6 py-3">
+                  Nomor
+                </th>
+                <th scope="col" className="px-6 py-3">
+                  Judul
+                </th>
+                <th scope="col" className="px-6 py-3">
+                  Action
+                </th>
+              </tr>
+            </thead>
+            <tbody className="capitalize">
+              {newses.map((news, index) => (
+                <tr
+                  className="odd:bg-white even:bg-gray-50 border-b"
+                  key={news.id}
                 >
-                  {news.title}
-                </Link>
-                {selectedNewsId === news.id && (
-                  <Popconfirm
-                    title="Apakah Anda Yakin Ingin Menghapus Berita Ini?"
-                    description="Setelah dihapus, berita tidak dapat dikembalikan."
-                    onConfirm={() => deleteNews(news.id)}
-                    onCancel={cancel}
-                    okText="Ya"
-                    cancelText="Tidak"
+                  <td
+                    scope="row"
+                    className="px-10 py-4 font-medium text-black whitespace-nowrap"
                   >
-                    <button className="ml-1 mr-2 bg-transparent outline outline-1 font-bold p-2 px-2 rounded-s-full">
+                    {index + 1}
+                  </td>
+                  <td
+                    scope="row"
+                    className="px-6 py-4 font-medium text-black whitespace-nowrap"
+                  >
+                    <Link
+                      className=" font-semibold hover:text-black max-w-50"
+                      onClick={() => handleNewsClick(news.id)}
+                    >
+                      {news.title}
+                    </Link>
+                  </td>
+                  <td className="px-6 py-4">
+                    <Popconfirm
+                      title="Yakin Ingin Hapus Dokumen Panduan Ini?"
+                      description="Jika di hapus tidak bisa dikembalikan lagi yaa"
+                      onConfirm={() => deleteNews(news.id)}
+                      onCancel={cancel}
+                      okText="Iya Dong"
+                      cancelText="Gak Jadi Deh"
+                    >
                       <button className="button-delete">
                         <svg viewBox="0 0 448 512" className="svgIconDelete">
                           <path d="M135.2 17.7L128 32H32C14.3 32 0 46.3 0 64S14.3 96 32 96H416c17.7 0 32-14.3 32-32s-14.3-32-32-32H320l-7.2-14.3C307.4 6.8 296.3 0 284.2 0H163.8c-12.1 0-23.2 6.8-28.6 17.7zM416 128H32L53.2 467c1.6 25.3 22.6 45 47.9 45H346.9c25.3 0 46.3-19.7 47.9-45L416 128z"></path>
                         </svg>
                       </button>
-                    </button>
-                  </Popconfirm>
-                )}
-              </div>
-            </React.Fragment>
-          ))}
+                    </Popconfirm>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
         </div>
-        <div className="flex flex-col-reverse justify-center w-full">
+        <h2 className="mt-4 -mb-2 text-base font-semibold"><InfoCircleOutlined /> Form Edit</h2>
+        <div className="flex flex-col-reverse justify-center w-full h-full mb-5">
           <form onSubmit={updateNews}>
             <div className="w-full h-full">
               <div className="mt-4">
@@ -330,13 +358,15 @@ export default function EditNews() {
                   onChange={handleChange}
                 ></textarea>
               </div>
-              <button
-                className="w-full mb-2 bg-transparent outline outline-1 font-bold p-2 px-2 rounded-lg bg-white hover:bg-red-600 transition-colors"
-                type="submit"
-                disabled={!selectedNewsId}
-              >
-                Update
-              </button>
+              <div className="flex justify-end">
+                <button
+                  className="mb-2 bg-transparent outline outline-1 font-bold p-2 px-10 rounded-lg bg-white hover:bg-blue-500 transition-colors"
+                  type="submit"
+                  disabled={!selectedNewsId}
+                >
+                  Update
+                </button>
+              </div>
             </div>
           </form>
         </div>

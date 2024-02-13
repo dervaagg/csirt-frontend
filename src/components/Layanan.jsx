@@ -49,7 +49,7 @@ export default function Layanan() {
             <h4>Layanan Utama</h4>
           </div>
           {primary.map((primaryService, index) => (
-            <ul className="font-extrabold capitalize text-xl" key={primaryService.id}>
+            <ul key={primaryService.id}>
               <li>{index + 1 + ". " + primaryService.services}</li>
               <br />
             </ul>
@@ -63,7 +63,7 @@ export default function Layanan() {
             <h4>Layanan Tambahan</h4>
           </div>
           {other.map((otherService, index) => (
-            <ul className="font-extrabold capitalize text-xl" key={otherService.id}>
+            <ul key={otherService.id}>
               <li>{index + 1 + ". " + otherService.services}</li>
               <br />
             </ul>

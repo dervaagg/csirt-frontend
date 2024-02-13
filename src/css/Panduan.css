@@ -104,15 +104,25 @@
 
 .book-content {
   display: grid;
-  grid-template-rows: 120%;
+  justify-content: center;
+  align-items: end;
   margin-left: 42px;
   margin-right: 10px;
-  margin-bottom: 30px;
+  margin-bottom: 10px;
+  gap: 5rem;
 }
 .book-content .book-title {
+  display: grid;
+  justify-content: center;
+  align-items: start;
+  height: 100px;
+}
+.book-content .book-title p {
+  margin-top: 20px;
   font-weight: 700;
 }
 .book-content .book-footer {
+  bottom: 0;
   font-size: 12px;
   font-weight: 700;
 }
@@ -226,6 +236,20 @@
 
 .pdfbar p {
   color: var(--color-black);
+}
+
+.No-PDF {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.No-PDF p {
+  margin-top: -100px;
+  font-weight: 700;
+  text-transform: uppercase;
 }
 
 .dropdown {
