@@ -214,6 +214,10 @@
   background: grey;
 }
 
+.side-list li.active .sidebar-button {
+  color: var(--color-white); 
+}
+
 .side-list .sidebar-button {
   margin-left: 20px;
   color: var(--color-black);
@@ -229,7 +233,7 @@
 .pdfbar {
   display: flex;
   justify-content: center;
-  align-items: start;
+  align-items: flex-start;
   margin-left: 50px;
   width: 100%;
 }
