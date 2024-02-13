@@ -37,10 +37,13 @@ export default function Kontak() {
               </div>
               <div className="kontak-warpper">
                 <div className="kontak-left">
-                  <h2 className="-mb-5 uppercase">Disclaimer</h2>
-                  <br />
+                  <h2 className="mb-1 uppercase text-xl leading-loose tracking-wide">
+                    Disclaimer
+                  </h2>
                   <ul>
-                    <li className="leading-loose">{kontak.disclaimer}</li>
+                    <li className="leading-loose tracking-wide">
+                      {kontak.disclaimer}
+                    </li>
                   </ul>
                 </div>
                 <div className="kontak-right">
