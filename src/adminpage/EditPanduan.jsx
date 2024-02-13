@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-
+import { InfoCircleOutlined } from "@ant-design/icons";
 import { Popconfirm, message } from "antd";
 import axios from "axios";
 
@@ -40,8 +40,8 @@ export default function EditPanduan() {
 
   return (
     <div className="flex flex-col bg-white min-h-full rounded-lg p-4 shadow-sm">
-      <h2 className="mt-4 mb-5 text-black font-bold text-3xl">
-        Layanan Tambahan
+      <h2 className="mb-1 mt-5 text-base font-semibold">
+        <InfoCircleOutlined /> Dokumen Panduan
       </h2>
       <div className="mt-5 relative overflow-x-auto shadow-md sm:rounded-lg">
         <table className="w-full text-sm text-left text-gray-500">

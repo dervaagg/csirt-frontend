@@ -1,6 +1,7 @@
 import { useRef, useState, useEffect } from "react";
 import { Descriptions } from "antd";
 import axios from "axios";
+import { InfoCircleOutlined } from "@ant-design/icons";
 
 export default function EditKontak() {
   const textareaRef = useRef();
@@ -56,7 +57,6 @@ export default function EditKontak() {
   return (
     <div className="flex flex-col bg-white min-h-full rounded-lg p-4 shadow-sm">
       <h2 className="mt-4 mb-5 text-black font-bold text-3xl">KONTAK</h2>
-
       <Descriptions>
         {contact.map((contact) => (
           <>
@@ -77,9 +77,9 @@ export default function EditKontak() {
         ))}
       </Descriptions>
 
-      <br />
-
-      <h1 className="mt-3 mb-1 text-black text-xl">Edit Kontak</h1>
+      <h2 className="mt-4 text-base font-semibold">
+        <InfoCircleOutlined /> Form Edit Kontak
+      </h2>
       <form onSubmit={updateContact}>
         <div className="mt-4">
           <label className="text-black" id="name">

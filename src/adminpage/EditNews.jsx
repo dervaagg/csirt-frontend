@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import { Popconfirm, message } from "antd";
-import { InfoCircleOutlined } from "@ant-design/icons"
+import { InfoCircleOutlined } from "@ant-design/icons";
 import { useRef } from "react";
 
 export default function EditNews() {
@@ -119,7 +119,10 @@ export default function EditNews() {
     <div className="flex flex-col min-h-full bg-white rounded-lg p-4 shadow-sm">
       <h2 className="mt-4 mb-5 text-black font-bold text-3xl">EDIT BERITA</h2>
       <div className="flex flex-col mt-5 max-h-full">
-        <h2 className="mb-3 text-base font-semibold"><InfoCircleOutlined /> Klik Salah Satu Judul Dan Data Akan Keluar Dibagian Form Edit</h2>
+        <h2 className="mb-6 text-base font-semibold">
+          <InfoCircleOutlined /> Klik Salah Satu Judul Dan Data Akan Keluar
+          Dibagian Form Edit
+        </h2>
         <div className="mb-5 relative overflow-x-auto shadow-md sm:rounded-lg">
           <table className="w-full text-sm text-left text-gray-500">
             <thead className="text-xs text-black uppercase bg-zinc-300">
@@ -179,7 +182,9 @@ export default function EditNews() {
             </tbody>
           </table>
         </div>
-        <h2 className="mt-4 -mb-2 text-base font-semibold"><InfoCircleOutlined /> Form Edit</h2>
+        <h2 className="mt-4 text-base font-semibold">
+          <InfoCircleOutlined /> Form Edit News
+        </h2>
         <div className="flex flex-col-reverse justify-center w-full h-full mb-5">
           <form onSubmit={updateNews}>
             <div className="w-full h-full">

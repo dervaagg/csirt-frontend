@@ -1,6 +1,7 @@
 import { useRef, useState, useEffect } from "react";
 import { Image, Descriptions } from "antd";
 import axios from "axios";
+import { InfoCircleOutlined } from "@ant-design/icons";
 
 export default function EditProfile() {
   const textareaRef = useRef();
@@ -92,7 +93,9 @@ export default function EditProfile() {
           </Descriptions>
         </>
       ))}
-      <h1 className="mt-1 mb-5 text-black text-xl">Edit Deskripsi</h1>
+      <h2 className="mt-4 mb-5 text-base font-semibold">
+        <InfoCircleOutlined /> Form Edit Deskripsi
+      </h2>
       <form onSubmit={updateProfile}>
         <div className="mt-4">
           <label className="text-black" id="name">

@@ -23,7 +23,7 @@ export default function Navbar() {
               className={`nav-item ${click === "/" ? "active" : ""}`}
             >
               <NavLink to="/" className="nav-NavLinks" onClick={closeMobileMenu}>
-                Beranda
+                BERANDA
               </NavLink>
             </motion.li>
             <motion.li
@@ -32,7 +32,7 @@ export default function Navbar() {
               className={`nav-item ${click === "/" ? "active" : ""}`}
             >
               <NavLink to="/about" onClick={closeMobileMenu}>
-                Profil
+                PROFIL
               </NavLink>
             </motion.li>
             <motion.li
@@ -50,7 +50,7 @@ export default function Navbar() {
               className={`nav-item ${click === "/" ? "active" : ""}`}
             >
               <NavLink to="/layanan" onClick={closeMobileMenu}>
-                Layanan
+                LAYANAN
               </NavLink>
             </motion.li>
             <motion.li
@@ -59,7 +59,7 @@ export default function Navbar() {
               className={`nav-item ${click === "/" ? "active" : ""}`}
             >
               <NavLink to="/panduan" onClick={closeMobileMenu}>
-                Panduan
+                PANDUAN
               </NavLink>
             </motion.li>
             <motion.li
@@ -68,7 +68,7 @@ export default function Navbar() {
               className={`nav-item ${click === "/" ? "active" : ""}`}
             >
               <NavLink to="/kontak" onClick={closeMobileMenu}>
-                Kontak
+                KONTAK
               </NavLink>
             </motion.li>
           </ul>

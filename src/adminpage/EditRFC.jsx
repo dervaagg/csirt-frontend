@@ -2,6 +2,7 @@ import { InboxOutlined } from "@ant-design/icons";
 import { message, Popconfirm, Upload } from "antd";
 import axios from "axios";
 import React, { useEffect, useState, useRef } from "react";
+import { InfoCircleOutlined } from "@ant-design/icons";
 
 export default function EditRFC() {
   const [fileList, setFileList] = useState([]);
@@ -89,17 +90,20 @@ export default function EditRFC() {
               <InboxOutlined />
             </p>
             <p className="ant-upload-text">
-              Klik atau seret dokumen kesini untuk upload.
+              Klik atau seret dokumen untuk upload.
             </p>
             <p className="ant-upload-hint">
-              Ketika memilih dokumen akan langsung ter upload disini.
+              Ketika memilih dokumen akan langsung ter-upload.
             </p>
           </Dragger>
         </div>
       </div>
 
       <br />
-      <h1 className="mt-3 mb-1 text-black text-xl">Edit RFC 2350</h1>
+      <h2 className="mt-6 mb-3 text-base font-semibold">
+        <InfoCircleOutlined /> Klik Salah Satu Judul Dan Data Akan Keluar
+        Dibagian Form Edit
+      </h2>
       <div className="mt-2 flex flex-col-reverse bg-zinc-300 rounded-lg p-4">
         {fileList.map((rfc, index) => (
           <React.Fragment key={index}>
