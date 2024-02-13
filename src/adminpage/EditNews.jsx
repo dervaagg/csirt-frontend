@@ -7,35 +7,40 @@ import { useRef } from "react";
 export default function EditNews() {
   const textareaRef = useRef();
   const [newses, setNewses] = useState([]);
-  const [title, setTitle] = useState("");
-  const [category, setCategory] = useState("");
-  const [content, setContent] = useState("");
-  const [source, setSource] = useState("");
-  const [date, setDate] = useState("");
-  const [file, setFile] = useState("");
-  const [preview, setPreview] = useState("");
-  const [sub_title1, setSub_title1] = useState("");
-  const [paragraph1, setParagraph1] = useState("");
-  const [sub_title2, setSub_title2] = useState("");
-  const [paragraph2, setParagraph2] = useState("");
-  const [sub_title3, setSub_title3] = useState("");
-  const [paragraph3, setParagraph3] = useState("");
-  const [selectedNewsId, setSelectedNewsId] = useState([]);
+  const [selectedNewsId, setSelectedNewsId] = useState(null);
+  const [formData, setFormData] = useState({
+    title: "",
+    category: "",
+    content: "",
+    source: "",
+    date: "",
+    file: "",
+    preview: "",
+    sub_title1: "",
+    paragraph1: "",
+    sub_title2: "",
+    paragraph2: "",
+    sub_title3: "",
+    paragraph3: "",
+  });
 
   const cancel = (e) => {
     console.log(e);
     message.error("Batal Menghapus");
   };
 
-  const handleChange = () => {
-    textareaRef.current.style.height = "auto";
-    textareaRef.current.style.height = `${textareaRef.current.scrollHeight}px`;
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
   };
 
   const loadImage = (e) => {
     const image = e.target.files[0];
-    setFile(image);
-    setPreview(URL.createObjectURL(image));
+    setFormData({
+      ...formData,
+      file: image,
+      preview: URL.createObjectURL(image),
+    });
   };
 
   useEffect(() => {
@@ -58,57 +63,25 @@ export default function EditNews() {
   const deleteNews = async (newsId) => {
     try {
       await axios.delete(`http://localhost:4001/news/${newsId}`);
-      message.success("News deleted successfully.");
+      message.success("Berita berhasil dihapus.");
     } catch (error) {
       console.error("Error deleting news:", error.message);
     }
   };
 
-  const updateNews = async (newsId) => {
-    newsId.preventDefault();
-    const formData = new FormData();
-    if (title.trim() !== "") {
-      formData.append("title", title);
-    }
-    if (category.trim() !== "") {
-      formData.append("category", category);
-    }
-    if (content.trim() !== "") {
-      formData.append("content", content);
-    }
-    if (source.trim() !== "") {
-      formData.append("source", source);
-    }
-    if (date.trim() !== "") {
-      formData.append("date", date);
-    }
-    if (file) {
-      formData.append("image", file);
-    }
-    if (sub_title1.trim() !== "") {
-      formData.append("sub_title1", sub_title1);
-    }
-    if (paragraph1.trim() !== "") {
-      formData.append("paragraph1", paragraph1);
-    }
-    if (sub_title2.trim() !== "") {
-      formData.append("sub_title2", sub_title2);
-    }
-    if (paragraph2.trim() !== "") {
-      formData.append("paragraph2", paragraph2);
-    }
-    if (sub_title3.trim() !== "") {
-      formData.append("sub_title3", sub_title3);
-    }
-    if (paragraph3.trim() !== "") {
-      formData.append("paragraph3", paragraph3);
-    }
+  const updateNews = async (e) => {
+    e.preventDefault();
     try {
-      await axios.patch(`http://localhost:4001/news/2`, formData, {
-        headers: {
-          "Content-Type": "multipart/form-data",
-        },
-      });
+      await axios.patch(
+        `http://localhost:4001/news/${selectedNewsId}`,
+        formData,
+        {
+          headers: {
+            "Content-Type": "multipart/form-data",
+          },
+        }
+      );
+      message.success("Berita berhasil diperbarui.");
     } catch (error) {
       console.error("Error submitting news form:", error.message);
     }
@@ -121,19 +94,21 @@ export default function EditNews() {
         `http://localhost:4001/news/${newsId}`
       );
       const selectedNewsData = newsResponse.data;
-      setTitle(selectedNewsData.title);
-      setCategory(selectedNewsData.category);
-      setContent(selectedNewsData.content);
-      setSource(selectedNewsData.source);
-      setDate(selectedNewsData.date);
-      setFile(selectedNewsData.image);
-      setPreview(selectedNewsData.url);
-      setSub_title1(selectedNewsData.sub_title1);
-      setParagraph1(selectedNewsData.paragraph1);
-      setSub_title2(selectedNewsData.sub_title2);
-      setParagraph2(selectedNewsData.paragraph2);
-      setSub_title3(selectedNewsData.sub_title3);
-      setParagraph3(selectedNewsData.paragraph3);
+      setFormData({
+        title: selectedNewsData.title,
+        category: selectedNewsData.category,
+        content: selectedNewsData.content,
+        source: selectedNewsData.source,
+        date: selectedNewsData.date,
+        file: selectedNewsData.image,
+        preview: selectedNewsData.url,
+        sub_title1: selectedNewsData.sub_title1,
+        paragraph1: selectedNewsData.paragraph1,
+        sub_title2: selectedNewsData.sub_title2,
+        paragraph2: selectedNewsData.paragraph2,
+        sub_title3: selectedNewsData.sub_title3,
+        paragraph3: selectedNewsData.paragraph3,
+      });
     } catch (error) {
       console.error("Error fetching selected news data:", error);
     }
@@ -157,12 +132,12 @@ export default function EditNews() {
                 </Link>
                 {selectedNewsId === news.id && (
                   <Popconfirm
-                    title="Apakah Kamu Mau Hapus Berita Ini?"
-                    description="Kalau dihapus tidak bisa dikembalikan lagi loh"
+                    title="Apakah Anda Yakin Ingin Menghapus Berita Ini?"
+                    description="Setelah dihapus, berita tidak dapat dikembalikan."
                     onConfirm={() => deleteNews(news.id)}
                     onCancel={cancel}
-                    okText="Iya Dong"
-                    cancelText="Gak Jadi Deh"
+                    okText="Ya"
+                    cancelText="Tidak"
                   >
                     <button className="ml-1 mr-2 bg-transparent outline outline-1 font-bold p-2 px-2 rounded-s-full">
                       <button className="button-delete">
@@ -181,15 +156,16 @@ export default function EditNews() {
           <form onSubmit={updateNews}>
             <div className="w-full h-full">
               <div className="mt-4">
-                <label className="text-black" id="title">
+                <label className="text-black" htmlFor="title">
                   Judul :
                 </label>
                 <input
                   placeholder="Masukkan Judul Berita"
                   className="w-full bg-zinc-300 rounded-md border-gray-700 text-black px-2 py-1"
                   id="title"
-                  value={title}
-                  onChange={(e) => setTitle(e.target.value)}
+                  name="title"
+                  value={formData.title}
+                  onChange={handleChange}
                 ></input>
               </div>
               <div className="mt-2 flex flex-col gap-2">
@@ -207,32 +183,31 @@ export default function EditNews() {
                     </div>
                   </div>
                 </label>
-                {preview ? (
+                {formData.preview && (
                   <figure className="w-32 h-32">
                     <img
-                      src={preview}
+                      src={formData.preview}
                       alt="preview"
                       className="w-full h-full object-cover rounded-md"
                     />
                   </figure>
-                ) : (
-                  ""
                 )}
               </div>
               <div className="mt-4">
-                <label className="text-black" id="category">
+                <label className="text-black" htmlFor="category">
                   Kategori :
                 </label>
                 <input
                   placeholder="Masukkan Kategori Berita"
                   className="w-full bg-zinc-300 rounded-md border-gray-700 text-black px-2 py-1"
                   id="category"
-                  value={category}
-                  onChange={(e) => setCategory(e.target.value)}
+                  name="category"
+                  value={formData.category}
+                  onChange={handleChange}
                 ></input>
               </div>
               <div className="mt-4 mb-4">
-                <label className="text-black" id="content">
+                <label className="text-black" htmlFor="content">
                   Ringkasan Berita :
                 </label>
                 <textarea
@@ -240,54 +215,55 @@ export default function EditNews() {
                   ref={textareaRef}
                   className="w-full bg-zinc-300 rounded-md border-gray-700 text-black px-2 py-1"
                   id="content"
-                  value={content}
-                  onChange={(e) => {
-                    handleChange(e);
-                    setContent(e.target.value);
-                  }}
+                  name="content"
+                  value={formData.content}
+                  onChange={handleChange}
                 ></textarea>
               </div>
               <div className="flex w-full justify-between gap-6">
                 <div className="grid w-full">
-                  <label className="text-black" id="date">
+                  <label className="text-black" htmlFor="date">
                     Tanggal Dibuat :
                   </label>
                   <input
                     placeholder="Masukkan Tanggal Dibuatnya Berita"
                     className="w-full bg-zinc-300 rounded-md border-gray-700 text-black px-2 py-1"
                     id="date"
-                    value={date}
-                    onChange={(e) => setDate(e.target.value)}
+                    name="date"
+                    value={formData.date}
+                    onChange={handleChange}
                   ></input>
                 </div>
                 <div className="grid w-full">
-                  <label className="text-black" id="source">
+                  <label className="text-black" htmlFor="source">
                     Link Berita :
                   </label>
                   <input
                     placeholder="Masukkan Link Sumber Berita"
                     className="w-full bg-zinc-300 rounded-md border-gray-700 text-black px-2 py-1"
                     id="source"
-                    value={source}
-                    onChange={(e) => setSource(e.target.value)}
+                    name="source"
+                    value={formData.source}
+                    onChange={handleChange}
                   ></input>
                 </div>
               </div>
 
               <div className="mt-4">
-                <label className="text-black" id="subtitle1">
+                <label className="text-black" htmlFor="subtitle1">
                   Sub Judul 1 :
                 </label>
                 <input
                   placeholder="Masukkan Judul 1 Dari Berita"
                   className="w-full bg-zinc-300 rounded-md border-gray-700 text-black px-2 py-1"
                   id="subtitle1"
-                  value={sub_title1}
-                  onChange={(e) => setSub_title1(e.target.value)}
+                  name="sub_title1"
+                  value={formData.sub_title1}
+                  onChange={handleChange}
                 ></input>
               </div>
               <div className="mt-4 mb-4">
-                <label className="text-black" id="paragraph1">
+                <label className="text-black" htmlFor="paragraph1">
                   Paragraf 1 :
                 </label>
                 <textarea
@@ -295,27 +271,26 @@ export default function EditNews() {
                   ref={textareaRef}
                   className="w-full bg-zinc-300 rounded-md border-gray-700 text-black px-2 py-1"
                   id="paragraph1"
-                  value={paragraph1}
-                  onChange={(e) => {
-                    handleChange(e);
-                    setParagraph1(e.target.value);
-                  }}
+                  name="paragraph1"
+                  value={formData.paragraph1}
+                  onChange={handleChange}
                 ></textarea>
               </div>
               <div className="mt-4">
-                <label className="text-black" id="subtitle2">
+                <label className="text-black" htmlFor="subtitle2">
                   Sub Judul 2 :
                 </label>
                 <input
                   placeholder="Masukkan Judul 2 Dari Berita"
                   className="w-full bg-zinc-300 rounded-md border-gray-700 text-black px-2 py-1"
                   id="subtitle2"
-                  value={sub_title2}
-                  onChange={(e) => setSub_title2(e.target.value)}
+                  name="sub_title2"
+                  value={formData.sub_title2}
+                  onChange={handleChange}
                 ></input>
               </div>
               <div className="mt-4 mb-4">
-                <label className="text-black" id="paragraph2">
+                <label className="text-black" htmlFor="paragraph2">
                   Paragrah 2 :
                 </label>
                 <textarea
@@ -323,27 +298,26 @@ export default function EditNews() {
                   ref={textareaRef}
                   className="w-full bg-zinc-300 rounded-md border-gray-700 text-black px-2 py-1"
                   id="paragraph2"
-                  value={paragraph2}
-                  onChange={(e) => {
-                    handleChange(e);
-                    setParagraph2(e.target.value);
-                  }}
+                  name="paragraph2"
+                  value={formData.paragraph2}
+                  onChange={handleChange}
                 ></textarea>
               </div>
               <div className="mt-4">
-                <label className="text-black" id="subtitle3">
+                <label className="text-black" htmlFor="subtitle3">
                   Sub Judul 3 :
                 </label>
                 <input
                   placeholder="Masukkan Judul 3 Dari Berita"
                   className="w-full bg-zinc-300 rounded-md border-gray-700 text-black px-2 py-1"
                   id="subtitle3"
-                  value={sub_title3}
-                  onChange={(e) => setSub_title3(e.target.value)}
+                  name="sub_title3"
+                  value={formData.sub_title3}
+                  onChange={handleChange}
                 ></input>
               </div>
               <div className="mt-4 mb-4">
-                <label className="text-black" id="paragraph3">
+                <label className="text-black" htmlFor="paragraph3">
                   Paragraf 3 :
                 </label>
                 <textarea
@@ -351,16 +325,15 @@ export default function EditNews() {
                   ref={textareaRef}
                   className="w-full bg-zinc-300 rounded-md border-gray-700 text-black px-2 py-1"
                   id="paragraph3"
-                  value={paragraph3}
-                  onChange={(e) => {
-                    handleChange(e);
-                    setParagraph3(e.target.value);
-                  }}
+                  name="paragraph3"
+                  value={formData.paragraph3}
+                  onChange={handleChange}
                 ></textarea>
               </div>
               <button
                 className="w-full mb-2 bg-transparent outline outline-1 font-bold p-2 px-2 rounded-lg bg-white hover:bg-red-600 transition-colors"
                 type="submit"
+                disabled={!selectedNewsId}
               >
                 Update
               </button>
