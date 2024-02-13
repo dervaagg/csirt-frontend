@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
+import { motion } from "framer-motion";
 import icoImg from "../assets/Logo WSKT.svg";
 
 export default function Navbar() {
@@ -12,40 +13,64 @@ export default function Navbar() {
     <>
       <nav>
         <div className="container nav-container">
-          <Link to="/" className="navbar-logo" onClick={handleClick}>
+          <NavLink to="/" className="navbar-logo" onClick={handleClick}>
             <img src={icoImg} alt="icon" />
-          </Link>
-          <ul className={click ? "nav-links active" : "nav-links"}>
-            <li className="nav-item">
-              <Link to="/" className="nav-links" onClick={closeMobileMenu}>
+          </NavLink>
+          <ul className="nav-links">
+            <motion.li 
+              layoutId="nav-item"
+              transition={{ type: "spring", duration:  0.5 }}
+              className={`nav-item ${click === "/" ? "active" : ""}`}
+            >
+              <NavLink to="/" className="nav-NavLinks" onClick={closeMobileMenu}>
                 Beranda
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link to="/about" onClick={closeMobileMenu}>
+              </NavLink>
+            </motion.li>
+            <motion.li
+              layoutId="nav-item"
+              transition={{ type: "spring", duration:  0.5 }}
+              className={`nav-item ${click === "/" ? "active" : ""}`}
+            >
+              <NavLink to="/about" onClick={closeMobileMenu}>
                 Profil
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link to="/rfc" onClick={closeMobileMenu}>
+              </NavLink>
+            </motion.li>
+            <motion.li
+              layoutId="nav-item"
+              transition={{ type: "spring", duration:  0.5 }}
+              className={`nav-item ${click === "/" ? "active" : ""}`}
+            >
+              <NavLink to="/rfc" onClick={closeMobileMenu}>
                 RFC 2350
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link to="/layanan" onClick={closeMobileMenu}>
+              </NavLink>
+            </motion.li>
+            <motion.li
+              layoutId="nav-item"
+              transition={{ type: "spring", duration:  0.5 }}
+              className={`nav-item ${click === "/" ? "active" : ""}`}
+            >
+              <NavLink to="/layanan" onClick={closeMobileMenu}>
                 Layanan
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link to="/panduan" onClick={closeMobileMenu}>
+              </NavLink>
+            </motion.li>
+            <motion.li
+              layoutId="nav-item"
+              transition={{ type: "spring", duration:  0.5 }}
+              className={`nav-item ${click === "/" ? "active" : ""}`}
+            >
+              <NavLink to="/panduan" onClick={closeMobileMenu}>
                 Panduan
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link to="/kontak" onClick={closeMobileMenu}>
+              </NavLink>
+            </motion.li>
+            <motion.li
+              layoutId="nav-item"
+              transition={{ type: "spring", duration:  0.5 }}
+              className={`nav-item ${click === "/" ? "active" : ""}`}
+            >
+              <NavLink to="/kontak" onClick={closeMobileMenu}>
                 Kontak
-              </Link>
-            </li>
+              </NavLink>
+            </motion.li>
           </ul>
           <h4 className="name">
             <button className="button" data-text="Awesome">

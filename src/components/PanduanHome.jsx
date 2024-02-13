@@ -38,9 +38,11 @@ const [panduan, setPanduan] = useState([])
                   <div className="book-cover">
                     <img src={panduan.urlCover} alt="cover-img" />
                   </div>                    
-                  <div className="book-content">                    
-                    <p className="book-title">{panduan.title}</p>
-                    <p className="book-footer">Klik untuk membaca lebih lanjut</p>
+                  <div className="book-content">
+                    <div className="book-title">
+                      <p>{panduan.file_title}</p>
+                    </div>  
+                    <p className="book-footer">Klik untuk membaca lebih lanjut</p>              
                   </div>
                 </Link>
               ))}

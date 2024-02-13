@@ -163,7 +163,7 @@ export default function EditProfile() {
         </div>
         <div className="mt-4 flex justify-end">
           <button
-            className="bg-black text-white rounded-md px-4 py-1 hover:bg-blue-500 hover:text-white transition-all duration-200"
+            className="mb-2 bg-transparent outline outline-1 font-bold p-2 px-10 rounded-lg bg-white hover:bg-blue-500 transition-colors"
             type="submit"
           >
             Update

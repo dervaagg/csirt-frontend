@@ -29,6 +29,8 @@ export default function Panduan() {
     setSelectedPanduanUrl(url);
   };
 
+  const selectedPanduan = panduan.find(p => p.id === selectedPanduanId);
+
   return (
     <div className="panduan">
       <div className="dropdown">
@@ -70,39 +72,40 @@ export default function Panduan() {
           ))}
         </div>
         <div className="pdfbar" style={{ textAlign: "center" }}> 
-          {panduan.map((panduan, index) => (
-            <React.Fragment key={index}>
-              {selectedPanduanId === panduan.id && (
-                <>
-                  <object
-                    data={panduan.url}
-                    type="application/pdf"
-                    width="100%"
-                    height="800px"
-                    style={{
-                      marginTop: "20px",
-                      borderRadius: "5px",
-                      boxShadow: "0 0 5px 0 rgba(0, 0, 0, 3)",
-                    }}
-                  >
-                    <p>
-                      Untuk melihat file PDF, anda memerlukan plugin PDF. Anda
-                      bisa{" "}
-                      <a
-                        href={panduan.url}
-                        download={panduan.url}
-                        className="font-bold text-blue-800"
-                      >
-                        {" "}
-                        klik disini
-                      </a>{" "}
-                      untuk mendownload file PDF-nya
-                    </p>
-                  </object>
-                </>
-              )}
-            </React.Fragment>
-          ))}
+          <React.Fragment>
+            {selectedPanduanId ? (
+              <>
+                <object
+                  data={selectedPanduan.url}
+                  type="application/pdf"
+                  width="100%"
+                  height="800px"
+                  style={{
+                    marginTop: "20px",
+                    borderRadius: "5px",
+                    boxShadow: "0  0  5px  0 rgba(0,  0,  0,  3)",
+                  }}
+                >
+                  <p>
+                    Untuk melihat file PDF, anda memerlukan plugin PDF. Anda
+                    bisa
+                    <a
+                      href={panduan.url}
+                      download={panduan.url}
+                      className="font-bold text-blue-800"
+                    >
+                      klik disini
+                    </a>
+                    untuk mendownload file PDF-nya
+                  </p>
+                </object>
+              </>
+            ) : (
+              <div className="No-PDF">
+                <p>dokumen akan tampil di sini</p>
+              </div>
+            )}
+          </React.Fragment>
         </div>
       </div>
     </div>

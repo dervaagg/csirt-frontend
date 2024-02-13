@@ -32,7 +32,8 @@
     margin-bottom: 20px;
 }
 .layanan-utama-left li {
-    font-weight: 500;
+    font-size: 17px;
+    font-weight: 700;
 }
 
 .layanan-tambahan {
@@ -41,7 +42,7 @@
     grid-template-columns: 30% 45%;
     justify-content: center;
     align-items: center;
-    gap: 5rem;
+    gap: 10rem;
 }
 .layanan-tambahan-right .title-layanan {
     color: var(--color-primary);
@@ -50,7 +51,8 @@
     margin-bottom: 20px;
 }
 .layanan-tambahan-right li {
-    font-weight: 500;
+    font-size: 17px;
+    font-weight: 700;
 }
 
 @media (max-width:666px) {
