@@ -17,13 +17,13 @@ const BackgroundVideo = () => {
             className="text-zinc-300 font-sans subpixel-antialiased tracking-wide text-2xl font-semibold z-[1]"
             style={{ textShadow: "2px 2px 3px rgba(0, 0, 0, 4)" }}
           >
-            HI, WELCOME!
+            HAI, SELAMAT DATANG!
           </h2>
           <h1
             className="text-zinc-300 font-sans subpixel-antialiased tracking-wide text-4xl font-bold mb-2 drop-shadow-2xl z-[1]"
             style={{ textShadow: "2px 2px 3px rgba(0, 0, 0, 4)" }}
           >
-            DASHBOARD ADMIN CSIRT WSKT
+            DI HALAMAN ADMIN CSIRT-WASKITA
           </h1>
         </div>
       </div>

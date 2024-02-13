@@ -2,13 +2,13 @@
 import "../css/RFC.css";
 import axios from "axios";
 import { useState, useEffect } from "react";
-import { Viewer } from '@react-pdf-viewer/core';
-import { defaultLayout } from '@react-pdf-viewer/default-layout';
-import '@react-pdf-viewer/core/lib/styles/index.css';
-import '@react-pdf-viewer/default-layout/lib/styles/index.css';
+import { Viewer } from "@react-pdf-viewer/core";
+import { defaultLayout } from "@react-pdf-viewer/default-layout";
+import "@react-pdf-viewer/core/lib/styles/index.css";
+import "@react-pdf-viewer/default-layout/lib/styles/index.css";
 
 export default function RFC() {
-  const [files, setFiles] = useState([]);
+  const [, setFiles] = useState([]);
   const [pdfDocument, setPdfDocument] = useState(null);
 
   useEffect(() => {
@@ -19,8 +19,8 @@ export default function RFC() {
     try {
       const response = await axios.get("http://localhost:4001/rfc");
       setFiles(response.data);
-      if (response.data.length >  0) {
-        loadPDF(response.data[0].url); // Load the first PDF document
+      if (response.data.length > 0) {
+        loadPDF(response.data[0].url);
       }
     } catch (error) {
       console.error("Error loading RFC", error.message);
@@ -42,10 +42,10 @@ export default function RFC() {
 
   return (
     <div className="container rfc-container">
-      <div className="title-rfc">
-          <h2 className="mt-5 mb-5 underline underline-offset-8 animate-pulse text-3xl">
-            Dokumen RFC-2350 WASKITA-CSIRT
-          </h2>
+      <div className="title-rfc mt-10">
+        <h2 className="title-rfc mt-5 mb-5 animate-none text-3xl">
+          DOKUMEN RFC 2350 WASKITA-CSIRT
+        </h2>
       </div>
       <div className="pdf-rfc">
         {pdfDocument && (

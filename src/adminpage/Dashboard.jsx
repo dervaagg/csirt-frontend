@@ -174,7 +174,7 @@ const Dashboard = () => {
             icon={<LoginOutlined />}
             style={{ marginRight: "20px" }}
           >
-            Logout
+            Keluar
           </Button>
         </Header>
         <Content

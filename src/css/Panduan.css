@@ -88,6 +88,7 @@
   -ms-flex-pack: center;
   justify-content: center;
 }
+
 .book-cover img {
   width: 200px;
   height: 260px;
@@ -218,10 +219,11 @@
 .pdfbar {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: start;
   margin-left: 50px;
   width: 100%;
 }
+
 .pdfbar p {
   color: var(--color-black);
 }

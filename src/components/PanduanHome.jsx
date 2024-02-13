@@ -1,10 +1,31 @@
 import TitleOne from "../UI/TitleOne"
-import { PanduanData } from "../data/datas"
 import { Link } from "react-router-dom"
 import { IoIosArrowForward } from "react-icons/io";
 import "../css/Panduan.css"
+import axios from "axios";
+import { useEffect, useState } from "react"; 
 
 export default function PanduanHome() {
+const [panduan, setPanduan] = useState([])
+
+  useEffect(() => {
+    const fetchPanduan = async () => {
+      try {
+        const response = await axios.get("http://localhost:4001/panduan");
+        setPanduan(response.data);
+      } catch (error) {
+        console.error("Error fetching news services:", error);
+      }
+    };
+
+    const refreshInterval = setInterval(() => {
+      fetchPanduan();
+    }, 1000);
+    fetchPanduan();
+
+    return () => clearInterval(refreshInterval);
+  }, []);
+
   return (
     <div id='PanduanH'>
         <div className="container panduanH-container">
@@ -12,13 +33,13 @@ export default function PanduanHome() {
             className={'panduanH-title'}/>      
 
             <div className="card-panduanH-warpper">
-              {PanduanData.DataPanduan.map(( items, index) => (
-                <Link key={index} to={ items.filePdf} target="_blank" className="book">
+              {panduan.map(( panduan, index) => (
+                <Link key={index} to={ panduan.url} target="_blank" className="book">
                   <div className="book-cover">
-                    <img src={items.imgPdf} alt="cover-img" />
+                    <img src={panduan.urlCover} alt="cover-img" />
                   </div>                    
                   <div className="book-content">                    
-                    <p className="book-title">{items.title}</p>
+                    <p className="book-title">{panduan.title}</p>
                     <p className="book-footer">Klik untuk membaca lebih lanjut</p>
                   </div>
                 </Link>

@@ -66,7 +66,15 @@ export default function Footer() {
           </div>
 
           <div className="footer-right">
-            <h4 className="name">CSIRT</h4>
+            <h4 className="name">
+              {" "}
+              <button className="button text-3xl ml-1" data-text="Awesome">
+                <span className="actual-text">&nbsp;CSIRT&nbsp;</span>
+                <span aria-hidden="true" className="hover-text">
+                  &nbsp;CSIRT&nbsp;
+                </span>
+              </button>
+            </h4>
             <img src={icoImg} alt="icon" />
           </div>
         </div>

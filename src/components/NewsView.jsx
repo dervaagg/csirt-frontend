@@ -1,35 +1,61 @@
-import { NewsViewData } from "../data/datas"
-import { useParams } from 'react-router-dom';
-import '../css/NewsViewer.css'
+
+import { useParams } from "react-router-dom";
+import "../css/NewsViewer.css";
+import axios from "axios";
+import { useState, useEffect } from "react";
 
 export default function NewsView() {
+  const [newses, setNewses] = useState([]);
+
+  useEffect(() => {
+    const fetchNewses = async () => {
+      try {
+        const response = await axios.get("http://localhost:4001/newses");
+        setNewses(response.data);
+      } catch (error) {
+        console.error("Error fetching news services:", error);
+      }
+    };
+
+    const refreshInterval = setInterval(() => {
+      fetchNewses();
+    }, 1000);
+    fetchNewses();
+
+    return () => clearInterval(refreshInterval);
+  }, []);
 
   const { id } = useParams();
-  const items = NewsViewData.find((items) => items.id === Number(id));
+  const news = newses.find((news) => news.id === Number(id));
 
-  return (
-    <div className="container-newsview">
+return (
+  <div className="container-newsview">
+    {news && (
       <div className="container header-news">
-          <img src={items.newsImage} alt="" />                  
-          <div className="title">
-              <h3>{items.title}</h3>
-              <small>{items.category}</small>                                                   
-          </div>    
-      </div>
-      <div className="container content-news">
-        <div className="container-sumber">
-          <p><a href={items.linkSumber}>Sumber Ditulis Oleh {items.namaPenulis}</a></p>
-          <p>Tanggal {items.tanggalUpload}</p>
+        <img src={news.url} alt="" />
+        <div className="title">
+          <h3>{news.title}</h3>
+          <small>{news.category}</small>
         </div>
-        <div className="text">                            
-            <p className='sub-title'>{items.sub_title1}</p>
-            <p>{items.paragraf1}</p>
-            <p className='sub-title'>{items.sub_title2}</p>
-            <p>{items.paragraf2}</p>
-            <p className='sub-title'>{items.sub_title3}</p>
-            <p>{items.paragraf3}</p>
+        <div className="container content-news">
+          <div className="container-sumber">
+            <p>
+              <a href={news.source}></a>
+            </p>
+            <p>Tanggal {news.date}</p>
+          </div>
+          <div className="text">
+            <p className="sub-title">{news.sub_title1}</p>
+            <p>{news.paragraph1}</p>
+            <p className="sub-title">{news.sub_title2}</p>
+            <p>{news.paragraph2}</p>
+            <p className="sub-title">{news.sub_title3}</p>
+            <p>{news.paragraph3}</p>
+          </div>
         </div>
       </div>
-    </div>
-  )
+    )}
+  </div>
+);
+
 }

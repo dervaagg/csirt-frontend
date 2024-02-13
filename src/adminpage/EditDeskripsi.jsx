@@ -92,8 +92,7 @@ export default function EditProfile() {
           </Descriptions>
         </>
       ))}
-      <br />
-      <h1 className="mt-3 mb-7 text-black text-xl">Edit Deskripsi</h1>
+      <h1 className="mt-1 mb-5 text-black text-xl">Edit Deskripsi</h1>
       <form onSubmit={updateProfile}>
         <div className="mt-4">
           <label className="text-black" id="name">
