@@ -120,8 +120,7 @@ export default function EditNews() {
       <h2 className="mt-4 mb-5 text-black font-bold text-3xl">EDIT BERITA</h2>
       <div className="flex flex-col mt-5 max-h-full">
         <h2 className="mb-6 text-base font-semibold">
-          <InfoCircleOutlined /> Klik Salah Satu Judul Dan Data Akan Keluar
-          Dibagian Form Edit
+          <InfoCircleOutlined /> Klik Pada Judul Berita Untuk Mengedit
         </h2>
         <div className="mb-5 relative overflow-x-auto shadow-md sm:rounded-lg">
           <table className="w-full text-sm text-left text-gray-500">
@@ -155,7 +154,7 @@ export default function EditNews() {
                     className="px-6 py-4 font-medium text-black whitespace-nowrap"
                   >
                     <Link
-                      className=" font-semibold hover:text-black max-w-50"
+                      className="underline decoration-sky-400 font-semibold hover:text-black max-w-50"
                       onClick={() => handleNewsClick(news.id)}
                     >
                       {news.title}
