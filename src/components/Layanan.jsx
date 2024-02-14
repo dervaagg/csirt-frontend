@@ -45,7 +45,7 @@ export default function Layanan() {
           <img src={utamaImg} alt="" />
         </div>
         <div className="layanan-utama-left">
-          <div className="title-layanan uppercase">
+          <div className="title-layanan">
             <h4>Layanan Utama</h4>
           </div>
           {primary.map((primaryService, index) => (
@@ -59,7 +59,7 @@ export default function Layanan() {
 
       <div className="layanan-tambahan">
         <div className="layanan-tambahan-right">
-          <div className="title-layanan uppercase">
+          <div className="title-layanan">
             <h4>Layanan Tambahan</h4>
           </div>
           {other.map((otherService, index) => (

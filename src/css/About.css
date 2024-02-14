@@ -71,10 +71,18 @@
     padding: 2.5rem;
   }
   .about-left {
-    width: 90%;
+    margin-top: -20px !important;
+    margin-bottom: -10px !important;
+    width: 80%;
     margin: auto;
   }
   .about-action-aria {
     justify-content: center;
+  }
+  .aboutMe-info p {
+    font-size: 15px;
+  }
+  .aboutMe-info li {
+    font-size: 15px;
   }
 }

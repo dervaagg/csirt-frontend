@@ -35,7 +35,7 @@ export default function Panduan() {
     <div className="panduan">
       <div className="dropdown">
         <div className="paste-button">
-          <button className="button">Dokumen Panduan &nbsp; ▼</button>
+          <button className="button-dropdown">Dokumen Panduan &nbsp; ▼</button>
           <div className="dropdown-content">
             {panduan.map((panduan, index) => (
               <ul key={index}>

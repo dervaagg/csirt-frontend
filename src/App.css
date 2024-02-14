@@ -420,7 +420,7 @@ nav {
   .footer-container {
     display: grid;
     gap: 50px;
-    margin-bottom: 40px;
+    margin-bottom: 60px;
   }
   .footer-container h4 {
     margin-bottom: 20px;
