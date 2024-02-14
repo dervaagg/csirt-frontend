@@ -124,9 +124,10 @@ nav {
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 3rem;
+  gap: 2.5rem;
 }
 .nav-links li {
+  font-size: 14px;
   font-weight: 700;
   color: var(--color-black);
   transition: var(--transition);

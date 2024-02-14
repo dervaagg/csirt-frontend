@@ -30,6 +30,7 @@
   grid-template-columns: repeat(4, 17rem);
   grid-gap: 30px;
   justify-content: center;
+  margin-left: 50px;
 }
 
 .book {
@@ -122,7 +123,6 @@
   font-weight: 700;
 }
 .book-content .book-footer {
-  bottom: 0;
   font-size: 12px;
   font-weight: 700;
 }
@@ -282,6 +282,9 @@
 
 /* .....................Start Media Screen(755)..................... */
 @media (max-width: 666px) {
+  .card-panduanH-warpper {
+    margin-left: 0;
+  }
   .panduan {
     display: grid;
     gap: 50px;
@@ -404,13 +407,15 @@
   }
   .book-content {
     display: grid;
-    grid-template-rows: 70%;
     margin-left: 42px;
     margin-right: 8px;
     margin-bottom: 0;
   }
   .book-content .book-title {
-    font-size: 13px;
+    height: 25px;
+  }
+  .book-content .book-title p{
+    font-size: 10px;
     font-weight: 500;
   }
   .book-content .book-footer {
@@ -418,4 +423,8 @@
     font-weight: 500;
     margin-right: 20px;
   }
+}
+
+.btn-content {
+  font-size: 17px;
 }
