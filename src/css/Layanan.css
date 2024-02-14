@@ -19,7 +19,7 @@
 .layanan-utama {
     height: 80vh;
     display: grid;
-    grid-template-columns: 50% 40%;
+    grid-template-columns: repeat(2, 550px);
     justify-content: center;
     align-items: center;
     gap: 5rem;
@@ -30,6 +30,7 @@
     font-weight: 700;
     font-size: 30px;
     margin-bottom: 20px;
+    text-transform: uppercase;
 }
 .layanan-utama-left li {
     font-size: 17px;
@@ -39,35 +40,67 @@
 .layanan-tambahan {
     height: 70vh;
     display: grid;
-    grid-template-columns: 30% 45%;
+    grid-template-columns: repeat(2, 550px);
     justify-content: center;
     align-items: center;
-    gap: 10rem;
+    gap: 5rem;
 }
 .layanan-tambahan-right .title-layanan {
     color: var(--color-primary);
     font-weight: 700;
     font-size: 30px;
     margin-bottom: 20px;
+    text-transform: uppercase;
 }
 .layanan-tambahan-right li {
     font-size: 17px;
     font-weight: 700;
 }
 
+
+@media (max-width:1150px) {
+    .layanan-utama {
+        grid-template-columns: repeat(2, 450px);
+    }
+    .layanan-tambahan {
+        grid-template-columns: repeat(2, 400px);
+    }
+}
+
+@media (max-width:900px) {
+    .layanan-utama {
+        grid-template-columns: repeat(2, 350px);
+    }
+    .layanan-tambahan {
+        grid-template-columns: repeat(2, 250px);
+    }
+}
+
 @media (max-width:666px) {
     .layanan-utama {
-        display: flex;
-        flex-direction: column;
+        grid-template-columns: repeat(1, 350px);
+        gap: 0;
     }
     .layanan-utama img {
         width: 450px;
+        margin-bottom: -300px;
     }
     .layanan-tambahan {
-        display: flex;
-        flex-direction: column-reverse;
+        grid-template-columns: repeat(1, 350px);
+        gap: 0;
+        grid-auto-flow: row;       
+    }
+    .layanan-tambahan > div:nth-child(1) {
+        grid-row:  2;
+    }    
+    .layanan-tambahan > div:nth-child(2) {
+        grid-row:  1;
     }
     .layanan-tambahan img {
-        width: 450px;
+        margin-right: 200px;
+        width: 400px;
+    }
+    .layanan-tambahan-right li {
+        font-size: 15px;
     }
 }

@@ -152,6 +152,7 @@
 }
 
 .btn-content .btn-title {
+  font-size: 19px;
   max-width: 160px;
   color: var(--color-black);
 }
@@ -312,7 +313,7 @@
     margin-top: 10px;
   }
 
-  .button {
+  .button-dropdown {
     background-color: var(--color-white);
     color: var(--color-black);
     padding: 10px 15px;

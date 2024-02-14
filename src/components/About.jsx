@@ -59,8 +59,6 @@ export default function About() {
                 src={profile.url}
                 alt="AboutMe"
                 style={{
-                  marginBottom: "20px",
-                  marginTop: "20px",
                   borderRadius: "10px",
                   boxShadow: "0 0 10px 0 rgba(0, 0, 0, 3)",
                 }}
