@@ -53,7 +53,7 @@ export default function About() {
     <section id="About">
       {profile.map((profile, index) => {
         return (
-          <div className="container about-container" key={index}>
+          <div className="container about-container mt-14 mb-10" key={index}>
             <div className="contrainer about-left">
               <img
                 src={profile.url}
@@ -64,7 +64,7 @@ export default function About() {
                 }}
               />
             </div>
-            <div className="contrainer about-right">
+            <div className="contrainer about-right gap-7">
               <div className="aboutMe-header text-3xl font-bold tracking-wider">
                 <TitleOne
                   title={profile.first_name}
@@ -73,7 +73,7 @@ export default function About() {
                 />
               </div>
               <div className="aboutMe-info">
-                <p className="tracking-wide text-lg leading-7 mb-4">
+                <p className="tracking-wider text-lg leading-loose mb-4">
                   {profile.about}
                 </p>
               </div>

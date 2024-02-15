@@ -9,8 +9,8 @@ import EditRFC from "./EditRFC";
 import AddNews from "./EditNews";
 import EditKontak from "./EditKontak";
 import AddPanduan from "./AddPanduan";
+import EditGaleri from "./EditGaleri"
 import logoWK from "../assets/Logo WSKT.svg";
-
 import { useState } from "react";
 import {
   MenuFoldOutlined,
@@ -28,18 +28,18 @@ import {
   ProjectOutlined,
   AppstoreAddOutlined,
   AppstoreOutlined,
+  PictureOutlined,
 } from "@ant-design/icons";
 import { Layout, Menu, Button, theme } from "antd";
-
 const { Header, Sider, Content } = Layout;
+
 const Dashboard = () => {
+  const [isButtonClicked, setIsButtonClicked] = useState(false);
+  const [currentPage, setCurrentPage] = useState("");
   const [collapsed, setCollapsed] = useState(false);
   const {
     token: { colorBgContainer },
   } = theme.useToken();
-  const [isButtonClicked, setIsButtonClicked] = useState(false);
-
-  const [currentPage, setCurrentPage] = useState("");
 
   const handleMenuClick = (event) => {
     setCurrentPage(event.key);
@@ -78,6 +78,9 @@ const Dashboard = () => {
         >
           <Menu.Item key="" icon={<HomeOutlined />}>
             Home
+          </Menu.Item>
+          <Menu.Item key="edit-galeri" icon={<PictureOutlined />}>
+            Galeri
           </Menu.Item>
           <Menu.SubMenu key="subprofil" icon={<UserOutlined />} title="Profil">
             <Menu.Item key="edit-deskripsi" icon={<SolutionOutlined />}>
@@ -193,6 +196,7 @@ const Dashboard = () => {
           {currentPage === "edit-panduan" && <AddPanduan />}
           {currentPage === "tambah-berita" && <EditNews />}
           {currentPage === "list-berita" && <AddNews />}
+          {currentPage === "edit-galeri" && <EditGaleri />}
         </Content>
       </Layout>
     </Layout>
