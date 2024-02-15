@@ -3,20 +3,54 @@ import { useEffect, useRef, useState } from "react";
 import axios from "axios";
 
 export const ShuffleHero = () => {
-  const [galeris, setGaleris] = useState([]);
+  const ShuffleGrid = () => {
+    const timeoutRef = useRef(null);
+    const [squares, setSquares] = useState([]);
 
+    useEffect(() => {
+      setSquares(generateSquares());
+      timeoutRef.current = setTimeout(shuffleSquares, 3000);
+      return () => clearTimeout(timeoutRef.current);
+    }, [galeris]);
+
+    const shuffleSquares = () => {
+      setSquares(generateSquares());
+      timeoutRef.current = setTimeout(shuffleSquares, 3000);
+    };
+
+    return (
+      <div className="custom:hidden custom:mb[-20] grid grid-cols-4 grid-rows-4 h-[450px] gap-1">
+        {squares.map((sq) => sq)}
+      </div>
+    );
+  };
+
+  const [galeris, setGaleris] = useState([]);
   useEffect(() => {
     const fetchGaleris = async () => {
       try {
         const response = await axios.get("http://localhost:4001/galeris");
-        setGaleris(response.data); 
+        setGaleris(response.data);
       } catch (error) {
-        console.error("Error fetching galeris:", error);
+        console.error("Error fetching galeri:", error);
       }
     };
-
     fetchGaleris();
   }, []);
+
+  const shuffle = (array) => {
+    let currentIndex = array.length,
+      randomIndex;
+    while (currentIndex != 0) {
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex--;
+      [array[currentIndex], array[randomIndex]] = [
+        array[randomIndex],
+        array[currentIndex],
+      ];
+    }
+    return array;
+  };
 
   const generateSquares = () => {
     return shuffle(galeris).map((galeri) => (
@@ -31,45 +65,6 @@ export const ShuffleHero = () => {
         }}
       ></motion.div>
     ));
-  };
-
-  const ShuffleGrid = () => {
-    const timeoutRef = useRef(null);
-    const [squares, setSquares] = useState([]);
-
-    useEffect(() => {
-      setSquares(generateSquares());
-      timeoutRef.current = setTimeout(shuffleSquares, 3000);
-      return () => clearTimeout(timeoutRef.current);
-    }, [galeris]); 
-
-    const shuffleSquares = () => {
-      setSquares(generateSquares());
-      timeoutRef.current = setTimeout(shuffleSquares, 3000);
-    };
-
-    return (
-      <div className="custom:hidden custom:mb[-20] grid grid-cols-4 grid-rows-4 h-[450px] gap-1">
-        {squares.map((sq) => sq)}
-      </div>
-    );
-  };
-
-  const shuffle = (array) => {
-    let currentIndex = array.length,
-      randomIndex;
-
-    while (currentIndex != 0) {
-      randomIndex = Math.floor(Math.random() * currentIndex);
-      currentIndex--;
-
-      [array[currentIndex], array[randomIndex]] = [
-        array[randomIndex],
-        array[currentIndex],
-      ];
-    }
-
-    return array;
   };
 
   return (

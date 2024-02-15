@@ -15,7 +15,7 @@ export default function ScrollTop() {
     if (showLoader) {
       const timer = setTimeout(() => {
         setShowLoader(false);
-      }, 600); // Adjust the duration as needed
+      }, 600);
       return () => clearTimeout(timer);
     }
   }, [showLoader]);
@@ -26,12 +26,12 @@ export default function ScrollTop() {
     setTimeout(function () {
       loaderWrapper.classList.add("fade-in");
       loaderWrapper.classList.remove("fade-out");
-    }, 10000); // show loader after 300 milliseconds
+    }, 10000);
 
     setTimeout(function () {
       loaderWrapper.classList.remove("fade-in");
       loaderWrapper.classList.add("fade-out");
-    }, 10000); // hide loader after 3 seconds
+    }, 10000); 
   });
 
   return (

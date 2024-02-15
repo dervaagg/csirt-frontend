@@ -54,7 +54,7 @@ export default function EditLayananU() {
 
   return (
     <div className="flex flex-col bg-white min-h-full rounded-lg p-4 shadow-sm">
-      <h2 className="mt-4 mb-5 text-black font-bold text-3xl">Layanan Utama</h2>
+      <h2 className="mt-4 mb-5 text-black font-bold text-3xl">UTAMA</h2>
       <form onSubmit={createServices}>
         <div className="mt-4">
           <label className="text-black" id="name">

@@ -45,20 +45,18 @@ export default function EditLayananT() {
     }
   };
 
-    const cancel = (e) => {
-      console.log(e);
-      message.error("Batal Menghapus Layanan Tambahan");
-    };
+  const cancel = (e) => {
+    console.log(e);
+    message.error("Batal Menghapus Layanan Tambahan");
+  };
 
   return (
     <div className="flex flex-col bg-white min-h-full rounded-lg p-4 shadow-sm">
-      <h2 className="mt-4 mb-5 text-black font-bold text-3xl">
-        Layanan Tambahan
-      </h2>
+      <h2 className="mt-4 mb-5 text-black font-bold text-3xl">TAMBAHAN</h2>
       <form onSubmit={createServices}>
         <div className="mt-4">
           <label className="text-black" id="name">
-            Layanan Utama :
+            Layanan Tambahan :
           </label>
           <input
             placeholder="Isi Layanan Tambahan"

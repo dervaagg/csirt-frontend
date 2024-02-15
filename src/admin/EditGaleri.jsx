@@ -151,7 +151,7 @@ export default function EditPanduan() {
                     Nama Gambar
                   </th>
                   <th scope="col" className="px-6 py-3">
-                    Preview Gambar
+                    Preview
                   </th>
                   <th scope="col" className="px-6 py-3">
                     Aksi

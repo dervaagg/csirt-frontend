@@ -93,7 +93,7 @@ export default function EditProfile() {
           </Descriptions>
         </>
       ))}
-      <h2 className="mt-4 mb-5 text-base font-semibold">
+      <h2 className=" mb-5 text-base font-semibold">
         <InfoCircleOutlined /> Form Edit Deskripsi
       </h2>
       <form onSubmit={updateProfile}>
