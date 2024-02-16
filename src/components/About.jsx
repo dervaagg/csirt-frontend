@@ -85,7 +85,7 @@ export default function About() {
                   return (
                     <ul className="capitalize" key={vission.id}>
                       <li className="text-lg tracking-wide leading-loose mb-4">
-                        {index + 1 + ". " + vission.vission}
+                        {index + 1 + ". " + vission.vissions}
                       </li>
                     </ul>
                   );
@@ -99,7 +99,7 @@ export default function About() {
                   return (
                     <ul className="capitalize" key={mission.id}>
                       <li className="text-lg tracking-wide leading-loose">
-                        {index + 1 + "." + " " + mission.mission}
+                        {index + 1 + "." + " " + mission.missions}
                       </li>
                     </ul>
                   );

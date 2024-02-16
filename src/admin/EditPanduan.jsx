@@ -40,7 +40,7 @@ export default function EditPanduan() {
 
   return (
     <div className="flex flex-col bg-white min-h-full rounded-lg p-4 shadow-sm">
-      <h2 className="mb-1 mt-5 text-base font-semibold">
+      <h2 className="mb-1 text-base font-semibold">
         <InfoCircleOutlined /> Edit Dokumen Panduan
       </h2>
       <div className="mt-5 relative overflow-x-auto shadow-md sm:rounded-lg">

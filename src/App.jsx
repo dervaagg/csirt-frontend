@@ -3,8 +3,7 @@ import { Route, Routes } from "react-router-dom";
 import ScrollTop from "./UI/ScrollTop";
 import "./App.css";
 
-// Import Pages...................................
-
+// Import Pages
 import Home from "./pages/Home";
 import About from "./components/About";
 import RFC from "./components/RFC";
@@ -12,13 +11,12 @@ import Layanan from "./components/Layanan";
 import Panduan from "./components/Panduan";
 import Kontak from "./components/Kontak";
 import MainLayout from "./pages/MainLayout";
-import PageNotFound from "./pages/PageNotFound"
+import PageNotFound from "./pages/PageNotFound";
 
-// Import News Content.............................
+// Import News Content
 import NewsView from "./components/NewsView";
 
 function App() {
-
   const [isLayoutVisible, setIsLayoutVisible] = useState(true);
 
   return (
@@ -36,7 +34,10 @@ function App() {
         {/* Route News */}
         <Route path="/news/:id" element={<NewsView />} />
 
-        <Route path="*" element={<PageNotFound setIsLayoutVisible={setIsLayoutVisible}/>} />
+        <Route
+          path="*"
+          element={<PageNotFound setIsLayoutVisible={setIsLayoutVisible} />}
+        />
       </Routes>
     </MainLayout>
   );
