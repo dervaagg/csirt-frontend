@@ -31,21 +31,33 @@ import {
   PictureOutlined,
 } from "@ant-design/icons";
 import { Layout, Menu, Button, theme } from "antd";
-import { useAdminAccess } from '../UI/AdminAccessContext';
+import { useMsal } from '@azure/msal-react';
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 const { Header, Sider, Content } = Layout;
 
 const Dashboard = () => {
-  const { hasAccess } = useAdminAccess();
+  const { instance, accounts } = useMsal();
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (!hasAccess) {
+    if (!accounts.length) {
       navigate('/admin');
+    } else {
+      const account = accounts[0];
+      const tokenRequest = {
+        scopes: ['User.Read'],
+        account: account,
+      };
+
+      instance.acquireTokenSilent(tokenRequest).then(() => {
+      }).catch((error) => {
+        console.error(error);
+        navigate('/admin');
+      });
     }
-  }, [hasAccess, navigate]);
+  }, [accounts, instance, navigate]);
 
   const [isButtonClicked, setIsButtonClicked] = useState(false);
   const [currentPage, setCurrentPage] = useState("");

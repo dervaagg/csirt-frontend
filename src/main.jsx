@@ -6,7 +6,8 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import App from './App.jsx'
 import Admin from './pages/Admin.jsx'
 import Dashboard from './admin/Dashboard.jsx'
-import { AdminAccessProvider } from './UI/AdminAccessContext.jsx';
+import { msalInstance } from './UI/authProvider.js';
+import { MsalProvider } from '@azure/msal-react';
 import './index.css'
 
 // Import PDF Componen
@@ -17,7 +18,7 @@ import 'react-pdf/dist/Page/AnnotationLayer.css';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <AdminAccessProvider>
+    <MsalProvider instance={msalInstance}>
       <BrowserRouter>
         <Routes>
           <Route path="/*" element={<App />} />
@@ -25,6 +26,6 @@ ReactDOM.createRoot(document.getElementById('root')).render(
           <Route path="/admin/dashboard" element={<Dashboard />} />
         </Routes>
       </BrowserRouter>
-    </AdminAccessProvider>
+    </MsalProvider>
   </React.StrictMode>,
 )
