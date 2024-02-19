@@ -31,9 +31,22 @@ import {
   PictureOutlined,
 } from "@ant-design/icons";
 import { Layout, Menu, Button, theme } from "antd";
+import { useAdminAccess } from '../UI/AdminAccessContext';
+import { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+
 const { Header, Sider, Content } = Layout;
 
 const Dashboard = () => {
+  const { hasAccess } = useAdminAccess();
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (!hasAccess) {
+      navigate('/admin');
+    }
+  }, [hasAccess, navigate]);
+
   const [isButtonClicked, setIsButtonClicked] = useState(false);
   const [currentPage, setCurrentPage] = useState("");
   const [collapsed, setCollapsed] = useState(false);
