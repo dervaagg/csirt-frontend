@@ -9,7 +9,7 @@ import EditRFC from "./EditRFC";
 import AddNews from "./EditNews";
 import EditKontak from "./EditKontak";
 import AddPanduan from "./AddPanduan";
-import EditGaleri from "./EditGaleri"
+import EditGaleri from "./EditGaleri";
 import logoWK from "../assets/Logo WSKT.svg";
 import { useState } from "react";
 import {
@@ -31,31 +31,32 @@ import {
   PictureOutlined,
 } from "@ant-design/icons";
 import { Layout, Menu, Button, theme } from "antd";
-import { useMsal } from '@azure/msal-react';
-import { useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
-
-const { Header, Sider, Content } = Layout;
+import { useMsal } from "@azure/msal-react";
+import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Dashboard = () => {
+  const { Header, Sider, Content } = Layout;
   const { instance, accounts } = useMsal();
   const navigate = useNavigate();
 
   useEffect(() => {
     if (!accounts.length) {
-      navigate('/admin');
+      navigate("/admin");
     } else {
       const account = accounts[0];
       const tokenRequest = {
-        scopes: ['User.Read'],
+        scopes: ["User.Read"],
         account: account,
       };
 
-      instance.acquireTokenSilent(tokenRequest).then(() => {
-      }).catch((error) => {
-        console.error(error);
-        navigate('/admin');
-      });
+      instance
+        .acquireTokenSilent(tokenRequest)
+        .then(() => {})
+        .catch((error) => {
+          console.error(error);
+          navigate("/admin");
+        });
     }
   }, [accounts, instance, navigate]);
 
