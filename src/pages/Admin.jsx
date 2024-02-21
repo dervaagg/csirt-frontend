@@ -15,7 +15,7 @@ export default function Admin() {
         scopes: ['User.Read'],
       };
       await instance.loginPopup(loginRequest);
-      navigate('/admin/dashboard');
+      navigate('/admin');
     } catch (error) {
       console.error(error);
       setIsButtonClicked(false);

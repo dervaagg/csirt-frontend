@@ -42,7 +42,7 @@ const Dashboard = () => {
 
   useEffect(() => {
     if (!accounts.length) {
-      navigate("/admin");
+      navigate("/admin/login");
     } else {
       const account = accounts[0];
       const tokenRequest = {
@@ -55,7 +55,7 @@ const Dashboard = () => {
         .then(() => {})
         .catch((error) => {
           console.error(error);
-          navigate("/admin");
+          navigate("/admin/login");
         });
     }
   }, [accounts, instance, navigate]);
