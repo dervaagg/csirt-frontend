@@ -39,6 +39,7 @@ const Dashboard = () => {
   const { Header, Sider, Content } = Layout;
   const { instance, accounts } = useMsal();
   const navigate = useNavigate();
+  const [logoutTimeout, setLogoutTimeout] = useState(null);
 
   useEffect(() => {
     if (!accounts.length) {
@@ -59,6 +60,27 @@ const Dashboard = () => {
         });
     }
   }, [accounts, instance, navigate]);
+
+  useEffect(() => {
+    setLogoutTimeout(setTimeout(() => {
+      handleLogout();
+    },  30 *  60 *  1000));
+
+    const resetLogoutTimeout = () => {
+      clearTimeout(logoutTimeout);
+      setLogoutTimeout(setTimeout(() => {
+        handleLogout();
+      },  30 *  60 *  1000));
+    };
+
+    window.addEventListener('mousemove', resetLogoutTimeout);
+    window.addEventListener('keydown', resetLogoutTimeout);
+
+    return () => {
+      window.removeEventListener('mousemove', resetLogoutTimeout);
+      window.removeEventListener('keydown', resetLogoutTimeout);
+    };
+  }, [logoutTimeout]);
 
   const handleLogout = () => {
     instance.logout({ postLogoutRedirectUri: '/admin/login' });
