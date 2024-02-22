@@ -10,6 +10,7 @@ import AddNews from "./EditNews";
 import EditKontak from "./EditKontak";
 import AddPanduan from "./AddPanduan";
 import EditGaleri from "./EditGaleri";
+import Pengunjung from "./Pengunjung";
 import logoWK from "../assets/Logo WSKT.svg";
 import { useState } from "react";
 import {
@@ -29,6 +30,7 @@ import {
   AppstoreAddOutlined,
   AppstoreOutlined,
   PictureOutlined,
+  EnvironmentOutlined,
 } from "@ant-design/icons";
 import { Layout, Menu, Button, theme } from "antd";
 import { useMsal } from "@azure/msal-react";
@@ -62,28 +64,33 @@ const Dashboard = () => {
   }, [accounts, instance, navigate]);
 
   useEffect(() => {
-    setLogoutTimeout(setTimeout(() => {
-      handleLogout();
-    },  30 *  60 *  1000));
+    setLogoutTimeout(
+      setTimeout(() => {
+        handleLogout();
+      }, 30 * 60 * 1000)
+    );
 
     const resetLogoutTimeout = () => {
       clearTimeout(logoutTimeout);
-      setLogoutTimeout(setTimeout(() => {
-        handleLogout();
-      },  30 *  60 *  1000));
+      setLogoutTimeout(
+        setTimeout(() => {
+          handleLogout();
+        }, 30 * 60 * 1000)
+      );
     };
 
-    window.addEventListener('mousemove', resetLogoutTimeout);
-    window.addEventListener('keydown', resetLogoutTimeout);
+    window.addEventListener("mousemove", resetLogoutTimeout);
+    window.addEventListener("keydown", resetLogoutTimeout);
 
     return () => {
-      window.removeEventListener('mousemove', resetLogoutTimeout);
-      window.removeEventListener('keydown', resetLogoutTimeout);
+      window.removeEventListener("mousemove", resetLogoutTimeout);
+      window.removeEventListener("keydown", resetLogoutTimeout);
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [logoutTimeout]);
 
   const handleLogout = () => {
-    instance.logout({ postLogoutRedirectUri: '/admin/login' });
+    instance.logout({ postLogoutRedirectUri: "/admin/login" });
   };
 
   const [isButtonClicked, setIsButtonClicked] = useState(false);
@@ -174,6 +181,9 @@ const Dashboard = () => {
           <Menu.Item key="edit-panduan" icon={<AppstoreAddOutlined />}>
             Panduan
           </Menu.Item>
+          <Menu.Item key="tracking-ip" icon={<EnvironmentOutlined />}>
+            Daftar IP Pengunjung
+          </Menu.Item>
         </Menu>
         <div
           className="mb-8 fixed flex justify-center bottom-0 uppercase"
@@ -249,6 +259,7 @@ const Dashboard = () => {
           {currentPage === "tambah-berita" && <EditNews />}
           {currentPage === "list-berita" && <AddNews />}
           {currentPage === "edit-galeri" && <EditGaleri />}
+          {currentPage === "tracking-ip" && <Pengunjung />}
         </Content>
       </Layout>
     </Layout>
