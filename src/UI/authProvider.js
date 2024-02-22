@@ -12,3 +12,6 @@ const msalConfig = {
   },
 };
 export const msalInstance = new PublicClientApplication(msalConfig);
+await msalInstance.initialize();
+await msalInstance.handleRedirectPromise(); // This will no longer throw this error since initialize completed before this was invoked
+msalInstance.acquireTokenSilent(); // This will also no longer throw this error
