@@ -182,7 +182,7 @@ const Dashboard = () => {
             Panduan
           </Menu.Item>
           <Menu.Item key="tracking-ip" icon={<EnvironmentOutlined />}>
-            Daftar IP Pengunjung
+            IP Pengunjung
           </Menu.Item>
         </Menu>
         <div
