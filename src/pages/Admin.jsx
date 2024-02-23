@@ -34,7 +34,7 @@ export default function Admin() {
           onClick={handleButtonClick}
           disabled={isButtonClicked}
         >
-          {isButtonClicked ? 'Redirecting...' : 'Login'}
+          {isButtonClicked ? 'Processing...' : 'Login'}
         </button>
       </div>
     </div>

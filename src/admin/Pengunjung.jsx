@@ -54,7 +54,7 @@ export default function EditKontak() {
   return (
     <div className="flex flex-col bg-white min-h-full rounded-lg p-4 shadow-sm">
       <h2 className="mt-4 mb-5 text-black font-bold text-3xl">IP PENGUNJUNG</h2>
-      <h2 className="mt-4 text-base font-semibold">
+      <h2 className="mt-4 mb-4 text-base font-semibold">
         <InfoCircleOutlined /> Berikut ini adalah daftar IP pengunjung website
         Waskita CSIRT
       </h2>
