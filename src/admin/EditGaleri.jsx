@@ -77,7 +77,7 @@ export default function EditPanduan() {
   return (
     <>
       <div className="flex flex-col min-h-full bg-white rounded-lg p-4 shadow-sm">
-        <h2 className="mt-4 mb-1 text-black font-bold text-3xl">PANDUAN</h2>
+        <h2 className="mt-4 mb-1 text-black font-bold text-3xl">GALERI</h2>
         <form onSubmit={createGaleri}>
           <div className="mt-4">
             <label className="text-black" id="name">

@@ -120,7 +120,7 @@ export default function EditNews() {
       <h2 className="mt-4 mb-5 text-black font-bold text-3xl">EDIT BERITA</h2>
       <div className="flex flex-col mt-5 max-h-full">
         <h2 className="mb-6 text-base font-semibold">
-          <InfoCircleOutlined /> Klik Pada Judul Berita Untuk Mengedit
+          <InfoCircleOutlined /> Klik Pada Judul Berita Untuk Memperbarui
         </h2>
         <div className="mb-5 relative overflow-x-auto shadow-md sm:rounded-lg">
           <table className="w-full text-sm text-left text-gray-500">
@@ -228,7 +228,7 @@ export default function EditNews() {
           </table>
         </div>
         <h2 className="mt-4 text-base font-semibold">
-          <InfoCircleOutlined /> Form Edit News
+          <InfoCircleOutlined /> Form Pembaruan Berita
         </h2>
         <div className="flex flex-col-reverse justify-center w-full h-full mb-5">
           <form onSubmit={updateNews}>

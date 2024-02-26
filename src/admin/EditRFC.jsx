@@ -101,8 +101,7 @@ export default function EditRFC() {
 
       <br />
       <h2 className="mt-6 mb-3 text-base font-semibold">
-        <InfoCircleOutlined /> Klik Salah Satu Judul Dan Data Akan Keluar
-        Dibagian Form Edit
+        <InfoCircleOutlined /> Preview Dokumen RFC 2350
       </h2>
       <div className="mt-2 flex flex-col-reverse bg-zinc-300 rounded-lg p-4">
         {fileList.map((rfc, index) => (
