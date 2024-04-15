@@ -80,7 +80,7 @@ export const ShuffleHero = () => {
           Waskita Computer Security Incident Response Team
         </p>
         <br />
-        <a href="/about">
+        <a href="/profil">
           <button className="bg-indigo-950 text-white font-medium py-2 px-4 mt-5 ml-1 rounded transition-all hover:bg-indigo-600 active:scale-95 animate-pulse">
             TENTANG WASKITA CSIRT
           </button>

@@ -17,27 +17,31 @@ export default function Navbar() {
             <img src={icoImg} alt="icon" />
           </NavLink>
           <ul className="nav-links">
-            <motion.li 
+            <motion.li
               layoutId="nav-item"
-              transition={{ type: "spring", duration:  0.5 }}
+              transition={{ type: "spring", duration: 0.5 }}
               className={`nav-item ${click === "/" ? "active" : ""}`}
             >
-              <NavLink to="/" className="nav-NavLinks" onClick={closeMobileMenu}>
+              <NavLink
+                to="/"
+                className="nav-NavLinks"
+                onClick={closeMobileMenu}
+              >
                 BERANDA
               </NavLink>
             </motion.li>
             <motion.li
               layoutId="nav-item"
-              transition={{ type: "spring", duration:  0.5 }}
+              transition={{ type: "spring", duration: 0.5 }}
               className={`nav-item ${click === "/" ? "active" : ""}`}
             >
-              <NavLink to="/about" onClick={closeMobileMenu}>
+              <NavLink to="/profil" onClick={closeMobileMenu}>
                 PROFIL
               </NavLink>
             </motion.li>
             <motion.li
               layoutId="nav-item"
-              transition={{ type: "spring", duration:  0.5 }}
+              transition={{ type: "spring", duration: 0.5 }}
               className={`nav-item ${click === "/" ? "active" : ""}`}
             >
               <NavLink to="/rfc" onClick={closeMobileMenu}>
@@ -46,7 +50,7 @@ export default function Navbar() {
             </motion.li>
             <motion.li
               layoutId="nav-item"
-              transition={{ type: "spring", duration:  0.5 }}
+              transition={{ type: "spring", duration: 0.5 }}
               className={`nav-item ${click === "/" ? "active" : ""}`}
             >
               <NavLink to="/layanan" onClick={closeMobileMenu}>
@@ -55,7 +59,7 @@ export default function Navbar() {
             </motion.li>
             <motion.li
               layoutId="nav-item"
-              transition={{ type: "spring", duration:  0.5 }}
+              transition={{ type: "spring", duration: 0.5 }}
               className={`nav-item ${click === "/" ? "active" : ""}`}
             >
               <NavLink to="/panduan" onClick={closeMobileMenu}>
@@ -64,7 +68,7 @@ export default function Navbar() {
             </motion.li>
             <motion.li
               layoutId="nav-item"
-              transition={{ type: "spring", duration:  0.5 }}
+              transition={{ type: "spring", duration: 0.5 }}
               className={`nav-item ${click === "/" ? "active" : ""}`}
             >
               <NavLink to="/kontak" onClick={closeMobileMenu}>

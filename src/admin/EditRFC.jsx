@@ -39,10 +39,10 @@ export default function EditRFC() {
   const handleDelete = async (rfcId) => {
     try {
       await axios.delete(`http://localhost:4001/rfc/${rfcId}`);
-      message.success("RFC deleted successfully.");
+      message.success("RFC Berhasil Terhapus");
       getRFC();
     } catch (error) {
-      message.error("Error deleting RFC file");
+      message.error("Tidak Dapat Menghapus RFC");
     }
   };
 
@@ -65,9 +65,9 @@ export default function EditRFC() {
         console.log(info.file, info.fileList);
       }
       if (status === "done") {
-        message.success(`${info.file.name} uploaded Successfully.`);
+        message.success(`${info.file.name} Berhasil TerUpload`);
       } else if (status === "error") {
-        message.error(`${info.file.name} Upload Failed.`);
+        message.error(`${info.file.name} Upload Gagal File Tidak Sesuai Format`);
       }
       if (info.file.status === "done" || info.file.status === "error") {
         getRFC();

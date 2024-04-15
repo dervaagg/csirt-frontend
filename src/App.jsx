@@ -25,7 +25,7 @@ function App() {
       <Routes>
         {/* Route Page */}
         <Route path="/" exact element={<Home />} />
-        <Route path="/about" element={<About />} />
+        <Route path="/profil" element={<About />} />
         <Route path="/rfc" element={<RFC />} />
         <Route path="/layanan" element={<Layanan />} />
         <Route path="/panduan" element={<Panduan />} />

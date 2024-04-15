@@ -1,5 +1,6 @@
 import "../css/Kontak.css";
-import { FiPhone, FiMail, FiMapPin, FiClock } from "react-icons/fi";
+import { FiPhone, FiMail, FiMapPin } from "react-icons/fi";
+import { LuClock8 } from "react-icons/lu";
 import { FaWhatsapp } from "react-icons/fa";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
@@ -66,10 +67,10 @@ export default function Kontak() {
                       </a>
                     </p>
                   </div>
-                  <div className="telephone">
-                    <FiClock className="icon-kontak-fi size-7" />
+                  <div className="operasional">
+                    <LuClock8 className="icon-kontak-fi size-6" />
                     <br />
-                    <p>{kontak.operasional}</p>
+                    <p className="mt-3">{kontak.operasional}</p>
                   </div>
                 </div>
               </div>

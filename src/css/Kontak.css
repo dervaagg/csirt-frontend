@@ -95,6 +95,11 @@
   gap: 10px;
 }
 
+.kontak-right .operasional {
+  display: flex;
+  gap: 10px;
+}
+
 .kontak-right .telephone {
   display: flex;
   gap: 10px;
