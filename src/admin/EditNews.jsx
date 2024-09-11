@@ -414,7 +414,7 @@ export default function EditNews() {
                   type="submit"
                   disabled={!selectedNewsId}
                 >
-                  Update
+                  Perbarui
                 </button>
               </div>
             </div>

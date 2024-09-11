@@ -50,7 +50,7 @@ export default function Layanan() {
           </div>
           {primary.map((primaryService, index) => (
             <ul className="tracking-wider" key={primaryService.id}>
-              <li>{index + 1 + ". " + primaryService.services}</li>
+              <li>{index + 1 + ". " + primaryService.services}</li> 
               <br />
             </ul>
           ))}

@@ -169,7 +169,7 @@ export default function EditProfile() {
             className="mb-2 bg-transparent outline outline-1 font-bold p-2 px-10 rounded-lg bg-white hover:bg-blue-500 transition-colors"
             type="submit"
           >
-            Update
+            Perbarui
           </button>
         </div>
       </form>

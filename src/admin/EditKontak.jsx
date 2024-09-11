@@ -34,7 +34,7 @@ export default function EditKontak() {
     formData.append("operasional", operasional);
     formData.append("disclaimer", disclaimer);
     try {
-      await axios.patch("http://localhost:4001/contact/1", formData, {
+      await axios.patch("http://localhost:4001/contact/3", formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },
@@ -154,7 +154,7 @@ export default function EditKontak() {
             className="bg-transparent outline outline-1 font-bold p-2 px-10 rounded-lg bg-white hover:bg-blue-500 transition-colors"
             type="submit"
           >
-            Update
+            Perbarui
           </button>
         </div>
       </form>
